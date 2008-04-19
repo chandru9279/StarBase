@@ -10,7 +10,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using Thon.ZaszBlog.Support;
 
-public partial class admin_admin : System.Web.UI.MasterPage
+public partial class ZaszBlogAdminMaster : System.Web.UI.MasterPage
 {
   protected void Page_Load(object sender, EventArgs e)
   {

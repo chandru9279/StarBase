@@ -41,13 +41,13 @@ label.wide {
 ----------------------------*/
 
 #leftColumn {
-	background-image: url( 'images/bkgd_left_column.gif' );
+	background-image: url(../Images/AdminPages/bkgd_left_column.gif);
 	background-repeat: repeat-y;
 	width: 28px;
 }
 
 #rightColumn {
-	background-image: url( 'images/bkgd_right_column.gif' );
+	background-image: url(../Images/AdminPages/bkgd_right_column.gif);
 	background-repeat: repeat-y;
 	width: 28px;
 }
@@ -225,7 +225,7 @@ table.referrer caption {
 
 .tabs a {
 	float: left;
-	background: url( "images/tableftB.gif" ) no-repeat left top;
+	background: url(../Images/AdminPages/tableftB.gif) no-repeat left top;
 	margin: 0;
 	padding: 0 0 0 4px;
 	text-decoration: none;
@@ -235,7 +235,7 @@ table.referrer caption {
 .tabs a span {
 	float: left;
 	display: block;
-	background: url( "images/tabrightB.gif" ) no-repeat right top;
+	background: url(../Images/AdminPages/tabrightB.gif) no-repeat right top;
 	padding: 5px 15px 4px 6px;
 	color: #666;
 }

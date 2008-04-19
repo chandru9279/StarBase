@@ -41,14 +41,7 @@ public partial class User_controls_xmanager_ExtensionsList : System.Web.UI.UserC
     /// <param name="e"></param>
     void btnRestart_Click(object sender, EventArgs e)
     {
-        // This short cercuits the IIS process. Need to find a better way to restart the app.
-        //ThreadPool.QueueUserWorkItem(delegate { ForceRestart(); });
-        //ThreadStart threadStart = delegate { ForceRestart(); };
-        //Thread thread = new Thread(threadStart);
-        //thread.IsBackground = true;
-        //thread.Start();
         Response.Redirect(Request.RawUrl, true);
-
     }
     public void ForceRestart()
     {

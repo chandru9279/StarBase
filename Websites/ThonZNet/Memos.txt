@@ -34,3 +34,5 @@ Requirementz :
     
     online utils like html encoder , url encoder , 
     csharp vb code compiler/ouput displayer and produces,
+    
+Original Design by <a href="http://arcsin.se">Arcsin</a>, Adapted by <a href="http://www.nyveldt.com/blog/">RazorAnt</a>

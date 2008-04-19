@@ -1,35 +1,21 @@
 <%@ Control Language="C#" EnableTheming="true" AutoEventWireup="true" EnableViewState="false" Inherits="Thon.ZaszBlog.Support.Web.Controls.PostViewBase" %>
 <div class="post xfolkentry">
-    <h2 class="title">
-        <a href="<%=Post.RelativeLink %>" class="taggedlink">
-            <%=Post.Title %>
-        </a>
-    </h2>
-    <div class="story">
-        <asp:PlaceHolder ID="BodyContent" runat="server" />
+    <h1><a class="postheader taggedlink" href="<%=Post.RelativeLink %>"><%=Post.Title %></a></h1>
+    <div class="descr"><img id="Img1" src="~/ZaszBlog/Images/MasterPageUserControls/TimeIcon.gif" runat="server" alt="clock" /> <%=Post.DateCreated.ToString("MMMM d, yyyy HH:mm")%> by <img id="Img2" src="~/ZaszBlog/Images/MasterPageUserControls/Author.gif" runat="server" alt="author" /> <a href="<%=VirtualPathUtility.ToAbsolute("~/ZaszBlog/") + "author/" + Post.Author %>.aspx"><%=Post.Author %></a></div>
+    <div class="postcontent"><asp:PlaceHolder ID="BodyContent" runat="server" /></div>
+    <%=Rating %>
+    <br />
+    <div class="postfooter">
+        Tags: <%=TagLinks(", ") %><br />
+        Categories: <%=CategoryLinks(" | ") %><br />
+        Actions: <%=AdminLinks %>
+        <a rel="nofollow" href="mailto:?subject=<%=Post.Title %>&amp;body=Thought you might like this: <%=Post.AbsoluteLink.ToString() %>">E-mail</a> | 
+        <a rel="nofollow" href="http://www.dotnetkicks.com/submit?url=<%=Server.UrlEncode(Post.AbsoluteLink.ToString()) %>&amp;title=<%=Server.UrlEncode(Post.Title) %>">Kick it!</a> |
+        <a href="<%=Post.PermaLink %>" rel="bookmark">Permalink</a> |
+        <a rel="nofollow" href="<%=Post.RelativeLink %>#comment">
+             <img id="Img4" runat="server" alt="comment" src="~/ZaszBlog/Images/MasterPageUserControls/Comments.gif" />Comments (<%=Post.ApprovedComments.Count %>)</a>
+         |   
+        <a rel="nofollow" href="<%=CommentFeed %>"><asp:Image ID="Image1" runat="Server" ImageUrl="~/ZaszBlog/Images/RSSButton.gif" AlternateText="RSS comment feed" style="margin-right:3px" />Comment RSS</a>
     </div>
-    <div class="meta">
-        <p class="date">
-            Posted on
-            <%=Post.DateCreated %>
-            by <a href="<%=VirtualPathUtility.ToAbsolute("~/") + "ZaszBlog/author/" + Post.Author %>.aspx">
-                <%=Post.Author %>
-            </a>
-        </p>
-        <p class="file">
-            <a rel="bookmark" href="<%=Post.PermaLink %>">Permalink</a> | <a rel="nofollow" href="<%=Post.RelativeLink %>#comment">
-                Comments
-                (<%=Post.ApprovedComments.Count %>)</a> | <a rel="nofollow" href="<%=CommentFeed %>">
-                    Post RSS<asp:Image ID="Image1" runat="Server" ImageUrl="~/ZaszBlog/Images/RSSButton.gif" AlternateText="RSS comment feed"
-                        Style="margin-left: 3px" /></a> |
-            <%=AdminLinks %>
-        </p>
-        <p class="date">Categories:
-            <%=CategoryLinks(" | ") %>
-        </p>
-        <p class="date">
-            Tags:
-            <%=TagLinks(", ") %>
-        </p><%=Rating %>
-    </div>
+    <br />
 </div>
