@@ -1,6 +1,6 @@
 <%@ Page AutoEventWireup="true" CodeFile="AddEntry.aspx.cs" Inherits="AdminAddEntry"
     Language="C#" MasterPageFile="~/ZaszBlog/Admin/ZaszBlogAdmin.master" ValidateRequest="False" %>
-<%@ Register Src="../htmlEditor.ascx" TagPrefix="Blog" TagName="TextEditor" %>
+<%@ Register src="~/ZaszBlog/Admin/HtmlEditor.ascx" TagPrefix="Blog" TagName="TextEditor" %>
 <%@ Import Namespace="Thon.ZaszBlog.Support" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphAdmin" Runat="Server">

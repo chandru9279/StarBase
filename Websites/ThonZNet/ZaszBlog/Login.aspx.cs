@@ -36,10 +36,7 @@ public partial class Login : System.Web.UI.Page
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
     protected void ThonLogin_LoggedIn(object sender, EventArgs e)
     {
-        if (!Roles.IsUserInRole(ThonLogin.UserName, "Family"))
-        {
-            Response.Redirect(SupportUtilities.RelativeWebRoot + "Default.aspx", true);
-        }
+        Response.Redirect(SupportUtilities.RelativeWebRoot + "Default.aspx", true);
     }
        
     /// <summary>

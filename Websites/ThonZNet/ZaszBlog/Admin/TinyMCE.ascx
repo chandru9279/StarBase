@@ -1,7 +1,7 @@
 <%@ Control Language="C#" AutoEventWireup="true" CodeFile="TinyMCE.ascx.cs" Inherits="AdminUserContolTinyMCE" %>
 <%@ Import Namespace="Thon.ZaszBlog.Support" %>
 
-<script type="text/javascript" src="<%=SupportUtilities.RelativeWebRoot%>admin/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript" src="<%=SupportUtilities.RelativeWebRoot%>Admin/TinyMCE/tiny_mce.js"></script>
 <script language="javascript" type="text/javascript">
   tinyMCE.init({
 	  mode : "exact",

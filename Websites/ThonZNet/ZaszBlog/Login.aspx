@@ -5,7 +5,7 @@
   PasswordRecoveryUrl="~/ZaszBlog/Login.aspx?forgot=true" 
     onloggedin="ThonLogin_LoggedIn" BackColor="#F7F7DE" BorderColor="#CCCC99" 
     BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" 
-    Font-Size="10pt" MembershipProvider="ThonMembershipProvider"  >
+    Font-Size="10pt" MembershipProvider="ThonMembershipProvider" FailureAction="RedirectToLoginPage"  >
       <TitleTextStyle BackColor="#6B696B" Font-Bold="True" ForeColor="#FFFFFF" />
 </asp:Login>
     <asp:PasswordRecovery ID="ThonPasswordRecovery" runat="server" 
