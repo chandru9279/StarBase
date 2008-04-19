@@ -1,0 +1,5 @@
+# For search crawlers...
+sitemap: http://thon.net/HttpHandlers/sitemap.ashx 
+# Allow all spiders
+User-agent: *
+Disallow:

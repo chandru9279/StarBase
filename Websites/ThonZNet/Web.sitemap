@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/ZaszBlog/Default.aspx" title="ZaszBlog"  description="" roles="Family, Blogger">
+        <siteMapNode url="~/ZaszBlog/Admin/Pages/AddEntry.aspx" title="AddEntry"  description=""  roles="Family, Blogger"/>
+        <siteMapNode url="~/ZaszBlog/Admin/Pages/Blogroll.aspx" title="Blogroll"  description=""  roles="Family, Blogger"/>
+        <siteMapNode url="~/ZaszBlog/Admin/Pages/Controls.aspx" title="Controls"  description=""  roles="Family"/>
+        <siteMapNode url="~/ZaszBlog/Admin/Pages/Categories.aspx" title="Categories"  description=""  roles="Family, Blogger"/>
+        <siteMapNode url="~/ZaszBlog/Admin/Pages/Pages.aspx" title="Pages"  description=""  roles="Family, Blogger"/>
+        <siteMapNode url="~/ZaszBlog/Admin/Pages/PingServices.aspx" title="PingServices"  description=""  roles="Family"/>
+        <siteMapNode url="~/ZaszBlog/Admin/Pages/Referrers.aspx" title="Referrers"  description=""  roles="Family, Blogger"/>
+        <siteMapNode url="~/ZaszBlog/Admin/Pages/Settings.aspx" title="Settings"  description=""  roles="Family"/>
+        <siteMapNode url="~/ZaszBlog/Admin/Pages/Users.aspx" title="Users"  description=""  roles="Family"/>
+        <siteMapNode url="~/ZaszBlog/Admin/Extension Manager/Default.aspx" title="Extensions"  description=""  roles="Family"/>
+    </siteMapNode>
+</siteMap>

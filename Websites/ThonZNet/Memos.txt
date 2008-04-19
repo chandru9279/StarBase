@@ -1,0 +1,36 @@
+﻿To Do : 
+
+    Disable debugging in web.config before deployment
+    :-) remove the Threading . sleep(300) from file upload
+    use ajax code from sample website don't code yourself
+    Change as specified in ThonSettingsSet before deployment
+
+Know these :
+
+    ASPSpider
+    http://www.aspspider.net/qa/Question892.aspx
+    http://www.aspspider.net/tips/Tip8.aspx
+
+    robots.txt is used by the search engine spiders and web crawlers
+    in robots.txt # prefixed lines are comments
+
+Requirementz :
+
+    tabs for each fm
+    with a role for each fm &bones&kutty and outsider..(tab content chages for each role..)
+    blogging(scrap)
+    file upload.. download.. browser..
+    photo upload.. download.. browser.. album..
+    abouts for all
+    contacts
+    calender
+    tamil
+    email@thon.net
+    home-Login with silverlight... AJAX
+    startbutton or WPF control..
+    themes(foreachrole/login)
+    google analytics & google adsense
+    
+    
+    online utils like html encoder , url encoder , 
+    csharp vb code compiler/ouput displayer and produces,

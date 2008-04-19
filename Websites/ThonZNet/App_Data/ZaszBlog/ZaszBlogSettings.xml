@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <avatar>combine</avatar>
+  <storagelocation>~/App_Data/ZaszBlog/</storagelocation>
+  <enablecountryincomments>False</enablecountryincomments>
+  <enablerating>True</enablerating>
+  <enablerelatedposts>True</enablerelatedposts>
+  <fileextension>.aspx</fileextension>
+  <showlivepreview>True</showlivepreview>
+  <enablecommentsearch>True</enablecommentsearch>
+  <displaycommentsonrecentposts>True</displaycommentsonrecentposts>
+  <searchcommentlabeltext>Include comments in search</searchcommentlabeltext>
+  <postsperpage>10</postsperpage>
+  <syndicationformat>Rss</syndicationformat>
+  <blogrollmaxlength>23</blogrollmaxlength>
+  <showpostnavigation>True</showpostnavigation>
+  <enablepingbacksend>True</enablepingbacksend>
+  <dayscommentsareenabled>1000</dayscommentsareenabled>
+  <showdescriptioninpostlist>False</showdescriptioninpostlist>
+  <blogrollvisibleposts>3</blogrollvisibleposts>
+  <enablepingbackreceive>True</enablepingbackreceive>
+  <searchdefaulttext>Enter search term</searchdefaulttext>
+  <numberofrecentposts>10</numberofrecentposts>
+  <iscocommentenabled>False</iscocommentenabled>
+  <enabletrackbackreceive>True</enabletrackbackreceive>
+  <virtualpath>~/ZaszBlog/</virtualpath>
+  <description>Beta</description>
+  <alternatefeedurl />
+  <displayratingsonrecentposts>True</displayratingsonrecentposts>
+  <numberofrecentcomments>10</numberofrecentcomments>
+  <searchbuttontext>Search</searchbuttontext>
+  <name>ZaszBlog</name>
+  <postsperfeed>15</postsperfeed>
+  <iscommentsenabled>True</iscommentsenabled>
+  <blogrollupdateminutes>60</blogrollupdateminutes>
+  <sendmailoncomment>True</sendmailoncomment>
+  <enablecommentsmoderation>False</enablecommentsmoderation>
+  <enabletrackbacksend>True</enabletrackbacksend>
+</settings>
