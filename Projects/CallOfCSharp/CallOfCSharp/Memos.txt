@@ -1,0 +1,28 @@
+﻿Runtime Creation:
+
+1.	create a form
+2.	handle various form events through eventahdlerfunctions
+3.	Device requires a form, presentation parameters[], adapter, creation flags
+
+
+
+Event Handling:
+note: eventhandler objects contain method pointers same like delegate objects
+so custom events's handlers will be delegates.. 
+
+4.	Create some delegates for handling keyboard and mouse events
+5.  Create custom events whose handlers are the previous delegates
+6.	Actual events on the form should rasie custom events with enumerated arguments
+7.  Assign to those delegates actual fuctions that form the logic of the game
+
+
+
+Game Story (Control Path):
+8.  Run() function must form.Show then, while (form.Created)
+	{ 'check for render'(fail: do events) and must raise idle(custom)event and present() }
+	and do events.
+9.  present() must call device.Present() or set devicelost if exception occurs.
+10. 'check for render' => CheckCooperativeLevel((ResultCode)int) and must resetdevice 
+    or set devicelost
+11. 
+

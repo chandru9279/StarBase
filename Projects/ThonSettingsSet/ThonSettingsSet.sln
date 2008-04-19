@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C# Express 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThonSettingsSet", "ThonSettingsSet\ThonSettingsSet.csproj", "{708D2BC1-5E77-4A4A-ADC5-CF4FA0C41DAB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{01459B05-BF24-4F02-821C-1E7CCFE5086D} = {01459B05-BF24-4F02-821C-1E7CCFE5086D}
+		{940C97B9-DB0F-4955-8ED4-C208862BFF9E} = {940C97B9-DB0F-4955-8ED4-C208862BFF9E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thon.Support", "..\Thon.Support\Thon.Support\Thon.Support.csproj", "{940C97B9-DB0F-4955-8ED4-C208862BFF9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thon.ZaszBlog.Support", "..\Thon.ZaszBlog.Support\Thon.ZaszBlog.Support\Thon.ZaszBlog.Support.csproj", "{01459B05-BF24-4F02-821C-1E7CCFE5086D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{708D2BC1-5E77-4A4A-ADC5-CF4FA0C41DAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{708D2BC1-5E77-4A4A-ADC5-CF4FA0C41DAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{708D2BC1-5E77-4A4A-ADC5-CF4FA0C41DAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{708D2BC1-5E77-4A4A-ADC5-CF4FA0C41DAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{940C97B9-DB0F-4955-8ED4-C208862BFF9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{940C97B9-DB0F-4955-8ED4-C208862BFF9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{940C97B9-DB0F-4955-8ED4-C208862BFF9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{940C97B9-DB0F-4955-8ED4-C208862BFF9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01459B05-BF24-4F02-821C-1E7CCFE5086D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01459B05-BF24-4F02-821C-1E7CCFE5086D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01459B05-BF24-4F02-821C-1E7CCFE5086D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01459B05-BF24-4F02-821C-1E7CCFE5086D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
