@@ -11,8 +11,9 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 using Thon.ZaszBlog.Support;
+using Thon.ZaszBlog.Support.Web.Controls;
 
-public partial class Login : System.Web.UI.Page
+public partial class Login : BlogBasePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {           

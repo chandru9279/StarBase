@@ -39,7 +39,7 @@ namespace Thon.ZaszBlog.Controls
         {
           lock (_SyncRoot)
           {
-              if (_Html == null || Thon.ZaszBlog.Support.CodedRepresentations.Page.Pages == null)
+            if (_Html == null || Thon.ZaszBlog.Support.CodedRepresentations.Page.Pages == null)
             {
               HtmlGenericControl ul = BindPages();
               System.IO.StringWriter sw = new System.IO.StringWriter();

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" ValidateRequest="false" MasterPageFile="~/ZaszBlog/Admin/ZaszBlogAdmin.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="User_controls_xdashboard_Default" Title="Extensions" %>
+﻿<%@ Page Language="C#" ValidateRequest="false" MasterPageFile="~/ZaszBlog/Admin/ZaszBlogAdmin.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="ExtensionsDefaultAspx" Title="Extensions" %>
 <%@ Reference Control = "Extensions.ascx" %>
 <%@ Reference Control = "Editor.ascx" %>
 <%@ Reference Control = "Settings.ascx" %>

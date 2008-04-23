@@ -93,12 +93,12 @@ namespace Thon.ZaszBlog.Controls
 				if (ShowRssIcon)
 				{
 					HtmlImage img = new HtmlImage();
-					img.Src = SupportUtilities.RelativeWebRoot + "pics/rssButton.gif";
+					img.Src = SupportUtilities.RelativeWebRoot + "Images/RSSButton.gif";
 					img.Alt = "RSS feed for " + user.UserName;
 					img.Attributes["class"] = "rssButton";
 
 					HtmlAnchor feedAnchor = new HtmlAnchor();
-					feedAnchor.HRef = SupportUtilities.RelativeWebRoot + "syndication.axd?author=" + SupportUtilities.RemoveIllegalCharacters(user.UserName);
+                    feedAnchor.HRef = SupportUtilities.RelativeWebRoot + "ZaszBlogHttpHandlers/Syndication.ashx?author=" + SupportUtilities.RemoveIllegalCharacters(user.UserName);
 					feedAnchor.Attributes["rel"] = "nofollow";
 					feedAnchor.Controls.Add(img);
 

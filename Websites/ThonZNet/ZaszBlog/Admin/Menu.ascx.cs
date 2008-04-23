@@ -17,7 +17,7 @@ public partial class AdminUserControlMenu : System.Web.UI.UserControl
 
 	private void BindMenu()
 	{
-		foreach (SiteMapNode adminNode in SiteMap.Providers["SecuritySiteMap"].RootNode.ChildNodes)
+		foreach (SiteMapNode adminNode in SiteMap.Providers["SecuritySiteMap"].RootNode.ChildNodes[0].ChildNodes[0].ChildNodes)
 		{
 			if (adminNode.IsAccessibleToUser(HttpContext.Current))
 			{
@@ -38,7 +38,7 @@ public partial class AdminUserControlMenu : System.Web.UI.UserControl
 		}
 
 		if (!Request.RawUrl.ToUpperInvariant().Contains("/ADMIN/"))
-            AddItem("Change password", HelperUtilities.InternetAppRoot + "Login.aspx");
+            AddItem("Change password", SupportUtilities.RelativeWebRoot + "Login.aspx");
 	}
 
     public void AddItem(string text, string url)

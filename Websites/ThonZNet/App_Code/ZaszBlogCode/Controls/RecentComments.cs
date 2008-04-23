@@ -111,14 +111,15 @@ namespace Thon.ZaszBlog.Controls
 						li.Controls.Add(author);
 
 						LiteralControl wrote = new LiteralControl(" wrote: ");
-						li.Controls.Add(wrote);
+                        li.Controls.Add(wrote);
 					}
 					else
 					{
 						LiteralControl author = new LiteralControl(comment.Author + " wrote: ");
 						li.Controls.Add(author);
 					}
-
+                    LiteralControl brtag = new LiteralControl("<br />");
+                    li.Controls.Add(brtag);
 					// The comment body
 					int bodyLength = Math.Min(comment.Content.Length, 50);
 					string commentBody = comment.Content.Substring(0, bodyLength);

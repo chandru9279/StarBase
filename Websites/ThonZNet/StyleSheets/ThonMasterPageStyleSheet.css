@@ -1,10 +1,16 @@
 ﻿.layouttable
         {
-            padding: 0px;
-            width: 100%;
-            float: left;
-            border: 3px solid #000080;
+            background: url(../Images/MasterPageUserControls/TopLeft.gif) no-repeat;
         }
+
+body 
+        {
+	        background: #0094D6 url(../Images/MasterPageUserControls/BG.gif) repeat-x;
+	        color: #466;
+	        font: normal 62.5% "Lucida Sans Unicode",sans-serif;
+	        margin: 0;
+        }
+       
 .content_cell
         {
             background-color:White;
@@ -16,19 +22,29 @@
             background-color:White;
             border: medium double #000080;
         }
+.main
+        {
+            background: #FFF url(../Images/MasterPageUserControls/BGMain.gif) no-repeat;
+	        clear: both;
+	        padding: 12px 12px 0 52px;
+        }
 .top
         {
-            margin-right:-1px;
-            background-color:White;
-            border-bottom-style: solid;
-            border-bottom-width: thick;
-            border-bottom-color: #000080;
+            height: 92px;
         }
+        
+.toptitle
+        {
+            float: left;
+	        padding: 28px 0 0 76px;
+	        color: #FFF;
+        }
+        
 .footer
         {
             background-color:White;
             font-family: 'Microsoft Sans Serif';
-            font-size: large;
+            font-size: smaller;
             font-weight: lighter;
             font-style: italic;
             color: #000080;

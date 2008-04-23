@@ -18,7 +18,7 @@ public partial class Login : System.Web.UI.Page
     {
         if (Request.UrlReferrer != null && Request.UrlReferrer.ToString().ToUpperInvariant().Contains("ZASZBLOG"))
         {
-            Server.Transfer("~/ZaszBlog/Login.aspx");
+            Response.Redirect("~/ZaszBlog/Login.aspx",true);
         }
     }
 

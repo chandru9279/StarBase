@@ -2,7 +2,7 @@
 using System.Web;
 using System.Web.UI;
 
-public partial class User_controls_xdashboard_Default : System.Web.UI.Page
+public partial class ExtensionsDefaultAspx : System.Web.UI.Page
 {
     /// <summary>
     /// Handles page load, loading control

@@ -14,7 +14,7 @@ using System.Xml;
 using System.Reflection;
 using Thon.ZaszBlog.Support;
 
-public partial class User_controls_xmanager_Parameters : System.Web.UI.UserControl
+public partial class ExtensionParameters : System.Web.UI.UserControl
 {
     #region Private members
     static protected string _extensionName = string.Empty;

@@ -1,6 +1,6 @@
 <%@ Control Language="C#" EnableViewState="False" Inherits="Thon.ZaszBlog.Support.Web.Controls.CommentViewBase" %>
-
-<div id="Div1" class="comment<%= Post.Author.Equals(Comment.Author, StringComparison.OrdinalIgnoreCase) ? " self" : "" %>">
+<%@ Import Namespace="Thon.ZaszBlog.Support.CodedRepresentations" %>
+<div id="#id_<%=Comment.Id %>" class="comment<%= Post.Author.Equals(Comment.Author, StringComparison.OrdinalIgnoreCase) ? " self" : "" %>">
   <p class="date"><%= Comment.DateCreated.ToString("MMMM d. yyyy HH:mm") %></p>
   <p class="gravatar"><%= Gravatar(80)%></p>
   <p class="content"><%= Text%></p>

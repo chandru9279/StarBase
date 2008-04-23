@@ -1,5 +1,6 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeFile="ZaszBlogMasterPage.master.cs" Inherits="ZaszBlogMasterPageMaster" %>
 <%@ Register Src="~/ZaszBlog/Admin/Menu.ascx" TagName="Menu" TagPrefix="M" %>
+<%@ Register Namespace="Thon.ZaszBlog.Controls" TagPrefix="ZaszBlog" %>
 <%@ Import Namespace="Thon.ZaszBlog.Support" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -14,7 +15,7 @@
     <div class="container">
 	    <div class="header">
 	        <div class="title">
-	            <h1><a id="A1" href="~/" runat="server"><%=BlogSettings.Instance.Name %></a></h1>
+	            <h1><a id="A1" href="~/ZaszBlog/Default.aspx" runat="server"><%=BlogSettings.Instance.Name %></a></h1>
 	            <%=BlogSettings.Instance.Description %>
             </div>
         </div>
@@ -32,20 +33,35 @@
                 
                  <% if (Page.User.Identity.IsAuthenticated){ %>
                 <h1>Administration</h1>
-                <M:Menu ID="Menu1" runat="server" />
+                <M:Menu ID="Menu" runat="server" />
                 <%} %>
                 
                 <h1>Calendar</h1>
-                <ZaszBlog:PostCalendar ID="PostCalendar1" runat="Server" NextMonthText=">>" DayNameFormat="FirstTwoLetters" FirstDayOfWeek="sunday" PrevMonthText="<<" CssClass="calendar" BorderWidth="0" WeekendDayStyle-CssClass="weekend" OtherMonthDayStyle-CssClass="other" UseAccessibleHeader="true" EnableViewState="false" />              
+                <ZaszBlog:PostCalendar ID="PostCalendar" runat="Server" NextMonthText=">>" DayNameFormat="FirstTwoLetters" FirstDayOfWeek="sunday" PrevMonthText="<<" CssClass="calendar" BorderWidth="0" WeekendDayStyle-CssClass="weekend" OtherMonthDayStyle-CssClass="other" UseAccessibleHeader="true" EnableViewState="false" />              
                 
+                <h1>Authors</h1>
+                <ZaszBlog:AuthorList ID="AuthorList" runat="server" /> 
+                
+                <h1>Pages</h1>
+                <ZaszBlog:PageList ID="PageList" runat="server" />
+                
+                <h1>RecentComments</h1>
+                <ZaszBlog:RecentComments ID="RecentComments" runat="server" />
+                
+                <h1>RecentPosts</h1>
+                <ZaszBlog:RecentPosts ID="RecentPosts" runat="server" />
+                
+                <h1>Related Posts</h1>
+                <ZaszBlog:RelatedPosts ID="RelatedPosts" runat="server" /> 
+                                
                 <h1>Archive</h1>
-                <ZaszBlog:MonthList ID="MonthList1" runat="server" />
+                <ZaszBlog:MonthList ID="MonthList" runat="server" />
                                 
                 <h1>Tags</h1>
-                <ZaszBlog:TagCloud ID="TagCloud1" runat="server" />
-
+                <ZaszBlog:TagCloud ID="TagCloud" runat="server" />
+                
                 <h1>Categories</h1>
-                <ZaszBlog:CategoryList ID="CategoryList1" ShowRssIcon="false" runat="Server" /><br />
+                <ZaszBlog:CategoryList ID="CategoryList" ShowRssIcon="false" runat="Server" /><br />
                 
                 <h1>Blogroll</h1>
                 <ZaszBlog:Blogroll runat="server" />
@@ -62,7 +78,7 @@
     </div>       
     <div class="footer">
         Powered by <a href="http://www.thon.net/" target="_blank">Thon.Net</a> | 
-        Original Design by <a href="http://arcsin.se">Arcsin</a>, Adapted by <a href="http://www.nyveldt.com/blog/">RazorAnt</a>
+        Original Design by <a href="http://arcsin.se">Arcsin</a>, Adapted by <a href="http://www.nyveldt.com/blog/">RazorAnt</a> and by <a href="http://www.thon.net/">Zasz</a>
     </div>
     
 </body>

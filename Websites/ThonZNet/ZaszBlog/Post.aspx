@@ -1,5 +1,5 @@
 <%@ Page Language="C#" AutoEventWireup="true" ValidateRequest="False" CodeFile="Post.aspx.cs" Inherits="PostAspx" MasterPageFile="~/ZaszBlog/ZaszBlogMasterPage.master" %>
-<%@ Register Src="UserControls/CommentView.ascx" TagName="CommentView" TagPrefix="uc" %>
+<%@ Register Src="UserControls/CommentViewContainer.ascx" TagName="CommentViewer" TagPrefix="CVC" %>
 <%@ Register Namespace="Thon.ZaszBlog.Controls" TagPrefix="ZaszBlog" %>
 
 <asp:content id="PostContent" contentplaceholderid="cphBody" runat="Server">
@@ -18,5 +18,5 @@
     </rdf:RDF>
     </asp:placeholder>
     <ZaszBlog:RelatedPosts runat="server" ID="related" MaxResults="3" ShowDescription="true" DescriptionMaxLength="100" />
-    <uc:CommentView ID="CommentView1" runat="server" />
+    <CVC:CommentViewer ID="CommentView1" runat="server" />
 </asp:content>

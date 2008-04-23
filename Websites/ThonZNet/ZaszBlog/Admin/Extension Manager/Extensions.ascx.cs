@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using Thon.ZaszBlog.Support;
 
-public partial class User_controls_xmanager_ExtensionsList : System.Web.UI.UserControl
+public partial class ExtensionsList : System.Web.UI.UserControl
 {
     /// <summary>
     /// handles page load event

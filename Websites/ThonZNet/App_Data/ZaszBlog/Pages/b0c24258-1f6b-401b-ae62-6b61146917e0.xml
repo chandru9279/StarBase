@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<page>
+  <title>Example Page</title>
+  <description />
+  <content>&lt;p&gt;
+&lt;font size="5"&gt;This is an example page.&lt;/font&gt; 
+&lt;/p&gt;
+&lt;p&gt;
+&lt;font size="2"&gt;This page is here as placeholder, you can create your own&amp;nbsp;pages, but sans scripts.&lt;/font&gt;&amp;nbsp;
+&lt;/p&gt;
+</content>
+  <keywords />
+  <parent>00000000-0000-0000-0000-000000000000</parent>
+  <isfrontpage>False</isfrontpage>
+  <showinlist>True</showinlist>
+  <ispublished>True</ispublished>
+  <datecreated>2008-04-23 20:28:18</datecreated>
+  <datemodified>2008-04-23 20:28:18</datemodified>
+</page>

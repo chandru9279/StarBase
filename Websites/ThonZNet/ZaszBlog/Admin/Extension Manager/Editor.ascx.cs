@@ -11,7 +11,7 @@ using System.IO;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class User_controls_xmanager_SourceEditor : System.Web.UI.UserControl
+public partial class ExtensionSourceEditor : System.Web.UI.UserControl
 {
     static protected string _errorMsg = string.Empty;
     static protected string _extensionName = string.Empty;
