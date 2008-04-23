@@ -254,7 +254,7 @@ namespace Thon.ZaszBlog.Support.Web.Controls
                         sb.AppendFormat("<a href=\"{0}\">Approve all Post Comments</a> | ", Post.RelativeLink + "?approveallcomments=true");
 					}
 
-                    sb.AppendFormat("<a href=\"{0}\">Edit</a> | ", SupportUtilities.AbsoluteWebRoot + "Admin/Pages/Add_entry.aspx?id=" + Post.Id.ToString());
+                    sb.AppendFormat("<a href=\"{0}\">Edit</a> | ", SupportUtilities.AbsoluteWebRoot + "Admin/Pages/AddEntry.aspx?id=" + Post.Id.ToString());
 					sb.AppendFormat("<a href=\"javascript:void(0);\" onclick=\"if (confirm('{2}')) location.href='{0}?deletepost={1}'\">Delete</a> | ", Post.RelativeLink, Post.Id.ToString(), confirmDelete);
 					return sb.ToString();
 				}

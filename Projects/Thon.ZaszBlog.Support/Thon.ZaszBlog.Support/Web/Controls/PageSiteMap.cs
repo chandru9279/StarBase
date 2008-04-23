@@ -7,7 +7,7 @@ using Thon.ZaszBlog.Support.CodedRepresentations;
 namespace Thon.ZaszBlog.Support.Web.Controls
 {
   /// <summary>
-  /// A site map provider for the Pages in BlogEngine.
+  /// A site map provider for the Pages in ZaszBlog.
   /// </summary>
   public class PageSiteMap : SiteMapProvider
   {

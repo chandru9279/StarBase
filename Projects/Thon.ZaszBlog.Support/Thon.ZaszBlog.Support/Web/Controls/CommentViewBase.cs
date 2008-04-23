@@ -90,28 +90,28 @@ namespace Thon.ZaszBlog.Support.Web.Controls
 					return string.Format("<img class=\"thumb\" src=\"http://images.websnapr.com/?url={0}&amp;size=t\" alt=\"{1}\" />", Server.UrlEncode(Comment.Website.ToString()), Comment.Email);
 				}
 
-				return "<img src=\"" + SupportUtilities.RelativeWebRoot + "Images/noavatar.jpg\" alt=\"" + Comment.Author + "\" />";
+                return "<img src=\"" + SupportUtilities.AbsoluteWebRoot + "Images/NoAvatar.jpg\" alt=\"" + Comment.Author + "\" />";
 			}
 
 			string img = "<img src=\"{0}\" alt=\"{1}\" />";
 			string hash = CreateMd5Hash();
-            string noavatar = SupportUtilities.AbsoluteWebRoot + "Images/noavatar.jpg";
-			string monster = SupportUtilities.AbsoluteWebRoot + "Monster.ashx?seed=" + hash.Substring(0, 10) + "&size=" + size;
-			string gravatar = "http://www.gravatar.com/avatar.php?gravatar_id=" + hash + "&amp;size=" + size + "&amp;default=";
+            string noavatar = SupportUtilities.AbsoluteWebRoot + "Images/NoAvatar.jpg";
+			string monster = SupportUtilities.AbsoluteWebRoot + "ZaszBlogHttpHandlers/Monster.ashx?seed=" + hash.Substring(0, 10) + "&size=" + size;
+			string gravatar = "http://www.gravatar.com/avatar.php?gravatar_id=" + hash + "&size=" + size + "&default=";
 
 			string link = string.Empty;
 			switch (BlogSettings.Instance.Avatar)
 			{
 				case "monster":
-                    link = Server.UrlEncode(monster);
+                    link = monster;
 					break;
 
 				case "gravatar":
-					link = gravatar + Server.UrlEncode(noavatar);
+					link = gravatar + noavatar;
 					break;
 
 				case "combine":
-					link = gravatar + Server.UrlEncode(monster);
+					link = gravatar + monster;
 					break;
 			}
 
