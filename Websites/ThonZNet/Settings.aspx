@@ -1,9 +1,9 @@
 <%@ Page Language="C#" MasterPageFile="~/ThonMasterPage.master" ValidateRequest="false"
     AutoEventWireup="true" CodeFile="Settings.aspx.cs" Inherits="ThonConfiguration"
-    Title="Settings" Theme="GreenTheme"%>
+    Title="Settings"%>
 <%@ Import Namespace="Thon.Support" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="cphmain" runat="Server">  
+<asp:Content ID="SettingsContent" ContentPlaceHolderID="cphmain" runat="Server">  
     
     <br />
     <div style="text-align: right">

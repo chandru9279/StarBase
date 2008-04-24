@@ -1,0 +1,52 @@
+﻿.settings {
+	padding: 10px 10px 10px 10px;
+	background: white;
+	border: 1px solid silver;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.settings h1 {
+	margin: 0 0 10px 0;
+	border-bottom: 1px solid silver;
+}
+
+.settings label {
+	float: left;
+	width: 200px;
+}
+
+.settings span label{
+	float: none;
+	display: inline;
+	width: auto;
+	padding-right: 20px;	
+}
+
+.settings span input[type="radio"]{
+	border: none;
+}
+
+
+.settings input[type="submit"], .settings input[type="button"] {
+	color: #666;
+	border: 1px solid #B8C1CA;
+}
+
+.settings input[type="submit"]:hover, .settings input[type="button"]:hover {
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+input, select, textarea {
+	color: #666;
+	border: 1px solid #B8C1CA;
+}
+
+input[type="file"]:hover {
+	cursor: pointer;
+}
+
+input[type="checkbox"] {
+	border: none;
+}

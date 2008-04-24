@@ -182,9 +182,26 @@ h1,h2,h3 {
 .content {
 	float: left;
 	margin-right: 4%;
-	width: 69%;
-	
+	width: 69%;	
 }
+
+.contenttable {
+	width: 100%;	
+}
+
+.treetop 
+{
+    vertical-align:top;
+}
+
+.thoncontent {
+	width: 70%;	
+}
+
+.thontree {
+	width: 30%;	
+}
+
 .content .postheader {
 	text-decoration: none;
 	color: #06C;

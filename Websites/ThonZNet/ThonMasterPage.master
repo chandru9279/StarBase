@@ -8,8 +8,10 @@
 <head id="Head1" runat="server" profile="http://gmpg.org/xfn/11">
     <title></title>
     <link rel="stylesheet" href="StyleSheets/MasterPageUserControls.css" type="text/css" />
+    <link href="StyleSheets/SettingsAspxStyleSheet.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="~/ZaszBlog/Images/ZaszBlog.bmp" type="image/x-icon"/>
 </head>
+
 
 <body>
     <div class="container">
@@ -35,7 +37,7 @@
         <div class="main">
 		    <form id="Form1" runat="server">
 		    <div class="content">
-                                <table>
+                                <table class="contenttable">
                                     <tr>
                                         <td colspan="2">
                                             <asp:SiteMapPath ID="ThonSiteMapPath" runat="server" Font-Names="Verdana" 
@@ -49,20 +51,22 @@
                                         </td>
                                     </tr> 
                                     <tr>
-                                        <td style="width:200px">
-                                            <asp:TreeView ID="ThonNavigationTreeView" runat="server" DataSourceID="ThonSitemap" 
-                                                ImageSet="Arrows">
-                                                <ParentNodeStyle Font-Bold="False" />
-                                                <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
-                                                <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" 
-                                                    HorizontalPadding="0px" VerticalPadding="0px" />
-                                                <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" 
-                                                    HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
-                                            </asp:TreeView>
-                                            <asp:SiteMapDataSource ID="ThonSitemap" runat="server" 
-                                                SiteMapProvider="SecuritySiteMap" />
+                                        <td class="thontree">
+                                            <div class="treetop">
+                                                <asp:TreeView ID="ThonNavigationTreeView" runat="server" DataSourceID="ThonSitemap" 
+                                                    ImageSet="Arrows">
+                                                    <ParentNodeStyle Font-Bold="False" />
+                                                    <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+                                                    <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" 
+                                                        HorizontalPadding="0px" VerticalPadding="0px" />
+                                                    <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" 
+                                                        HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
+                                                </asp:TreeView>
+                                                <asp:SiteMapDataSource ID="ThonSitemap" runat="server" 
+                                                    SiteMapProvider="SecuritySiteMap" />
+                                            </div>
                                         </td>
-                                        <td style="width:340px">
+                                        <td class="thoncontent">
                                             <asp:ContentPlaceHolder ID="cphmain" runat="server">
                                             </asp:ContentPlaceHolder>
                                         </td>
