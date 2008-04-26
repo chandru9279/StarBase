@@ -10,10 +10,13 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 
-public partial class _Default : System.Web.UI.Page 
+namespace Thon
 {
-    protected void Page_Load(object sender, EventArgs e)
+    public partial class Default : System.Web.UI.Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

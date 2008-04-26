@@ -22,13 +22,13 @@ You can find&amp;nbsp;other details on the &lt;a href="/ThonZNet/ZaszBlog/Admin/
 Good luck and happy writing. 
 &lt;/p&gt;
 &lt;p&gt;
-The&amp;nbsp;ZaszBlog Admin 
+T. Chandirasekar
 &lt;/p&gt;
 </content>
   <ispublished>True</ispublished>
   <iscommentsenabled>True</iscommentsenabled>
   <pubDate>2008-04-22 00:00:00</pubDate>
-  <lastModified>2008-04-23 19:01:40</lastModified>
+  <lastModified>2008-04-26 11:16:28</lastModified>
   <raters>3</raters>
   <rating>4.4</rating>
   <slug>Welcome-to-ZaszBlog</slug>
@@ -45,6 +45,30 @@ The&amp;nbsp;ZaszBlog Admin
       <ip>127.0.0.1</ip>
       <website>http://www.thon.net/</website>
       <content>Check out the monster avatars! Its based on the MonsterID HttpHandler by Alexander Schuc http://blog.furred.net/page/MonsterID-Demo.aspx and all users will be given an avatar = A Monster created from the Email ID.</content>
+    </comment>
+    <comment id="5f116191-c0f2-4165-b752-92f5f2f1e537" approved="True">
+      <date>2008-04-26 20:50:24</date>
+      <author>Zasz</author>
+      <email>vasu@gmail.com</email>
+      <ip>127.0.0.1</ip>
+      <website>http://localhost.com/</website>
+      <content>hi</content>
+    </comment>
+    <comment id="6f1a929e-60d8-4bf6-a8f4-62e8b98836b2" approved="True">
+      <date>2008-04-26 20:50:45</date>
+      <author>Zasz</author>
+      <email>vasu@gmail.com</email>
+      <ip>127.0.0.1</ip>
+      <website>http://localhost.com/</website>
+      <content>the</content>
+    </comment>
+    <comment id="37869a97-4979-4fcf-a93b-28a359352e23" approved="True">
+      <date>2008-04-26 20:50:49</date>
+      <author>Zasz</author>
+      <email>vasu@gmail.com</email>
+      <ip>127.0.0.1</ip>
+      <website>http://localhost.com/</website>
+      <content>hell</content>
     </comment>
   </comments>
   <categories>

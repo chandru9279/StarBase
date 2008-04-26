@@ -27,6 +27,7 @@
     <siteMapNode url="~/Login.aspx" title="Login" description="" roles="*"/>
     <siteMapNode url="~/Settings.aspx" title="Settings" description="" roles="Family"/>
     <siteMapNode url="~/Credits.aspx" title="Credits" description="" roles="*"/>
+    <siteMapNode url="~/Gallery.aspx" title="Gallery" description="" roles="*"/>
     
   </siteMapNode>
 </siteMap>

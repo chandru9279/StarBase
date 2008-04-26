@@ -12,10 +12,13 @@ using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 using Thon.Support.Web.Controls;
 
-public partial class CreditsAspx : ThonBasePage
+namespace Thon
 {
-    protected void Page_Load(object sender, EventArgs e)
+    public partial class CreditsAspx : ThonBasePage
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

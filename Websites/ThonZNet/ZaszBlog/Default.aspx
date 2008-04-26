@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="ZaszBlogDefaultAspx" MasterPageFile="~/ZaszBlog/ZaszBlogMasterPage.master" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Thon.ZaszBlog.ZaszBlogDefaultAspx" MasterPageFile="~/ZaszBlog/ZaszBlogMasterPage.master" %>
 <%@ Register Namespace="Thon.ZaszBlog.Controls" TagPrefix="ZaszBlog" %>
 <%@ Register Src="~/ZaszBlog/UserControls/PostList.ascx" TagName="PostList" TagPrefix="PL" %>
 

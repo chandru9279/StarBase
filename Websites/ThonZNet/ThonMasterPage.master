@@ -8,8 +8,10 @@
 <head id="Head1" runat="server" profile="http://gmpg.org/xfn/11">
     <title></title>
     <link rel="stylesheet" href="StyleSheets/MasterPageUserControls.css" type="text/css" />
-    <link href="StyleSheets/SettingsAspxStyleSheet.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="~/ZaszBlog/Images/ZaszBlog.bmp" type="image/x-icon"/>
+    <% if(Page.Title.Equals("Settings"){ %>
+    <link href="StyleSheets/SettingsAspxStyleSheet.css" rel="stylesheet" type="text/css" />
+    <% } %>    
 </head>
 
 
@@ -18,10 +20,7 @@
 	    <div class="header">
 	        <div class="title">
                                 <table>
-                                    <tr>
-                                        <td>
-                                            <h4>Image</h4>
-                                        </td>
+                                    <tr>                                        
                                         <td>
                                             <h1>The Thiagarajan Household</h1>
                                         </td>

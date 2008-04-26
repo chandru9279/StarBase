@@ -192,6 +192,7 @@ h1,h2,h3 {
 .treetop 
 {
     vertical-align:top;
+    vertical-align:text-top;
 }
 
 .thoncontent {
@@ -199,7 +200,9 @@ h1,h2,h3 {
 }
 
 .thontree {
-	width: 30%;	
+	width: 30%;
+	vertical-align:top;
+	vertical-align:text-top;	
 }
 
 .content .postheader {
