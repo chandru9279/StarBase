@@ -1,0 +1,33 @@
+Memos :
+
+
+Command for wsdl.exe :
+
+		C:\Program Files\Microsoft Visual Studio 9.0\VC>wsdl.exe "http://localhost:49299
+		/AuthWCF/Services/DaybookClientService.svc?wsdl"
+		
+		
+Userstate :
+
+		"There are potentially two overloads for the asynchronous operations:
+		single-invocation and multiple-invocation. You can distinguish these two forms by 
+		their method signatures: the multiple-invocation form has an extra parameter called
+		userState. This form makes it possible for your code to call Method1Async(string param,
+		object userState) multiple times without waiting for any pending asynchronous operations 
+		to finish. If, on the other hand, you try to call Method1Async(string param) before a 
+		previous invocation has completed, the method raises an InvalidOperationException.
+
+		The userState parameter for the multiple-invocation overloads allows you to distinguish 
+		among asynchronous operations. You provide a unique value (for example, a GUID or hash 
+		code) for each call to Method1Async(string param, object userState), and when each operation
+		is completed, your event handler can determine which instance of the operation raised the
+		completion event."
+
+		Multiple Async Ops need a user state object.
+		
+
+Exposing Grouped Properties:
+
+	readAccessProperties="Contact.Name,CompanyName"
+	Link : http://weblogs.asp.net/adamgreene/archive/2007/09.aspx
+        Syntax : GroupName.PropertyName
