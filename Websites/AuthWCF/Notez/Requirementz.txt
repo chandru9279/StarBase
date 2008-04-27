@@ -1,0 +1,41 @@
+﻿   
+   
+   1. Windows client app that can display contacts info,
+      scheduled events info and tasks info (each in a different screen/tab)
+      to the user on the desktop.
+      
+   2. App has a tray icon - with menu options to view each of the above,
+      set options and exit.
+      
+   3. Balloon tips from the tray icon at the reminder times of the scheduled events.
+   
+   4. App should connect to the webservice once an hour (would be good to have 
+      this in the options) to sync with the web server.
+      
+   5. App should work fine when no net connection is available also.
+   
+   6. App should be localized to tamil as well
+
+
+
+   1. Checkout how to call the web services asynchronously... 
+      That will be better, since otherwise the app will hang until it 
+      gets response from the webservice.
+      
+   2. Find how to authenticate the user. We need to pass the username 
+      and password to the webservice - check out the best practice to 
+      authenticate a user with a webservice.
+
+
+You can then define a dummy web service which will have methods like - 
+GetContacts, GetScheduledEvents, GetTasks() which will return the following:
+
+
+Contacts            - name, mobile, phone, email, website, tags
+
+Schedule events     - schedule name, description, repository name,
+                      target group/user, created user, start time,
+                      end time, reminder time
+                  
+Tasks               - name, description, repository name, target group/user,
+                      created user, start date, due date, priority, percent complete

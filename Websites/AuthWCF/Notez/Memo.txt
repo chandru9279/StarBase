@@ -1,0 +1,195 @@
+﻿
+procedure for integration into day book ............
+
+
+
+important :--------------
+ >while integrating plz give a stable fixed unused port number,<
+ >49195 for now, to the asp.net dev server<
+ by L-clickin the soln and change the property
+Use Dynamic ports = false (then click somewhere outside , then click the soln icon again)
+Port number = 49195
+-------------------------
+
+
+
+A	a) ASP membership enabled website{we have this -> daybook} :-)
+	                         (or) 
+	   this code in Global.asax to create the ASPNETDB automatically...
+                	
+	                <%@ Application Language="C#" %>	
+		                <script runat="server">
+		                void Application_Start(object sender, EventArgs e) 
+		                {
+			                // Code that runs on application startup
+			                // Warning. This code is just for test purposes 
+			                // to generate a SQL Express database quickly.
+			                // In a production environment, you must set 
+			                // a SQL standard database separately.
+			                if (!Roles.RoleExists("Administrators"))
+			                {
+				                Roles.CreateRole("Administrators");
+
+			                }
+			                if (!Roles.RoleExists("Friends"))
+			                {
+				                Roles.CreateRole("Friends");
+			                }
+		                }
+		                </script>
+		
+		
+		
+		
+		
+	[for this step refer to this website]	
+B	b) aspx pages that have login control and means to view profile info and 
+	to create new users...{we have this -> i suppose we must create profile pages
+	and roles pages IFFF we decide to use these features}
+	
+	
+
+
+
+
+C	c) Create 3 new svc files and name them "AuthenticationService",
+		"ProfileService","RoleService" (or) copy-paste these & delete the code-
+		behind cs files
+
+	We have the default code that comes while creating the svc service files like :
+	These tags are required if we're trying to create our own service which expose 
+	functions & methods that "we" code up....
+	Language="C#"
+	Debug="true"
+	Service="AuthenticationService"
+	CodeBehind="~/App_Code/AuthenticationService.cs"
+	
+	But we want to use the System.Web.ApplicationServices.RoleService
+						   System.Web.ApplicationServices.AuthenticationService
+						   System.Web.ApplicationServices.ProfileService
+	These are already present in the system.web dll...
+	So we have to eliminate Language, Debug, CodeBehind attriutes.......
+	(for all 3 services)
+
+	Also i've eliminated the the code behind files automatically created when 
+	creating the svc files put'em in a folder called "waste" , if we delete waste 
+	and all its contents notihn' is gointo happen	
+	
+	But if we want to expose our own functions we're gonna need the codebehind files
+	
+	
+	
+	
+	
+	
+	
+D	d)USE Website->Asp.Net Configuration (or) modify web.config file to have
+	
+	In the system.web group :
+	
+	<authentication mode="Forms" /> instead of <authentication mode="Windows" />
+	
+	then (not necessary for daybook, but maybe for any future works)
+	
+	<roleManager enabled="true"/>
+	
+	then (not necessary for daybook, but maybe for any future works)
+	
+	<profile enabled="true">
+	  <properties>
+		<add name="FirstName"   type="String"/>
+		<add name="LastName"    type="String"/>
+		<add name="EmployeeId"  type="String"/>
+	  </properties>
+	</profile>
+	
+	
+	
+	
+	
+E	e) I think this code is for activating the System.Web dll so that its 
+	service classes
+					   System.Web.ApplicationServices.RoleService
+					   System.Web.ApplicationServices.AuthenticationService
+					   System.Web.ApplicationServices.ProfileService
+					   can be referred to and used by our svc files...
+	
+	In the root element "configuration"
+	<system.web.extensions>	  	  
+		<scripting>
+			<webServices>
+				<authenticationService enabled="true"/>
+				<profileService
+					enabled="true"
+					readAccessProperties="FirstName,LastName,EmployeeId"/>
+				<roleService enabled="true"/>
+			</webServices>
+		</scripting>		
+	</system.web.extensions>
+
+
+
+
+
+F	f) The <system.serviceModel> already in our new web site , after(because of) adding
+	the three svc files has 3 services and 3 behaviour with each service referring to
+	each behavior.
+	I replaced <system.serviceModel> entirely with this one so that
+		1) endpoint tags are defined(don't kno what this is used for)
+		2) the same behaviour can be referred to by all 3 services..
+		
+		  ((( (this is good, use the same behavior defenition for all 3 
+		   services if they are gonna behave the same, as they are 
+		   <behavior name="AppServiceBehaviors">
+			<serviceMetadata httpGetEnabled="true"/>
+			<serviceDebug includeExceptionDetailInFaults="true"/>
+		   </behavior>) )))
+	
+	<system.serviceModel>
+		<services>
+			<service
+				behaviorConfiguration="AppServiceBehaviors"
+				name="System.Web.ApplicationServices.AuthenticationService">
+				<endpoint
+					binding="basicHttpBinding"
+					bindingNamespace="http://asp.net/ApplicationServices/v200"
+					contract="System.Web.ApplicationServices.AuthenticationService"/>
+			</service>
+
+			<service
+				behaviorConfiguration="AppServiceBehaviors"
+				name="System.Web.ApplicationServices.RoleService">
+				<endpoint
+					binding="basicHttpBinding"
+					bindingNamespace="http://asp.net/ApplicationServices/v200"
+					contract="System.Web.ApplicationServices.RoleService"/>
+			</service>
+
+			<service
+				behaviorConfiguration="AppServiceBehaviors"
+				name="System.Web.ApplicationServices.ProfileService">
+				<endpoint
+					binding="basicHttpBinding"
+					bindingNamespace="http://asp.net/ApplicationServices/v200"
+					contract="System.Web.ApplicationServices.ProfileService"/>
+			</service>
+		</services>
+
+		<behaviors>
+			<serviceBehaviors>
+				<behavior name="AppServiceBehaviors">
+					<serviceMetadata httpGetEnabled="true"/>
+					<serviceDebug includeExceptionDetailInFaults="true"/>
+				</behavior>
+			</serviceBehaviors>
+		</behaviors>
+		<serviceHostingEnvironment aspNetCompatibilityEnabled="true"/>
+	</system.serviceModel>
+	
+
+
+
+
+
+G	g) After all req'd modifications are made , R-CLick a web service and view 
+	it in browser to see the SCREENSHOT included to see if all works...
