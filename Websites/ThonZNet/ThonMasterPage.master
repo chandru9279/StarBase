@@ -8,13 +8,13 @@
 <head id="Head1" runat="server" profile="http://gmpg.org/xfn/11">
     <title></title>
     <link rel="stylesheet" href="StyleSheets/MasterPageUserControls.css" type="text/css" />
-    <link rel="shortcut icon" href="~/ZaszBlog/Images/ZaszBlog.bmp" type="image/x-icon"/>
+    <link rel="shortcut icon" href="~/ZaszBlog/Images/ZB.ico" type="image/x-icon"/>
     <% if(Page.Title.Equals("Settings")){ %>
     <link href="StyleSheets/SettingsAspxStyleSheet.css" rel="stylesheet" type="text/css" />
     <% } %>
     <% if(Page.Title.Equals("Gallery")){ %>
     <link href="StyleSheets/Gallery.css" rel="stylesheet" type="text/css" />
-    <% } %>
+    <% } %>   
 </head>
 
 <body>
