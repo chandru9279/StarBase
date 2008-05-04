@@ -134,19 +134,6 @@ namespace Thon.Support
 			        {handleWwwSubdomain = value;}
                 }
 		        #endregion
-                //Used by Thon.ZaszBlog.Support.XmlProvider.StorageLocation
-                #region ZaszBlogSettingsLocation
-                private string zaszBlogSettingsLocation;
-                // Gets or sets how to handle the www subdomain of the url (for SEO purposes).		
-                public string ZaszBlogSettingsLocation
-                {
-                    get
-                    { return zaszBlogSettingsLocation; }
-
-                    set
-                    { zaszBlogSettingsLocation = value; }
-                }
-                #endregion
                 //Used in ReferrerModule
                 #region EnableReferrerTracking
                 private bool enableReferrerTracking;
@@ -339,7 +326,7 @@ namespace Thon.Support
 		        //============================================================
 
 		        #region Load()
-        		//Loads values from the provider(eg. xml file ~/App_Data/settings.xml),
+        		//Loads values from the provider(eg. xml file ~/App_Data/ThonSettings.xml),
                 //see StaticDataService.LoadSettings() comment
 		        private void Load()
 		        {

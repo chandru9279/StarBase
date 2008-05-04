@@ -30,7 +30,7 @@ namespace Thon.Support.Web.HttpHandlers
 				{
                     FileInfo fi = new FileInfo(context.Server.MapPath(filepath));
 
-					if (fi.Exists && fi.Directory.FullName.ToUpperInvariant().Contains("\\FILES"))
+					if (fi.Exists && (fi.Directory.FullName.ToUpperInvariant().Contains("\\FILES") || fi.Directory.FullName.ToUpperInvariant().Contains("\\GALLERY")))
 					{
 						int index = filepath.LastIndexOf(".") + 1;
 						string extension = filepath.Substring(index).ToUpperInvariant();
