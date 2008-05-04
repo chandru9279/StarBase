@@ -556,8 +556,8 @@ namespace Thon.ZaszBlog.Support
 						        }
 						        catch(Exception e)
 						        {
-                                    throw e;
-                                   // throw new ConfigurationErrorsException("Exception while setting values to BlogSettings.Instance");                                    
+                                   //throw e;
+                                   throw new ConfigurationErrorsException("Exception while setting values to BlogSettings.Instance");                                    
 						        }
 						        break;
 					        }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using Thon.ZaszBlog.Support.CodedRepresentations;
 using Thon.ZaszBlog.Support.DataServicesAndConfiguration;
+using System.Web;
 
 namespace Thon.ZaszBlog.Support.XmlProvider
 {  
@@ -12,7 +13,7 @@ namespace Thon.ZaszBlog.Support.XmlProvider
   {    
     public override StringDictionary LoadSettings()
     {
-      string filename = _SettingsFolder + "ZaszBlogSettings.xml";
+      string filename = HttpContext.Current.Server.MapPath("~/App_Data/ZaszBlog/ZaszBlogSettings.xml");
       StringDictionary dic = new StringDictionary();
       XmlDocument doc = new XmlDocument();
       doc.Load(filename);
@@ -29,7 +30,7 @@ namespace Thon.ZaszBlog.Support.XmlProvider
     {
       if (settings == null)
         throw new ArgumentNullException("settings");
-      string filename = _SettingsFolder + "ZaszBlogSettings2.xml";
+      string filename = HttpContext.Current.Server.MapPath("~/App_Data/ZaszBlog/ZaszBlogSettings.xml");
       XmlWriterSettings writerSettings = new XmlWriterSettings(); ;
       writerSettings.Indent = true;
       using (XmlWriter writer = XmlWriter.Create(filename, writerSettings))
