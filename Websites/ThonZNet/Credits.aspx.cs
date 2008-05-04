@@ -14,7 +14,7 @@ using Thon.Support.Web.Controls;
 
 namespace Thon
 {
-    public partial class CreditsAspx : ThonBasePage
+    public partial class CreditsAspx : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -9,11 +9,13 @@
     <title></title>
     <link rel="stylesheet" href="StyleSheets/MasterPageUserControls.css" type="text/css" />
     <link rel="shortcut icon" href="~/ZaszBlog/Images/ZaszBlog.bmp" type="image/x-icon"/>
-    <% if(Page.Title.Equals("Settings"){ %>
+    <% if(Page.Title.Equals("Settings")){ %>
     <link href="StyleSheets/SettingsAspxStyleSheet.css" rel="stylesheet" type="text/css" />
-    <% } %>    
+    <% } %>
+    <% if(Page.Title.Equals("Gallery")){ %>
+    <link href="StyleSheets/Gallery.css" rel="stylesheet" type="text/css" />
+    <% } %>
 </head>
-
 
 <body>
     <div class="container">
@@ -81,9 +83,9 @@
                 </div>
                 
                 <h1>Disclaimer</h1>
-                <p>The opinions expressed herein are the author's own personal opinions and do not represent the author's related people's or organization's view in anyway.</p>
+                <p>The content exposed herein are confidential and private to the social circle of T. Chandirasekar, T. Arun Kumar, T. Jayalakshmi, R. Thiagarajan. Any form of misusage of content, will be subject to severe action as much as the the applicable country's law allows.</p>
                 <p>&copy; Copyright <%=DateTime.Now.Year %></p>
-                <p><asp:LoginStatus ID="LoginStatus1" runat="Server" LoginText="Sign in" LogoutText="Sign out" EnableViewState="false" /></p>
+                
               
             </div>
             

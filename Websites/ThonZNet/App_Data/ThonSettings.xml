@@ -18,6 +18,5 @@
   <smtppassword>password</smtppassword>
   <htmlheader />
   <emailsubjectprefix />
-  <zaszblogsettingslocation>~/App_Data/ZaszBlog/</zaszblogsettingslocation>
   <contactthankmessage>&lt;h1&gt;Thank you&lt;/h1&gt;&lt;p&gt;The message was sent.&lt;/p&gt;</contactthankmessage>
 </settings>

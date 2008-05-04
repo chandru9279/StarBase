@@ -1,0 +1,252 @@
+﻿/* Derivation of andreas03 - an open source xhtml/css website layout by Andreas Viklund - http://andreasviklund.com . Free to use for any purpose as long as the proper credits are given to the original author. */
+
+body{
+margin:0;
+font:76% tahoma,verdana,sans-serif;
+background:#047 url(bodybg.png) repeat-x fixed;
+color:#222;
+}
+
+#Container
+{
+width: 85%;
+margin: 30px auto 0px auto;
+padding: 0px;
+background: #ffffff url(contbg.png) no-repeat;
+color: #222;
+}
+
+
+/* Special case for the editor */
+#Container .ContentControlTinyMCE
+{
+    width: 99%;
+}
+
+#Header {
+margin: 0px 0px 0px 200px;
+padding: 20px;
+}
+
+#Header #Logo {
+float: left;
+width: 240px;
+height: 150px;
+background: url(Logo-240-150.jpg) no-repeat;
+}
+
+#Header #LogoText {
+    margin-top: 70px;
+    height: 80px;
+}
+
+#MainContent p {
+padding: 0 0 0 10px;
+}
+
+#MainContent
+{
+margin: 0px 0px 0px 200px;
+padding: 10px;
+}
+
+.HeaderStyle
+{
+display: block;
+margin: 30px 0 10px 0;
+padding: 5px 0 5px 8px;
+background: #eee url(gradient2.png) repeat-x;
+color: #222;
+border-top: 1px solid #ddd;
+border-right: 1px solid #bbb;
+border-bottom: 1px solid #bbb;
+border-left: 1px solid #ddd;
+text-decoration: none;
+}
+
+#Sidebar
+{
+float: left;
+clear: left;
+width: 175px;
+padding: 35px 10px 20px 10px;
+font-size: 1em;
+line-height: 1.3em;
+}
+
+#Sidebar p{
+font-size: 0.9em;
+}
+
+#Navigation a {
+display: block;
+width: 160px;
+margin: 3px 10px 2px 0;
+padding: 5px 0 5px 5px;
+font-size: 1.0em;
+font-weight: bold;
+text-align: left;
+background: #eee url(gradient1.png) repeat-x;
+color: #26c;
+border-top: 1px solid #ddd;
+border-right: 1px solid #bbb;
+border-bottom: 1px solid #bbb;
+border-left: 1px solid #ddd;
+}
+
+#Navigation a:hover, #Navigation a.MenuHeader {
+background: #fff url(gradient2.png) repeat-x;
+color: #222;
+border-top: 1px solid #ddd;
+border-right: 1px solid #888;
+border-bottom: 1px solid #888;
+border-left: 1px solid #ddd;
+text-decoration: none;
+}
+
+#Footer 
+{
+margin: 10px auto 0px auto;
+padding: 10px;
+clear: both;
+background:#fff url(footerbg.png) bottom left no-repeat;
+font-size:0.9em;
+color:#888;
+text-align:center;
+}
+
+a{
+text-decoration: none;
+background-color: inherit;
+color: #26c;
+}
+
+a:hover{
+text-decoration: underline;
+}
+
+a img{
+border: 0;
+}
+
+p{
+margin: 0 0 15px 0;
+line-height: 1.5em;
+}
+
+h1 {
+font-size: 2.0em;
+font-weight: normal;
+}
+
+h2 {
+margin: 20px 0px 8px 0px;
+font-size: 1.4em;
+font-weight: normal;
+}
+
+h3 {
+margin: 10px 0px 8px 0px;
+font-size: 1.2em;
+font-weight: normal;
+}
+
+ul li {
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.Block {
+padding: 20px;
+background: #eee;
+color: #222;
+border: 2px solid #ddd;
+}
+
+.Indent {
+margin-left: 20px;
+}
+
+.ClearBoth {
+clear: both;
+}
+
+
+/* Formatting for Blog Controls */
+
+#Container .BlogStream { margin: 0px 170px 0px 0px; }
+#Container .BlogFeatures { width: 150px; float: right; }
+#Container .BlogFeatures div { padding-bottom: 20px; margin-bottom: 20px; border-left: solid 1px #d3d3d3; text-align: center; }
+#Container .BlogFeatures h1 { font-size: 16px; font-weight: bold; background: url('ContentDividerTileLight-4-14.gif') repeat-x; padding: 6px; margin: 0px 0px 10px 0px; }
+#Container .BlogFeatures ul { list-style: none; margin: 0px; padding: 0px; }
+#Container .BlogFeatures .BlogFeaturesSearchBox { width: 80px; }
+#Container .BlogFeatures .BlogFeaturesSearchButton { width: 40px; }
+#Container .BlogEntry { border-left: solid 1px #d3d3d3; margin: 0px 0px 20px 0px; }
+#Container .BlogEntryHeader { padding: 10px 6px 6px 6px; background: #ffffff url('ContentDividerTileLight-4-14.gif') repeat-x; }
+#Container .BlogEntryHeader .BlogEntryHeaderPostTitle span { font-size: 1.6em; }
+#Container .BlogEntryHeader .BlogEntryHeaderPostDate span { font-size: 0.8em; color: #787878; }
+#Container .BlogEntryHeader div label { display: block; float: left; width: 100px; }
+#Container .BlogEntryBody { padding: 6px; }
+#Container .BlogEntryBody .TinyMCETextArea { width: 98%; }    
+#Container .BlogEntryFooter { background: #ffffff url('ContentDividerTileLightFlip-4-14.gif') repeat-x bottom left; padding: 6px; }
+#Container .BlogEntryFooter .BlogEntryFooterCommands { float: left; }
+#Container .BlogEntryFooter .BlogEntryFooterCommands a { margin-right: 10px; }
+#Container .BlogEntryFooter .BlogEntryFooterLinks div { float: left; }
+.BlogEntryFooter .BlogEntryFooterLinks .BlogEntryFooterLinksPermalink a, .BlogEntryFooter .BlogEntryFooterLinks .BlogEntryFooterLinksServices a { margin-right: 10px; }
+#Container .BlogEntryFooter .BlogEntryFooterLinks .BlogEntryFooterLinksComments { display: block; float: right;  text-align: right; margin-left: 20px; }
+#Container .BlogEntryFooter .BlogEntryFooterLinks .BlogEntryFooterLinksTags { display: block; float: none;  text-align: right; }
+#Container .BlogEntryFooter ul { padding-left: 0px; margin: 0px; list-style-type: none; display: inline; }
+#Container .BlogEntryFooter ul li { display: inline; margin-left: 6px; }
+#Container .BlogNavigation { margin-right: 200px; margin-top: 20px; text-align: center; }
+#Container .BlogNavigation a { font-weight: bold; margin-left: 50px; margin-right: 50px; padding: 4px; border: outset 1px #6f5230; text-decoration: none; }
+#Container .CommentsStream { margin: 0px 0px 20px 40px; }
+#Container .CommentsStream .CommentsEntry { margin-bottom: 20px; background: #fdfcf6 url('FeatureBackgroundTile-1-119.gif') repeat-x; border-bottom: solid 1px #e1d2bd; }
+#Container .CommentsStream .CommentsEntryHeader { font-style:italic; margin-bottom: 10px; padding: 6px; }
+#Container .CommentsStream .CommentsEntryBody { padding: 6px; }
+#Container .CommentsStream .CommentsEntryFooter { padding: 6px; text-align: left; }
+#Container .CommentsStream .CommentsAdd { border: dashed 1px #6f5230; padding: 10px; }
+#Container .CommentsStream .CommentsAdd h1 { font-size: 16px; font-weight: bold; margin: 0px; }
+#Container .CommentsStream .CommentsAdd div { padding: 4px; }
+#Container .CommentsStream .CommentsAdd label { display: block; float: left; width: 150px; }
+#Container .CommentsStream .CommentsAdd textarea { width: 99%; }
+#Container .CommentsStream .CommentsAdd a, .CommentsCommands a { padding: 4px; border: outset 1px #d3d3d3; text-decoration: none; }
+
+
+/* Photo Section */
+
+#Container .GalleryFeatures { width: 150px; margin-top: 0px; float: right; }
+#Container .GalleryFeatures div { padding-bottom: 6px; margin-bottom: 20px; border-left: solid 1px #d3d3d3; text-align: center; }
+#Container .GalleryFeatures h1 { font-size: 16px; font-weight: bold; background: url('ContentDividerTileLight-4-14.gif') repeat-x; padding: 6px; margin: 0px 0px 10px 0px; }
+#Container .GalleryFeatures ul { margin: 0px; list-style: none; padding: 0px;}
+#Container .GalleryFeatures ul li { margin-bottom: 4px; }
+#Container .GalleryFeatures input { width: 120px; }
+#Container .GalleryStream {  }
+#Container .GalleryStreamStandoff {  margin-right: 180px; }
+#Container .GalleryStream div { float: left; }
+#Container .GalleryStream img {  vertical-align: middle; border: none; max-width: 120px; max-height: 120px; }
+#Container .GalleryStream .PhotoItemHidden { filter:alpha(opacity=50); opacity: 0.5; -moz-opacity:0.5; _border: dashed 1px #6f5230; }
+#Container .GalleryStream .PhotoItem { margin: 4px; line-height: 140px; _font-size: 126.7px; text-align: center; width: 140px; height: 150px; border-left: solid 1px #d3d3d3; border-right: solid 1px #d3d3d3; border-bottom: solid 1px #d3d3d3; background: #ffffff url('ContentDividerTileLight-4-14.gif') repeat-x top left; } /* UnderScore Hack 90.5% of box height, 50% critical to IE5 */
+#Container .GalleryNavigation { padding-top: 20px; text-align: center; clear:left; }
+#Container .GalleryNavigation a { font-weight: bold; margin-left: 50px; margin-right: 50px; padding: 4px; border: outset 1px #d3d3d3; text-decoration: none; }
+
+#GalleryPopup { color: #ffffff; font-size: 12px; }
+#GalleryPopup a { color: #ffffff; }
+#GalleryPopup .PhotoTextItems { width: 100%; }
+#GalleryPopup .PhotoDescription { padding: 2px; }
+#GalleryPopup .DownloadLink { padding: 2px; vertical-align: top; text-align: right; font-weight: bold;  }
+#GalleryPopup .AdminPhoto { float: left;  }
+#GalleryPopup .AdminForm { width: 280px; float: right; }
+#GalleryPopup .AdminForm .FormRow { clear: both; margin: 10px; }
+#GalleryPopup .AdminForm .FormLabel { float: left; width: 80px; font-weight: bold; padding-right: 10px; }
+#GalleryPopup .AdminForm .FormItem { padding-left: 10px; }
+#GalleryPopup .AdminForm { white-space:nowrap; }
+#GalleryPopup .AdminForm .FixedWidth { width: 160px; }
+#GalleryPopup .AdminForm a { margin-top: 20px; padding: 4px; border: outset 1px #6f5230; text-decoration: none; }
+#GalleryPopup .AdminForm .DeleteButton { float: left; }
+#GalleryPopup .AdminForm .SaveButton { float: right; }
+
+/* Admin Section */
+
+#Container .AdminFormRow { clear: both; margin: 10px; }
+#Container .AdminFormLabel { float: left; width: 80px; font-weight: bold; padding-right: 10px; }
+#Container .AdminFormItem { padding-left: 10px; }

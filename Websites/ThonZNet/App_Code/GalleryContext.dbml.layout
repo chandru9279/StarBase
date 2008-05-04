@@ -1,30 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.375" name="GalleryContext">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.625" name="GalleryContext">
   <DataContextMoniker Name="/GalleryContext" />
   <nestedChildShapes>
-    <classShape Id="eaa4dfa9-f01d-4c21-868d-4a3a49ed51f2" absoluteBounds="1.375, 1.125, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/GalleryContext/Category" />
-      <nestedChildShapes>
-        <elementListCompartment Id="2eaa3ddf-ffda-4683-8869-6053aa7afe15" absoluteBounds="1.3899999999999997, 1.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="f38ce96b-5f4c-48b1-98f3-a1f987c9ee1e" absoluteBounds="1.375, 3.125, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/GalleryContext/FlickrCommand" />
-      <nestedChildShapes>
-        <elementListCompartment Id="361ef3cd-8782-4f46-ae97-d27d0fc149b0" absoluteBounds="1.39, 3.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="813e71ee-6d70-4e95-bf0a-fb463ba7766c" absoluteBounds="1.375, 7.875, 2, 1.1939925130208333">
-      <DataClassMoniker Name="/GalleryContext/PhotoCategoryJoin" />
-      <nestedChildShapes>
-        <elementListCompartment Id="46c5083f-6826-490c-b06f-d07af6eb4c24" absoluteBounds="1.3900000000000001, 8.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="f7b55ad0-fe6f-4f22-9c3d-cdd17aa4a810" absoluteBounds="1.375, 5, 2, 2.5401025390625">
+    <classShape Id="0fdc215c-9dc3-46d7-82db-8be0bdd84a47" absoluteBounds="0.75, 7.875, 2, 2.5401025390625">
       <DataClassMoniker Name="/GalleryContext/Photo" />
       <nestedChildShapes>
-        <elementListCompartment Id="aa1457a2-508f-4649-97a4-9c37628368d3" absoluteBounds="1.3900000000000001, 5.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4c9e0403-948c-4617-825c-89f112cc1415" absoluteBounds="0.76500000000000012, 8.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="8558fbe0-51e3-4965-b86f-4d476286ef52" absoluteBounds="0.75, 6.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/GalleryContext/PhotoCategoryJoin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d8f397c-81ac-4721-a736-e554e042eb21" absoluteBounds="0.76500000000000012, 6.7100000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.75 : 7.875); (1.75 : 7.44399251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GalleryContext/Photo/Photo_PhotoCategoryJoin" />
+      <nodes>
+        <classShapeMoniker Id="0fdc215c-9dc3-46d7-82db-8be0bdd84a47" />
+        <classShapeMoniker Id="8558fbe0-51e3-4965-b86f-4d476286ef52" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="efd7308c-b0b3-4f27-9666-ebb916f90985" absoluteBounds="4.875, 7.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/GalleryContext/FlickrCommand" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4039c0d4-53a3-40b7-ac22-48a62a54c199" absoluteBounds="4.8900000000000006, 7.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e676a4c6-f48b-46d7-8132-542dc0443b0d" absoluteBounds="0.75, 4.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/GalleryContext/Category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3f943bcf-d3ef-4b07-b50b-0c4016f93f27" absoluteBounds="0.76499999999999968, 4.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.75 : 5.82859537760417); (1.75 : 6.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GalleryContext/Category/Category_PhotoCategoryJoin" />
+      <nodes>
+        <classShapeMoniker Id="e676a4c6-f48b-46d7-8132-542dc0443b0d" />
+        <classShapeMoniker Id="8558fbe0-51e3-4965-b86f-4d476286ef52" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

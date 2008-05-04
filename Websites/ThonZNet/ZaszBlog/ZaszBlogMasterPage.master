@@ -2,21 +2,21 @@
 <%@ Register Src="~/ZaszBlog/Admin/Menu.ascx" TagName="Menu" TagPrefix="M" %>
 <%@ Register Namespace="Thon.ZaszBlog.Controls" TagPrefix="ZaszBlog" %>
 <%@ Import Namespace="Thon.ZaszBlog.Support" %>
+<%@ Import Namespace="Thon.Support" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head id="Head1" runat="server" profile="http://gmpg.org/xfn/11">
     <title></title>
     <link rel="stylesheet" href="~/ZaszBlog/StyleSheets/MasterPageUserControls.css" type="text/css" />
-    <link rel="shortcut icon" href="~/ZaszBlog/Images/ZaszBlog.bmp" type="image/x-icon"/>
+    <link rel="shortcut icon" href="~/ZaszBlog/Images/ZB.ico" type="image/x-icon"/>
 </head>
 
-<body>
+<body>    
     <div class="container">
 	    <div class="header">
 	        <div class="title">
-	            <h1><a id="A1" href="~/ZaszBlog/Default.aspx" runat="server"><%=BlogSettings.Instance.Name %></a></h1>
-	            <%=BlogSettings.Instance.Description %>
+	            <h1><a id="A1" href="~/ZaszBlog/Default.aspx" runat="server"><%=BlogSettings.Instance.Name %></a></h1>	            
             </div>
         </div>
         
@@ -28,6 +28,7 @@
                 <asp:ContentPlaceHolder ID="cphBody" runat="server" />
             </div>
             <div class="sidenav">
+                <h1><a href="<%= HelperUtilities.RelativeAppRoot %>">Back to Home</a></h1>
                 <h1>Search</h1>
                 <ZaszBlog:SearchBox runat="server" />
                 
@@ -76,10 +77,12 @@
             </form>
         </div>
     </div>       
-    <div class="footer">
-        Powered by <a href="http://www.thon.net/" target="_blank">Thon.Net</a> | 
-        Original Design by <a href="http://arcsin.se">Arcsin</a>, Adapted by <a href="http://www.nyveldt.com/blog/">RazorAnt</a> and by <a href="http://www.thon.net/">Zasz</a>
+    
+    <div class="footer">        
+        Powered by <a href="<%= HelperUtilities.RelativeAppRoot %>">Thon.Net</a> | 
+        Original Design by <a href="http://arcsin.se">Arcsin</a>, Adapted by <a href="http://www.thon.net/">Zasz</a>
     </div>
     
+    <table style="width:100%"><tr><td align="left"><%=BlogSettings.Instance.Description %></td><td align="right"><h2><a href="<%= HelperUtilities.RelativeAppRoot %>">Home</a></h2></td></tr></table>
 </body>
 </html>

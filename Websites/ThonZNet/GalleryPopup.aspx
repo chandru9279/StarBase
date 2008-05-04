@@ -1,10 +1,10 @@
-<%@ Page Language="C#" AutoEventWireup="True" CodeFile="GalleryPopup.aspx.cs" Inherits="GalleryPopup" %>
+<%@ Page Language="C#" AutoEventWireup="True" CodeFile="GalleryPopup.aspx.cs" Inherits="Thon.Gallery.GalleryPopupAspx" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>Photo Gallery</title>
-    <link type="text/css" rel="stylesheet" href="Skins/Normal/~Normal.css" />
+    <link href="StyleSheets/GalleryPopup.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form runat="server">
@@ -14,7 +14,7 @@
                 <table class="PhotoTextItems">
                     <tr>
                         <td class="PhotoDescription"><asp:Literal ID="DescriptionLiteral" runat="server"></asp:Literal></td>
-                        <td class="DownloadLink"><asp:HyperLink ID="DownloadLinkHref" runat="server" meta:resourcekey="DownloadLinkHref" Text="Download (Full Size)"></asp:HyperLink></td>
+                        <td class="DownloadLink"><asp:HyperLink ID="DownloadLinkHref" runat="server" Text="Download (Full Size)"></asp:HyperLink></td>
                     </tr>
                 </table>
             </div>
@@ -73,7 +73,11 @@
                     </div>
                     
                     <div class="FormRow">
-                        <asp:LinkButton ID="DeleteButton" runat="server" CssClass="DeleteButton" Text="Delete" meta:resourcekey="DeleteButton"></asp:LinkButton> <asp:LinkButton ID="UpdateButton" runat="server" CssClass="SaveButton" Text="Save & Close" meta:resourcekey="UpdateButton"></asp:LinkButton>
+                        <asp:LinkButton ID="DeleteButton" runat="server" CssClass="DeleteButton" 
+                            Text="Delete" meta:resourcekey="DeleteButton" onclick="DeleteButton_Click"></asp:LinkButton> 
+                        <asp:LinkButton ID="UpdateButton" runat="server" CssClass="SaveButton" 
+                            Text="Save & Close" meta:resourcekey="UpdateButton" 
+                            onclick="UpdateButton_Click"></asp:LinkButton>
                     </div>
 
                     
