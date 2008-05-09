@@ -183,17 +183,18 @@ namespace Thon.Gallery
             //SELECT 'DeletePhoto', Photos.PhotoFlickrID FROM Photos 
             //WHERE PhotoFlickrID Is Not Null AND PhotoID=" + int.Parse(PhotoIDLabel.Text) + " AND PhotoOwner = '" + Session["GalleryOwner"] + "'";
 
-            string PhotoFlickrID =
-                (
+            IEnumerable<string> PhotoFlickrID =
                 from photo in GDC.Photos
-                where (photo.PhotoFlickrID!=null) && photo.PhotoID == int.Parse(PhotoIDLabel.Text) && photo.PhotoOwner.Equals((string)Session["GalleryOwner"])
-                select photo.PhotoFlickrID
-                ).First();
-            FlickrCommand fc = new FlickrCommand();
-            fc.FlickrCommandType = "DeletePhoto";
-            fc.FlickrCommandParameter = PhotoFlickrID;
-            GDC.FlickrCommands.InsertOnSubmit(fc);
-            GDC.SubmitChanges();
+                where (photo.PhotoFlickrID != null) && photo.PhotoID == int.Parse(PhotoIDLabel.Text) && photo.PhotoOwner.Equals((string)Session["GalleryOwner"])
+                select photo.PhotoFlickrID;
+            if (PhotoFlickrID.Count() > 0)
+            {
+                FlickrCommand fc = new FlickrCommand();
+                fc.FlickrCommandType = "DeletePhoto";
+                fc.FlickrCommandParameter = PhotoFlickrID.First();
+                GDC.FlickrCommands.InsertOnSubmit(fc);
+                GDC.SubmitChanges();
+            }
 
             //SQLString = "DELETE FROM Photos 
             //WHERE PhotoID=" + int.Parse(Request.QueryString["PhotoID"]) + " AND PhotoOwner='" + Session["GalleryOwner"] + "'";

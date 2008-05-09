@@ -641,7 +641,7 @@ namespace Thon.Gallery
             {
                 Category cat = new Category();
                 cat.CategoryName = CategoriesAddDeleteBox.Text.Replace("'", string.Empty);
-                cat.CategoryOwner = _Owner;
+                cat.CategoryOwner = _Owner;                
                 GDC.Categories.InsertOnSubmit(cat);
                 GDC.SubmitChanges();
                 //string SQLString = "INSERT INTO Categories ( CategoryName, CategoryOwner ) SELECT '" + CategoriesAddDeleteBox.Text.Replace("'", "''") + "','" + _Owner + "'";
