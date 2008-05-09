@@ -1,19 +1,19 @@
 ﻿/* Derivation of andreas03 - an open source xhtml/css website layout by Andreas Viklund - http://andreasviklund.com . Free to use for any purpose as long as the proper credits are given to the original author. */
 
-#Container .GalleryFeatures { width: 150px; margin-top: 0px; float: right; }
-#Container .GalleryFeatures div { padding-bottom: 6px; margin-bottom: 20px; border-left: solid 1px #d3d3d3; text-align: center; }
-#Container .GalleryFeatures h1 { font-size: 16px; font-weight: bold; background: url('../Images/Gallery/TileLight.gif') repeat-x; padding: 6px; margin: 0px 0px 10px 0px; }
-#Container .GalleryFeatures ul { margin: 0px; list-style: none; padding: 0px;}
-#Container .GalleryFeatures ul li { margin-bottom: 4px; }
-#Container .GalleryFeatures input { width: 120px; }
-#Container .GalleryStream {  }
-#Container .GalleryStreamStandoff {  margin-right: 180px; }
-#Container .GalleryStream div { float: left; }
-#Container .GalleryStream img {  vertical-align: middle; border: none; max-width: 120px; max-height: 120px; }
-#Container .GalleryStream .PhotoItemHidden { filter:alpha(opacity=50); opacity: 0.5; -moz-opacity:0.5; _border: dashed 1px #6f5230; }
-#Container .GalleryStream .PhotoItem { margin: 4px; line-height: 140px; _font-size: 126.7px; text-align: center; width: 140px; height: 150px; border-left: solid 1px #d3d3d3; border-right: solid 1px #d3d3d3; border-bottom: solid 1px #d3d3d3; background: #ffffff url('../Images/Gallery/TileLight.gif') repeat-x top left; } /* UnderScore Hack 90.5% of box height, 50% critical to IE5 */
-#Container .GalleryNavigation { padding-top: 20px; text-align: center; clear:left; }
-#Container .GalleryNavigation a { font-weight: bold; margin-left: 50px; margin-right: 50px; padding: 4px; border: outset 1px #d3d3d3; text-decoration: none; }
+.GalleryFeatures { width: 150px; margin-top: 0px; float: right; }
+.GalleryFeatures div { padding-bottom: 6px; margin-bottom: 20px; border-left: solid 1px #d3d3d3; text-align: center; }
+.GalleryFeatures h1 { font-size: 16px; font-weight: bold; background: url(../Images/Gallery/TileLight.gif) repeat-x; padding: 6px; margin: 0px 0px 10px 0px; }
+.GalleryFeatures ul { margin: 0px; list-style: none; padding: 0px;}
+.GalleryFeatures ul li { margin-bottom: 4px; }
+.GalleryFeatures input { width: 120px; }
+.GalleryStream {  }
+.GalleryStreamStandoff {  margin-right: 180px; }
+.GalleryStream div { float: left; }
+.GalleryStream img {  vertical-align: middle; border: none; max-width: 120px; max-height: 120px; }
+.GalleryStream .PhotoItemHidden { filter:alpha(opacity=50); opacity: 0.5; -moz-opacity:0.5; _border: dashed 1px #6f5230; }
+.GalleryStream .PhotoItem { margin: 4px; line-height: 140px; _font-size: 126.7px; text-align: center; width: 140px; height: 150px; border-left: solid 1px #d3d3d3; border-right: solid 1px #d3d3d3; border-bottom: solid 1px #d3d3d3; background: #ffffff url(../Images/Gallery/TileLight.gif) repeat-x top left; } /* UnderScore Hack 90.5% of box height, 50% critical to IE5 */
+.GalleryNavigation { padding-top: 20px; text-align: center; clear:left; }
+.GalleryNavigation a { font-weight: bold; margin-left: 50px; margin-right: 50px; padding: 4px; border: outset 1px #d3d3d3; text-decoration: none; }
 
 #GalleryPopup { color: #ffffff; font-size: 12px; }
 #GalleryPopup a { color: #ffffff; }
@@ -33,6 +33,6 @@
 
 /* Admin Section */
 
-#Container .AdminFormRow { clear: both; margin: 10px; }
-#Container .AdminFormLabel { float: left; width: 80px; font-weight: bold; padding-right: 10px; }
-#Container .AdminFormItem { padding-left: 10px; }
+.AdminFormRow { clear: both; margin: 10px; }
+.AdminFormLabel { float: left; width: 80px; font-weight: bold; padding-right: 10px; }
+.AdminFormItem { padding-left: 10px; }
