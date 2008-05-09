@@ -97,7 +97,7 @@ namespace Thon.Gallery
         #endregion
 
         #region ItemCSSClasses
-        private string _ItemCSSClasses = "PhotoItem";
+        private string _ItemCSSClasses = "PhotoItemHidden,PhotoItem";
         public string ItemCSSClasses
         {
             get { return _ItemCSSClasses; }
@@ -612,7 +612,7 @@ namespace Thon.Gallery
             string[] ClassArray = _ItemCSSClasses.Split(',');
 
             System.Random MyRandom = new System.Random(DateTime.Now.Millisecond + int.Parse(photoitem.PhotoDate.Value.ToString("hhmmss")) + photoitem.PhotoID);
-            int ArrayOffset = MyRandom.Next(0, ClassArray.Length-1);
+            int ArrayOffset = MyRandom.Next(1, ClassArray.Length-1);
 
             string PhotoItemClass = ClassArray[ArrayOffset].Trim();
 

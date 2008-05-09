@@ -3,8 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="cphhead" Runat="Server">
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="cphmain" Runat="Server">
-    
+<asp:Content ID="Content2" ContentPlaceHolderID="cphmain" Runat="Server">    
     <div id="GalleryStream" class="GalleryStream">
         <asp:Repeater ID="PhotosRepeater" runat="server" 
             onitemdatabound="PhotosRepeater_ItemDataBound">
@@ -82,9 +81,9 @@
 
      <div id="Features">
     
-        <div runat="server" id="GalleryFeatures" class="GalleryFeatures" visible="false">
+        <div runat="server" id="GalleryFeatures" visible="false">
             <asp:LoginStatus ID="LoginStatus1" runat="server" />
-            <div runat="server" id="GalleryAdminUpload" class="GalleryFeaturesAdmin" visible="false">
+            <div runat="server" id="GalleryAdminUpload" visible="false">
                 <h1><asp:Literal ID="UploadLiteral" runat="server" Text="Upload Photos" meta:resourcekey="UploadLiteral"></asp:Literal></h1>
                 <asp:FileUpload ID="UncatalogedFileUpload" runat="server" />
                 <asp:Button ID="UncatalogedUploadButton" runat="server" Text="Upload Image" 
@@ -92,13 +91,13 @@
                     onclick="UncatalogedUploadButton_Click" />
             </div>
             
-            <div runat="server" id="GalleryAdminCatalog" class="GalleryFeaturesAdmin" visible="false">
+            <div runat="server" id="GalleryAdminCatalog" visible="false">
                 <h1><asp:Literal ID="CatelogLiteral" runat="server" Text="Catalog Uploads" meta:resourcekey="CatalogLiteral"></asp:Literal></h1>
                 <asp:Label runat="server" ID="UncatalogedCountLabel"></asp:Label>
                 <asp:Button ID="UncatalogedCatalogButton" runat="server" Text="Catalog Uploads" meta:resourcekey="UncatalogedCatalogButton" OnClick="UncatalogedCatalogButton_Click"/>
             </div>
             
-            <div runat="server" id="GalleryCategories" class="GalleryFeaturesCategories" visible="false">
+            <div runat="server" id="GalleryCategories" visible="false">
                 <h1><asp:Literal ID="CategoriesLiteral" runat="server" Text="Categories" meta:resourcekey="CategoriesLiteral"></asp:Literal></h1>
                 <asp:BulletedList runat="server" ID="CategoriesList" DisplayMode="HyperLink"></asp:BulletedList>        
                 <asp:TextBox runat="server" ID="CategoriesAddDeleteBox" Visible="false"></asp:TextBox>
@@ -110,18 +109,18 @@
                 <span style="clear: both; display: block;"></span>
             </div>
             
-            <div runat="server" id="GallerySearch" class="GalleryFeaturesSearch" visible="false">
+            <div runat="server" id="GallerySearch" visible="false">
                 <h1><asp:Literal ID="Literal1" runat="server" Text="Search" meta:resourcekey="SearchLiteral"></asp:Literal></h1>
                 <asp:TextBox runat="server" ID="GallerySearchBox" EnableViewState="true" 
                     ontextchanged="GallerySearchBox_TextChanged"></asp:TextBox>
             </div>
             
-            <div runat="server" id="GallerySort" class="GalleryFeaturesSort" visible="false">
+            <div runat="server" id="GallerySort" visible="false">
                 <h1><asp:Literal ID="SortLiteral" runat="server" Text="Sort" meta:resourcekey="SortLiteral"></asp:Literal></h1>
                 <asp:BulletedList runat="server" ID="SortList" DisplayMode="HyperLink"></asp:BulletedList>
             </div>
             
-            <div runat="server" id="GalleryPageSize" class="GalleryFeaturesPageSize" visible="false">
+            <div runat="server" id="GalleryPageSize" visible="false">
                 <h1><asp:Literal ID="PhotosPerPageLiteral" runat="server" Text="PhotosPerPage" meta:resourcekey="PhotosPerPageLiteral"></asp:Literal></h1>
                 <asp:BulletedList runat="server" ID="PageSizeList" DisplayMode="HyperLink"></asp:BulletedList>
             </div>
