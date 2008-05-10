@@ -1,9 +1,6 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/ThonMasterPage.master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" Title="Change Password" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/ThonMasterPage.master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Thon.LoginAspx" Title="Change Password" %>
 
 <asp:Content ID="LoginHeadContent" ContentPlaceHolderID="cphhead" Runat="Server">
-    <div>
-    
-</div>
 </asp:Content>
 
 <asp:Content ID="LoginMainContent" ContentPlaceHolderID="cphmain" Runat="Server">

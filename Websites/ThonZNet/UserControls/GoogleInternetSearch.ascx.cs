@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Configuration;
 using System.Data;
 using System.Linq;
@@ -12,7 +13,7 @@ using System.Xml.Linq;
 
 namespace Thon
 {
-    public partial class ThonDefaultAspx : Thon.Support.Web.Controls.ThonBasePage
+    public partial class GoogleInternetSearchAscx : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {

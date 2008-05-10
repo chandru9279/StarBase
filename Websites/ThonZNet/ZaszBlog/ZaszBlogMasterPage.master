@@ -1,5 +1,8 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeFile="ZaszBlogMasterPage.master.cs" Inherits="ZaszBlogMasterPageMaster" %>
 <%@ Register Src="~/ZaszBlog/Admin/Menu.ascx" TagName="Menu" TagPrefix="M" %>
+<%@ Register Src="~/UserControls/GoogleThisSiteSearch.ascx" TagName="ThisSiteSearch" TagPrefix="Google"%>
+<%@ Register Src="~/UserControls/GoogleInternetSearch.ascx" TagName="InternetSearch" TagPrefix="Google"%>
+<%@ Register Src="~/UserControls/BannerAd.ascx" TagName="BannerAd" TagPrefix="Google"%>
 <%@ Register Namespace="Thon.ZaszBlog.Controls" TagPrefix="ZaszBlog" %>
 <%@ Import Namespace="Thon.ZaszBlog.Support" %>
 <%@ Import Namespace="Thon.Support" %>
@@ -23,13 +26,16 @@
         <div class="main">
 		    <form id="Form1" runat="server">
 		    <div class="content">
-		    
+		        <Google:BannerAd runat="server" />
+		        <br />
                 <ZaszBlog:SearchOnSearch ID="SearchOnSearch1" runat="server" MaxResults="3" Headline="You searched for" Text="Here are some results for the search term on this website" />
                 <asp:ContentPlaceHolder ID="cphBody" runat="server" />
+                <br />
+                <Google:BannerAd ID="BannerAd1" runat="server" />
             </div>
             <div class="sidenav">
                 <h1><a href="<%= HelperUtilities.RelativeAppRoot %>">Back to Home</a></h1>
-                <h1>Search</h1>
+                <h1>Search <%=BlogSettings.Instance.Name%></h1>
                 <ZaszBlog:SearchBox runat="server" />
                 
                  <% if (Page.User.Identity.IsAuthenticated){ %>
@@ -53,7 +59,7 @@
                 <ZaszBlog:RecentPosts ID="RecentPosts" runat="server" />
                 
                 <h1>Related Posts</h1>
-                <ZaszBlog:RelatedPosts ID="RelatedPosts" runat="server" /> 
+                <ZaszBlog:RelatedPosts ID="RelatedPosts" runat="server" />
                                 
                 <h1>Archive</h1>
                 <ZaszBlog:MonthList ID="MonthList" runat="server" />
@@ -66,7 +72,11 @@
                 
                 <h1>Blogroll</h1>
                 <ZaszBlog:Blogroll runat="server" />
-                
+                <br /><br />
+                <Google:InternetSearch runat="server" />                
+                <br />
+                <Google:ThisSiteSearch runat="server" />
+                <br /><br />
                 <h1>Disclaimer</h1>
                 <p>The opinions expressed herein are the author's own personal opinions and do not represent the author's related people's or organization's view in anyway.</p>
                 <p>&copy; Copyright <%=DateTime.Now.Year %></p>

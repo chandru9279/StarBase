@@ -1,10 +1,13 @@
 <%@ Page Language="C#" MasterPageFile="~/ThonMasterPage.master" ValidateRequest="false"
-    AutoEventWireup="true" CodeFile="Settings.aspx.cs" Inherits="ThonConfiguration"
+    AutoEventWireup="true" CodeFile="Settings.aspx.cs" Inherits="Thon.ThonConfigurationAspx"
     Title="Settings"%>
 <%@ Import Namespace="Thon.Support" %>
 
-<asp:Content ID="SettingsContent" ContentPlaceHolderID="cphmain" runat="Server">  
-    
+<asp:Content ContentPlaceHolderID="cphhead" ID="Header" runat="server">
+<link href="StyleSheets/SettingsAspxStyleSheet.css" rel="stylesheet" type="text/css" />
+</asp:Content>
+
+<asp:Content ID="SettingsContent" ContentPlaceHolderID="cphmain" runat="Server">    
     <br />
     <div style="text-align: right">
         <asp:Button runat="server" ID="btnSaveTop" Text="Save Settings"/>
@@ -80,9 +83,7 @@
           <asp:CheckBox runat="Server" ID="cbEnableAttachments" />
     </div>
     <div class="settings">
-        <h1>
-            HTML head section
-        </h1>
+        <h1>HTML head section</h1>
         <label for="<%=txtHtmlHeader.ClientID %>">
             Add custom code to the HTML head section
         </label>
@@ -92,8 +93,8 @@
     <div class="settings">
         <h1>Tracking script</h1>
         <label for="<%=txtTrackingScript.ClientID %>">
-          Visitor tracking script<br /><br />The JavaScript code from i.e. Google Analytics.<br /><br />
-          Will be added in the bottom of each page regardless of the theme.<br /><br />(remember to add the &lt;script&gt; tags)
+          Visitor tracking script - The JavaScript code from i.e. Google Analytics.
+          Will be added in the bottom of each page regardless of the theme.(remember to add the &lt;script&gt; tags)
         </label>
         <asp:TextBox runat="server" ID="txtTrackingScript" TextMode="multiLine" 
             Rows="9" Columns="30" Width="400px" />
@@ -101,4 +102,7 @@
     <div align="right">
         <asp:Button runat="server" ID="btnSave" Text="Save Settings" /></div>
     <br />
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="cphsidebar" ID="Content1" runat="server">
 </asp:Content>

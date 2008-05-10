@@ -10,11 +10,10 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
-using Thon.Support.Web.Controls;
 
 namespace Thon
 {
-    public partial class CreditsAspx : System.Web.UI.Page
+    public partial class CreditsAspx : Thon.Support.Web.Controls.ThonBasePage 
     {
         protected void Page_Load(object sender, EventArgs e)
         {

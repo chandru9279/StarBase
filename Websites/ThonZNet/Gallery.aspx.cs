@@ -13,7 +13,7 @@ using Thon.Support;
 
 namespace Thon.Gallery
 {
-    public partial class GalleryAspx : System.Web.UI.Page
+    public partial class GalleryAspx : Thon.Support.Web.Controls.ThonBasePage
     {
         private GalleryContext GDC;
         bool AdminMode = false;
@@ -186,7 +186,7 @@ namespace Thon.Gallery
 
                 foreach (string catname in curr_owner_categories)
                 {
-                    string LinkString = Request.Path + "?Categories=" + Server.UrlEncode(catname);
+                    string LinkString = Request.Path + "?Categories=" + Server.UrlEncode(catname);                    
                     string AdditionalQueryString = "";
                     if (Request.QueryString["PageSize"] != null)
                     {

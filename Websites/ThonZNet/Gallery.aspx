@@ -1,9 +1,14 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/ThonMasterPage.master" AutoEventWireup="true" CodeFile="Gallery.aspx.cs" Inherits="Thon.Gallery.GalleryAspx" Title="Gallery" Debug="true" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/ThonMasterPage.master" 
+AutoEventWireup="true" CodeFile="Gallery.aspx.cs" Inherits="Thon.Gallery.GalleryAspx" 
+Title="Gallery" Debug="true" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="cphhead" Runat="Server">
+<asp:Content ID="Header" ContentPlaceHolderID="cphhead" Runat="Server">
+<link href="StyleSheets/Gallery.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="cphmain" Runat="Server">    
+
+<asp:Content ID="MainGalleryContent" ContentPlaceHolderID="cphmain" Runat="Server">    
+    
     <div id="GalleryStream" class="GalleryStream">
         <asp:Repeater ID="PhotosRepeater" runat="server" 
             onitemdatabound="PhotosRepeater_ItemDataBound">
@@ -76,8 +81,7 @@
 </asp:Content>
 
 
-
-<asp:Content ID="Content3" ContentPlaceHolderID="cphsidebar" Runat="Server">
+<asp:Content ID="Sidebar" ContentPlaceHolderID="cphsidebar" Runat="Server">
 
      <div id="Features">
     

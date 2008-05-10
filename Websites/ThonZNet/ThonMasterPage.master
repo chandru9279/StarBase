@@ -1,43 +1,32 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeFile="ThonMasterPage.master.cs" Inherits="ThonMasterPage" %>
 <%@ Register Src="~/ZaszBlog/Admin/Menu.ascx" TagName="Menu" TagPrefix="M" %>
 <%@ Register Namespace="Thon.ZaszBlog.Controls" TagPrefix="ZaszBlog" %>
+<%@ Register Src="~/UserControls/GoogleThisSiteSearch.ascx" TagName="ThisSiteSearch" TagPrefix="Google"%>
+<%@ Register Src="~/UserControls/GoogleInternetSearch.ascx"TagName="InternetSearch" TagPrefix="Google"%>
+<%@ Register Src="~/UserControls/ReferralAd.ascx" TagName="ReferralAd" TagPrefix="Google"%>
+<%@ Register Src="~/UserControls/TowerAd.ascx" TagName="TowerAd" TagPrefix="Google"%>
 <%@ Import Namespace="Thon.ZaszBlog.Support" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head id="Head1" runat="server" profile="http://gmpg.org/xfn/11">
-    <title></title>
-    <link rel="stylesheet" href="StyleSheets/MasterPageUserControls.css" type="text/css" />
+    <title />
+    <link rel="stylesheet" href="~/StyleSheets/MasterPageUserControls.css" type="text/css" />
     <link rel="shortcut icon" href="~/ZaszBlog/Images/ZB.ico" type="image/x-icon"/>
-    <% if(Page.Title.Equals("Settings")){ %>
-    <link href="StyleSheets/SettingsAspxStyleSheet.css" rel="stylesheet" type="text/css" />
-    <% } %>
-    <% if(Page.Title.Equals("Gallery")){ %>
-    <link href="StyleSheets/Gallery.css" rel="stylesheet" type="text/css" />
-    <% } %>   
+    <asp:ContentPlaceHolder id="cphhead" runat="server">
+    </asp:ContentPlaceHolder>
 </head>
 
 <body>
     <div class="container">
 	    <div class="header">
-	        <div class="title">
-                                <table>
-                                    <tr>                                        
-                                        <td>
-                                            <h1>The Thiagarajan Household</h1>
-                                        </td>
-                                        <td>
-                                            <asp:ContentPlaceHolder id="cphhead" runat="server">
-                                            </asp:ContentPlaceHolder>
-                                        </td> 
-                                    </tr>
-                                </table>
-            </div>
+	        <div class="title"><h1>The Thiagarajan Household</h1></div>
         </div>
         
         <div class="main">
 		    <form id="Form1" runat="server">
 		    <div class="content">
+		    
                                 <table class="contenttable">
                                     <tr>
                                         <td colspan="2">
@@ -66,6 +55,10 @@
                                                 <asp:SiteMapDataSource ID="ThonSitemap" runat="server" 
                                                     SiteMapProvider="SecuritySiteMap" />
                                             </div>
+                                            <br/><br/><br/>
+                                            <Google:TowerAd runat="server" />    
+                                            <br/><br/>
+                                            <Google:InternetSearch runat="server" />                                                
                                         </td>
                                         <td class="thoncontent">
                                             <asp:ContentPlaceHolder ID="cphmain" runat="server">
@@ -73,24 +66,20 @@
                                         </td>
                                     </tr>
                                 </table>
+                                
             </div>
             <div class="sidenav">
                 <div style="margin-top:-1px">
-                
-                                <asp:ContentPlaceHolder ID="cphsidebar" runat="server">
-                                </asp:ContentPlaceHolder>
-                                
-                </div>
-                
+                    <Google:ThisSiteSearch ID="ThisSiteSearch1" runat="server" />                    
+                    <asp:ContentPlaceHolder ID="cphsidebar" runat="server">
+                    </asp:ContentPlaceHolder> 
+                    <Google:ReferralAd ID="Referral" runat="server" />                    
+                </div>                
                 <h1>Disclaimer</h1>
                 <p>The content exposed herein are confidential and private to the social circle of T. Chandirasekar, T. Arun Kumar, T. Jayalakshmi, R. Thiagarajan. Any form of misusage of content, will be subject to severe action as much as the the applicable country's law allows.</p>
                 <p>&copy; Copyright <%=DateTime.Now.Year %></p>
-                
-              
-            </div>
-            
+            </div>            
             <div class="clearer"><span></span></div>
-            
             </form>
         </div>
     </div>       

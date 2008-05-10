@@ -82,6 +82,11 @@ public partial class AdminNewUser : System.Web.UI.Page
 	/// <param name="e">The <see cref="System.Web.UI.WebControls.GridViewUpdateEventArgs"/> instance containing the event data.</param>
 	void grid_RowUpdating(object sender, GridViewUpdateEventArgs e)
 	{
+        if (string.IsNullOrEmpty(CreateUserWizard1.Question) || string.IsNullOrEmpty(CreateUserWizard1.Answer))
+        {
+            lblError.Text = "Fill up the \"Question\" and \"Answer\" rows(fields) alone in the Create User section above.";
+            return;
+        }
 		string username = (string)gridUsers.DataKeys[e.RowIndex].Value;
 		TextBox txtPassword = (TextBox)gridUsers.Rows[e.RowIndex].FindControl("txtPassword");
 		TextBox txtEmail = (TextBox)gridUsers.Rows[e.RowIndex].FindControl("txtEmail");
@@ -90,17 +95,25 @@ public partial class AdminNewUser : System.Web.UI.Page
 		MembershipUser oldUser = Membership.GetUser(username);
 		string[] oldRoles = Roles.GetRolesForUser(username);
 		Membership.DeleteUser(username);
+        MembershipCreateStatus status;
+		MembershipUser user = Membership.CreateUser(txtUsername.Text, txtPassword.Text, txtEmail.Text,CreateUserWizard1.Question,CreateUserWizard1.Answer,true,out status);
+        if (status == MembershipCreateStatus.Success)
+        {
 
-		MembershipUser user = Membership.CreateUser(txtUsername.Text, txtPassword.Text, txtEmail.Text);
-		if (oldRoles.Length > 0)
-			Roles.AddUserToRoles(username, oldRoles);
+            if (oldRoles.Length > 0)
+                Roles.AddUserToRoles(username, oldRoles);
 
-		if (username != txtUsername.Text)
-		{
-			UpdatePosts(username, txtUsername.Text);
-		}
+            if (username != txtUsername.Text)
+            {
+                UpdatePosts(username, txtUsername.Text);
+            }
 
-		Response.Redirect(Request.RawUrl);
+            Response.Redirect(Request.RawUrl);
+        }
+        else
+        {
+            lblError.Text = status.ToString();
+        }
 	}
 
 	private static void UpdatePosts(string oldUsername, string newUsername)
