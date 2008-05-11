@@ -9,9 +9,12 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class ThonMasterPage : System.Web.UI.MasterPage
+namespace Thon
 {
-  protected void Page_Load(object sender, EventArgs e)
-  {
-  }
+    public partial class ThonMasterPage : System.Web.UI.MasterPage
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+        }
+    }
 }

@@ -1,10 +1,12 @@
-<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ThonMasterPage.master.cs" Inherits="ThonMasterPage" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ThonMasterPage.master.cs" Inherits="Thon.ThonMasterPage" %>
+
 <%@ Register Src="~/ZaszBlog/Admin/Menu.ascx" TagName="Menu" TagPrefix="M" %>
 <%@ Register Namespace="Thon.ZaszBlog.Controls" TagPrefix="ZaszBlog" %>
 <%@ Register Src="~/UserControls/GoogleThisSiteSearch.ascx" TagName="ThisSiteSearch" TagPrefix="Google"%>
 <%@ Register Src="~/UserControls/GoogleInternetSearch.ascx"TagName="InternetSearch" TagPrefix="Google"%>
 <%@ Register Src="~/UserControls/ReferralAd.ascx" TagName="ReferralAd" TagPrefix="Google"%>
 <%@ Register Src="~/UserControls/TowerAd.ascx" TagName="TowerAd" TagPrefix="Google"%>
+
 <%@ Import Namespace="Thon.ZaszBlog.Support" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
