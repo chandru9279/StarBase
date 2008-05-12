@@ -5,7 +5,8 @@
     <h1 runat="server" id="h1Headline" />
     <br />
     
-    <div id="searchpage">
+    <div id="searchpage">      
+      <p style="font-size:small;">Search - powered by this site!</p><br />
       <!-- Keycode 13 is enter key -->
       <input type="text" name="q" id="q" value="<%=Request.QueryString["q"] %>" onkeypress="if(event.keyCode==13) SearchPage()" />
       <input type="button" value="Search" onclick="SearchPage()" onkeypress="SearchPage()" />
@@ -44,7 +45,7 @@
         </div>
       </ItemTemplate>
     </asp:repeater>
-    
+    <label id="lblNoResults" style="font-size:medium;color:Navy;" runat="server" visible="false"/>    
     <asp:PlaceHolder ID="Paging" runat="server" />
   </div>
 </asp:Content>

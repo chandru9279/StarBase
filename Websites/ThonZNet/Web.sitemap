@@ -18,16 +18,17 @@
       </siteMapNode>
 
       <siteMapNode url="~/ZaszBlog/Contact.aspx" title="Contact" description="" roles="*"/>
-      <siteMapNode url="~/ZaszBlog/Archive.aspx" title="Archive" description="" roles="*"/>
-      <siteMapNode url="~/ZaszBlog/Login.aspx" title="Login" description="" roles="*"/>
+      <siteMapNode url="~/ZaszBlog/Archive.aspx" title="Archive" description="" roles="*"/>      
       <siteMapNode url="~/ZaszBlog/Search.aspx" title="Search" description="" roles="*"/>
       
     </siteMapNode>
 
-    <siteMapNode url="~/Login.aspx" title="Login" description="" roles="*"/>
+    <siteMapNode url="~/Login.aspx" title="Sign In/Out" description="" roles="*"/>
     <siteMapNode url="~/Settings.aspx" title="Settings" description="" roles="Family"/>
+    <siteMapNode url="~/CreateUser.aspx" title="Add New User" description="" roles="*"/>
     <siteMapNode url="~/Credits.aspx" title="Credits" description="" roles="*"/>
     <siteMapNode url="~/Gallery.aspx" title="Gallery" description="" roles="*"/>
+      <siteMapNode url="~/Linkz.aspx" title="Linkz" description="" roles="*"/>
     
   </siteMapNode>
 </siteMap>

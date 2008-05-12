@@ -12,7 +12,7 @@ using Thon.ZaszBlog.Support.Web.Controls;
 public partial class SearchAspx : BlogBasePage
 {
 
-  private const int PAGE_SIZE = 20;
+  private const int PAGE_SIZE = 10;
 
   #region Event handlers
 
@@ -103,6 +103,7 @@ public partial class SearchAspx : BlogBasePage
 
     int start = PAGE_SIZE * (page - 1);
     List<IShowed> list = StaticSearch.Hits(searchTerm, includeComments);
+    if (list.Count == 0) lblNoResults.InnerText = "Sorry. No results matching your search string was found.";
     if (start <= list.Count - 1)
     {
       int size = PAGE_SIZE;

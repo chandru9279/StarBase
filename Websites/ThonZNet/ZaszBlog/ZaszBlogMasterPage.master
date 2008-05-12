@@ -11,8 +11,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head id="Head1" runat="server" profile="http://gmpg.org/xfn/11">
     <title></title>
-    <link rel="stylesheet" href="~/ZaszBlog/StyleSheets/MasterPageUserControls.css" type="text/css" />
-    <link rel="shortcut icon" href="~/ZaszBlog/Images/ZB.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="StyleSheets/MasterPageUserControls.css" type="text/css" />
+    <link rel="shortcut icon" href="Images/ZB.ico" type="image/x-icon"/>    
 </head>
 
 <body>    
@@ -73,7 +73,7 @@
                 <h1>Blogroll</h1>
                 <ZaszBlog:Blogroll runat="server" />
                 <br /><br />
-                <Google:InternetSearch runat="server" />                
+                <Google:InternetSearch runat="server" />               
                 <br />
                 <Google:ThisSiteSearch runat="server" />
                 <br /><br />

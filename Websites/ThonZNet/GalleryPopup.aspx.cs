@@ -14,7 +14,7 @@ using System.Collections.Generic;
 
 namespace Thon.Gallery
 {
-    public partial class GalleryPopupAspx : System.Web.UI.Page
+    public partial class GalleryPopupAspx : Thon.Support.Web.Controls.ThonBasePage
     {
         GalleryContext GDC = new GalleryContext();
         List<Category> cats = new List<Category>();

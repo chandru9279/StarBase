@@ -13,11 +13,11 @@ using System.Xml.Linq;
 
 namespace Thon
 {
-    public partial class CreditsAspx : Thon.Support.Web.Controls.ThonBasePage 
+    public partial class LinkzAspx : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

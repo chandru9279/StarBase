@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/ThonMasterPage.master" ValidateRequest="false"
+<%@ Page Language="C#" MasterPageFile="~/SecureMaster.master" ValidateRequest="false"
     AutoEventWireup="true" CodeFile="Settings.aspx.cs" Inherits="Thon.ThonConfigurationAspx"
     Title="Settings"%>
 <%@ Import Namespace="Thon.Support" %>

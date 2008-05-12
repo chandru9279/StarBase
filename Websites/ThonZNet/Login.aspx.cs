@@ -16,14 +16,6 @@ namespace Thon
 {
     public partial class LoginAspx : Thon.Support.Web.Controls.ThonBasePage
     {
-        protected void Page_PreInit(object sender, EventArgs e)
-        {
-            if (Request.UrlReferrer != null && Request.UrlReferrer.ToString().ToUpperInvariant().Contains("ZASZBLOG"))
-            {
-                Response.Redirect("~/ZaszBlog/Login.aspx", true);
-            }
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Page.User.Identity.IsAuthenticated)
@@ -48,7 +40,7 @@ namespace Thon
         {
             if (!Roles.IsUserInRole(ThonLogin.UserName, "Family"))
             {
-                Response.Redirect(HelperUtilities.RelativeAppRoot + "Default.aspx", true);
+                Response.Redirect("~/Default.aspx", true);
             }
         }
 

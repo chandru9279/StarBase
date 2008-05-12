@@ -122,7 +122,7 @@
     <div class="settings">
       <h1>Import & Export</h1>
       <p>
-        BlogEngine.NET uses BlogML as the format for exporting. The import support both BlogML and RSS.
+        <%=BlogSettings.Instance.Name%> uses BlogML as the format for exporting. The import support both BlogML and RSS.
         (<a href="http://blogml.org/">blogml.org</a>)
       </p>
       <input type="button" value="Import" onclick="location.href='http://dotnetblogengine.net/clickonce/blogimporter/blog.importer.application?url=<%=SupportUtilities.AbsoluteWebRoot %>&username=<%=Page.User.Identity.Name %>'" />&nbsp;&nbsp;

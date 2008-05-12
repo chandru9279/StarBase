@@ -8,7 +8,7 @@ using Thon.Support;
 
 namespace Thon
 {
-    public partial class ThonConfigurationAspx : System.Web.UI.Page
+    public partial class ThonConfigurationAspx : Thon.Support.Web.Controls.ThonBasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
