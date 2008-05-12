@@ -102,9 +102,9 @@ namespace Thon.Support.Web.Controls
                 {
                     if (!c.Attributes["href"].StartsWith("http://"))
                     {
-                        c.Attributes["href"] = HelperUtilities.RelativeAppRoot + "ThonHttpHandlers/Css.ashx?name=" + c.Attributes["href"];
+                        c.Attributes["href"] = HelperUtilities.RelativeAppRoot + "StyleSheets/Css.ashx?name=~/" + c.Attributes["href"];
                         //eg href = StyleSheets/MasterPageStyleSheet.css will be converted into :
-                        // /ThonZNet/ThonHttpHandlers/Css.ashx?name=StyleSheets/MasterPageStyleSheet.css
+                        // /ThonZNet/ThonHttpHandlers/Css.ashx?name=~/StyleSheets/MasterPageStyleSheet.css
                         c.EnableViewState = false;
                     }
                 }

@@ -85,6 +85,7 @@ namespace Thon.Support
 		        {
 			        get
 			        {return "~/App_Data/";}
+                    set { }
 		        }
 		        #endregion
                 //Used in Thon.ZaszBlog.Web.Controls.ThonBasePage
@@ -151,6 +152,7 @@ namespace Thon.Support
                 {
                     get
                     { return "T.Chandirasekar"; }
+                    set { }
                 }
                 #endregion
 
