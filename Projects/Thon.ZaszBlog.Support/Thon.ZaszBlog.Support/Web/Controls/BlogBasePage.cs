@@ -168,7 +168,7 @@ namespace Thon.ZaszBlog.Support.Web.Controls
                 {
                     if (!c.Attributes["href"].StartsWith("http://"))
                     {
-                        c.Attributes["href"] = SupportUtilities.RelativeWebRoot + "StyleSheets/Css.ashx?name=" + c.Attributes["href"];
+                        c.Attributes["href"] = SupportUtilities.RelativeWebRoot + "StyleSheets/Css.ashx?name=~/ZaszBlog/" + c.Attributes["href"];
                         c.EnableViewState = false;
                     }
                 }

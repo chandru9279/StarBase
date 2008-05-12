@@ -107,8 +107,7 @@ namespace Thon.ZaszBlog.Support.XmlProvider
 			string fileName = _Folder + "Posts" + Path.DirectorySeparatorChar + post.Id.ToString() + ".xml";
 			XmlWriterSettings settings = new XmlWriterSettings();
 			settings.Indent = true;
-
-			using (XmlWriter writer = XmlWriter.Create(fileName, settings))
+            using (XmlWriter writer = XmlWriter.Create(fileName, settings))
 			{
 				writer.WriteStartDocument(true);
 				writer.WriteStartElement("post");

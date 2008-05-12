@@ -68,6 +68,7 @@ namespace Thon.ZaszBlog.Support
                 {
                     get
                     {return System.Web.HttpRuntime.AppDomainAppPath;}
+                    set { }
                 }
                 #endregion
         
@@ -556,8 +557,7 @@ namespace Thon.ZaszBlog.Support
 						        }
 						        catch(Exception e)
 						        {
-                                   //throw e;
-                                   throw new ConfigurationErrorsException("Exception while setting values to BlogSettings.Instance");                                    
+                                   throw e;
 						        }
 						        break;
 					        }
@@ -604,7 +604,7 @@ namespace Thon.ZaszBlog.Support
 				        try
 				        {
                             // Except this all hs to be persisted, this contains the current object
-					        if (propertyInformation.Name != "Instance") 
+                            if (propertyInformation.Name != "Instance" && propertyInformation.Name != "AppRoot") 
 					        {
 						        object propertyValue = propertyInformation.GetValue(this, null);
 						        string valueAsString = propertyValue.ToString();
