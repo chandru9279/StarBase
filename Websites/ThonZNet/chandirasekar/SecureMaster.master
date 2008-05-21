@@ -1,0 +1,88 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SecureMaster.master.cs" Inherits="Thon.SecureMaster" %>
+
+<%@ Register Namespace="Thon.ZaszBlog.Controls" TagPrefix="ZaszBlog" %>
+<%@ Import Namespace="Thon.ZaszBlog.Controls" %>
+<%@ Import Namespace="Thon.Support" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server" profile="http://gmpg.org/xfn/11">
+    <title></title>
+    <link rel="stylesheet" href="../StyleSheets/MasterPageUserControls.css" type="text/css" />
+    <link rel="shortcut icon" href="../ZaszBlog/Images/ZB.ico" type="image/x-icon"/>
+    <asp:ContentPlaceHolder id="cphhead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <div class="container">
+	    <div class="header">
+	        <div class="title"><h1><%=ThonSettings.Instance.Name%></h1></div>
+        </div>
+        
+        <div class="main">
+		    <form id="Form1" runat="server">
+		    <div class="content">
+                                <table class="contenttable">
+                                    <tr>
+                                        <td colspan="2">
+                                            <asp:SiteMapPath ID="ThonSiteMapPath" runat="server" Font-Names="Verdana" 
+                                                Font-Size="0.8em" PathSeparator=" &gt;&gt; " 
+                                                SiteMapProvider="SecuritySiteMap">
+                                                <PathSeparatorStyle Font-Bold="True" ForeColor="#990000" />
+                                                <CurrentNodeStyle ForeColor="#333333" />
+                                                <NodeStyle Font-Bold="True" ForeColor="#990000" />
+                                                <RootNodeStyle Font-Bold="True" ForeColor="#FF8000" />
+                                            </asp:SiteMapPath>   
+                                        </td>
+                                    </tr> 
+                                    <tr>
+                                        <td class="thontree">
+                                            <div class="treetop">
+                                                <asp:TreeView ID="ThonNavigationTreeView" runat="server" DataSourceID="ThonSitemap" 
+                                                    ImageSet="Arrows">
+                                                    <ParentNodeStyle Font-Bold="False" />
+                                                    <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+                                                    <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" 
+                                                        HorizontalPadding="0px" VerticalPadding="0px" />
+                                                    <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" 
+                                                        HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
+                                                </asp:TreeView>
+                                                <asp:SiteMapDataSource ID="ThonSitemap" runat="server" 
+                                                    SiteMapProvider="SecuritySiteMap" />
+                                            <br/><br/><br/>
+                                            </div>
+                                        </td>
+                                        <td class="thoncontent">
+                                            <asp:ContentPlaceHolder ID="cphmain" runat="server">                                                
+                                            </asp:ContentPlaceHolder>
+                                        </td>
+                                    </tr>
+                                </table>
+            </div>
+            <div class="sidenav">
+                <div style="margin-top:-1px">
+                    <asp:ContentPlaceHolder ID="cphsidebar" runat="server">
+                    </asp:ContentPlaceHolder> 
+                </div>
+                
+                <h1>Disclaimer</h1>
+                <p>The content exposed herein are confidential and private to the social circle of T. Chandirasekar, T. Arun Kumar, T. Jayalakshmi, R. Thiagarajan. Any form of misusage of content, will be subject to severe action as much as the the applicable country's law allows.</p>
+                <p>&copy; Copyright <%=DateTime.Now.Year %></p>
+                
+              
+            </div>
+            
+            <div class="clearer"><span></span></div>
+            
+            </form>
+        </div>
+    </div>       
+    <div class="footer">
+       <p style="float:left;">Copyright &copy; 2008 T.Chandirasekar.</p>
+       <p style="float:right;">Powered by Thon.net</p>
+    </div>
+    
+</body>
+</html>
+

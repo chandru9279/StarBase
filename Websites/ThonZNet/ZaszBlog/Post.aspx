@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ValidateRequest="False" CodeFile="Post.aspx.cs" Inherits="PostAspx" MasterPageFile="~/ZaszBlog/ZaszBlogMasterPage.master" %>
+<%@ Page Language="C#" AutoEventWireup="true" ValidateRequest="False" CodeFile="Post.aspx.cs" Inherits="PostAspx" MasterPageFile="~/ZaszBlog/SecureZaszBlogMaster.master" %>
 <%@ Register Src="UserControls/CommentViewContainer.ascx" TagName="CommentViewer" TagPrefix="CVC" %>
 <%@ Register Namespace="Thon.ZaszBlog.Controls" TagPrefix="ZaszBlog" %>
 

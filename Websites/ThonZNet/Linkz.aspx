@@ -15,6 +15,7 @@
     <li><a href="http://www.divxcrawler.com/">DivX Crawler</a> - Direct Download movies.</li>
     <li><a href="http://www.thepiratebay.org/">The Pirate Bay</a> - Statuatory Warning : Don't go here.</li>
     <li><a href="http://www.gamespot.com/">GameSpot</a> - Best Reviews & News.</li>
+    <li><a href="http://chandirasekar.chandruon.net/">My subdomain (http://chandirasekar.chandruon.net/)</a> - Currently has my resume.</li>
     </ul>
 
 </asp:Content>
