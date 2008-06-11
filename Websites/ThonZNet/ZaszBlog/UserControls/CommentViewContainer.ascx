@@ -134,5 +134,3 @@ coco =
 </asp:PlaceHolder>
 
 <asp:label runat="server" id="lbCommentsDisabled" visible="false">Comments are closed.</asp:label>
-
-<%=VirtualPathUtility.ToAbsolute("~/ZaszBlog/category/")%>

@@ -50,7 +50,7 @@ namespace Thon.ZaszBlog.Controls
       StringBuilder sb = new StringBuilder();
       sb.AppendLine("<div id=\"searchbox\">");
       sb.Append("<label for=\"searchfield\" style=\"display:none\">Search</label>");
-      sb.AppendFormat("<input type=\"text\" value=\"{0}\" id=\"searchfield\" onkeypress=\"if(event.keyCode==13) return Search('{1}')\" onfocus=\"SearchClear('{2}')\" onblur=\"SearchClear('{2}')\" />", BlogSettings.Instance.SearchDefaultText, SupportUtilities.RelativeWebRoot, BlogSettings.Instance.SearchDefaultText);
+      sb.AppendFormat("<input type=\"text\" value=\"{0}\" id=\"searchfield\" onkeypress=\"if(event.keyCode==13) return Search('{1}')\" onfocus=\"SearchClear('{2}')\" onblur=\"SearchClear('{2}')\" /><br />", BlogSettings.Instance.SearchDefaultText, SupportUtilities.RelativeWebRoot, BlogSettings.Instance.SearchDefaultText);
       sb.AppendFormat("<input type=\"button\" value=\"{0}\" id=\"searchbutton\" onclick=\"Search('{1}');\" onkeypress=\"Search('{1}');\" />", BlogSettings.Instance.SearchButtonText, SupportUtilities.RelativeWebRoot);
 
       if (BlogSettings.Instance.EnableCommentSearch)

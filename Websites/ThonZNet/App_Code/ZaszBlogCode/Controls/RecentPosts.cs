@@ -72,7 +72,7 @@ namespace Thon.ZaszBlog.Controls
 
         string rating = Math.Round(post.Rating, 1).ToString(System.Globalization.CultureInfo.InvariantCulture);
 
-        string link = "<li><a href=\"{0}\">{1}</a>{2}{3}</li>";
+        string link = "<li><a href=\"{0}\">{1}</a> {2} {3} </li>";
         string comments = string.Format("<span>Comments : {0}</span>", post.ApprovedComments.Count);
         string rate = string.Format("<span>Rating: {0} / {1}</span>", rating, post.Raters);
 

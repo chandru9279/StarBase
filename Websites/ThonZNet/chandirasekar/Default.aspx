@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/chandirasekar/SecureMaster.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="chandirasekar_Default" Title="Untitled Page" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/ThonMasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="chandirasekar_Default" Title="Untitled Page" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphhead" Runat="Server">
 </asp:Content>

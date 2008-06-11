@@ -291,7 +291,7 @@ namespace Thon.Gallery
                 //Show the admin menu
                 GalleryAdminUpload.Visible = true;
                 //Force it small, CSS won't work.
-                //UncatalogedFileUpload.Attributes.Add("size", "4");
+                UncatalogedFileUpload.Attributes.Add("size", "6");
                 int FileCount = System.IO.Directory.GetFiles(Server.MapPath(_FilePath + "/Uploads")).Length;
                 if (FileCount > 0)
                 {

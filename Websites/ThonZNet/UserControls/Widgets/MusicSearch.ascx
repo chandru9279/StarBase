@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="MusicSearch.ascx.cs" Inherits="Thon.MusicSearchAscx" %>
+<script src="http://gmodules.com/ig/ifr?url=http://www.gorounreal.com/google/musicsearch/musicsearch.xml&amp;synd=open&amp;w=320&amp;h=136&amp;title=MusicSearch&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script>

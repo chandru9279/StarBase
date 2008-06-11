@@ -2,7 +2,7 @@
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <siteMapNode url="~/Default.aspx" title="Thon"  description="" roles="*">
     
-    <siteMapNode url="~/ZaszBlog/Default.aspx" title="ZaszBlog"  description="" roles="*">
+    <siteMapNode url="~/ZaszBlog/Default.aspx" title="Z-Blog"  description="" roles="*">
       
       <siteMapNode url="~/ZaszBlog/Admin/Pages/Default.aspx" title="Administration"  description=""  roles="Family, Blogger">
         <siteMapNode url="~/ZaszBlog/Admin/Pages/AddEntry.aspx" title="AddEntry"  description=""  roles="Family, Blogger"/>

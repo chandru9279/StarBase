@@ -107,14 +107,6 @@ function GetElementByClassName(parent, tag, className)
   }
 }
 
-function SetFlag(iso)
-{  
-  if (iso.length > 0)
-    flagImage.src = KEYwebRoot + "pics/flags/" + iso + ".png";
-  else
-    flagImage.src = KEYwebRoot + "pics/pixel.gif";
-}
-
 // Searches the blog based on the entered text and
 // searches comments as well if chosen.
 function Search(root)
@@ -122,7 +114,7 @@ function Search(root)
   var input = $("searchfield");
   var check = $("searchcomments");
   
-  var search = "search.aspx?q=" + encodeURIComponent(input.value);
+  var search = "Search.aspx?q=" + encodeURIComponent(input.value);
   if (check != null && check.checked)
     search += "&comment=true";
   
@@ -143,8 +135,17 @@ function SearchClear(defaultText)
 
 function Rate(id, rating)
 {
-  CreateCallback("rating.axd?id=" + id + "&rating=" + rating, RatingCallback);
+  
+  if(document.URL.toString().indexOf("/post/") > 0)
+  {
+  CreateCallback("../../../ZaszBlogHttpHandlers/Rating.ashx?id=" + id + "&rating=" + rating, RatingCallback);  
+  }
+  else
+  {
+  CreateCallback("ZaszBlogHttpHandlers/Rating.ashx?id=" + id + "&rating=" + rating, RatingCallback);  
+  }
 }
+
 
 function RatingCallback(response)
 {
@@ -159,11 +160,12 @@ function RatingCallback(response)
     alert("You rating has been registered. Thank you!");
   }  
   else if (status == "HASRATED")
-  {
+  {  
     alert("You already rated this post");
   }
   else
   {
+  alert(status);
     alert("An error occured while registering your rating. Please try again");
   }    
 }
@@ -252,7 +254,7 @@ var xfnRelationships = ['friend', 'acquaintance', 'contact', 'met'
 						            , 'neighbor', 'child', 'parent', 'sibling'
 						            , 'spouse', 'kin', 'muse', 'crush', 'date'
 						            , 'sweetheart', 'me']
-
+						            
 // Applies the XFN tags of a link to the title tag
 function HightLightXfn()
 {
@@ -278,7 +280,7 @@ function HightLightXfn()
     }
   }
 }
-
+						            
 // Adds event to window.onload without overwriting currently assigned onload functions.
 // Function found at Simon Willison's weblog - http://simon.incutio.com/
 function addLoadEvent(func)
@@ -297,5 +299,22 @@ function addLoadEvent(func)
 		}
 	}
 }
+
+function bookmarksite()
+    {
+    title=document.title;
+    url=document.URL;
+    if (window.sidebar) // firefox
+        window.sidebar.addPanel(title, url, "");
+    else if(window.opera && window.print){ // opera
+        var elem = document.createElement('a');
+        elem.setAttribute('href',url);
+        elem.setAttribute('title',title);
+        elem.setAttribute('rel','sidebar');
+        elem.click();
+    } 
+    else if(document.all)// ie
+        window.external.AddFavorite(url, title);
+    }
 
 addLoadEvent(HightLightXfn);

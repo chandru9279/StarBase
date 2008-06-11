@@ -2,7 +2,7 @@
 <%@ Import Namespace="Thon.ZaszBlog.Support" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphBody" Runat="Server">
     <div>
-    <h1>Ooops! I can't find the page<br /><br /> you're looking for</h1>
+    <h1>Ooops! I can't find the page<br /> you're looking for</h1>
     <br />
     <br />
     <div id="divSearchEngine" runat="server" visible="False">
@@ -22,10 +22,10 @@
       </p>
       
       <p>I suggest you try one of the links below:</p>
-      <ul>
+      <ol>
         <li><a href="./Archive.aspx">Archive</a></li>
         <li><a href="<%=SupportUtilities.RelativeWebRoot %>">Home page</a></li>
-      </ul>
+      </ol>
       
       <p>You can also try to <strong>search for the page you were looking for</strong>:</p>
       <ZaszBlog:searchbox runat="server" />
@@ -35,9 +35,8 @@
     
     <div id="divInternalReferrer" runat="server" visible="False">
       <p>
-        This one’s down to me! Please accept my apologies for this — I’ll see to it
-        that the developer responsible for this broken link is given 20 lashes 
-        (but only after he or she has fixed this problem).
+        I must have an internal error, or you've typed an invalid address directly into 
+        the address bar, by mistake! I've logged this and will look into as soon as possible.
       </p>
       
       <p>You can also try to <strong>search for the page you were looking for</strong>:</p>
@@ -46,11 +45,11 @@
     
     <div id="divDirectHit" runat="server" visible="False">
       <p>You might find one of the following links useful:</p>
-      <ul>
+      <ol type="a">
         <asp:placeholder runat="server" id="phSearchResult" />
         <li><a href="./Archive.aspx">Archive</a></li>
         <li><a href="<%=SupportUtilities.RelativeWebRoot %>">Home page</a></li>
-      </ul>
+      </ol>
       
       <p>You can also try to <strong>search for the page you were looking for</strong>:</p>
       <ZaszBlog:searchbox ID="SearchBox1" runat="server" />

@@ -22,26 +22,26 @@
         </AnonymousTemplate>
     </asp:LoginView>
     <br /><br />
-    <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" BackColor="#EFF3FB" 
-        BorderColor="#B5C7DE" BorderStyle="Solid" BorderWidth="1px" 
-        Font-Names="Verdana" Font-Size="1.5em" Visible="false">
-        <SideBarStyle BackColor="#507CD1" Font-Size="1.5em" VerticalAlign="Top" />
-        <SideBarButtonStyle BackColor="#507CD1" Font-Names="Verdana" 
+    <div style="font-size:larger;">
+    <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" BackColor="#FFFBD6" 
+        BorderColor="#FFDFAD" BorderStyle="Solid" BorderWidth="1px" 
+        Font-Names="Verdana" Font-Size="0.8em" Visible="False">
+        <SideBarStyle BackColor="#990000" Font-Size="0.9em" VerticalAlign="Top" />
+        <SideBarButtonStyle 
             ForeColor="White" Font-Size="Medium" />
-        <ContinueButtonStyle BackColor="White" BorderColor="#507CD1" 
+        <ContinueButtonStyle BackColor="White" BorderColor="#CC9966" 
             BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" 
-            ForeColor="#284E98" Font-Size="Large"/>
-        <NavigationButtonStyle BackColor="White" BorderColor="#507CD1" 
+            ForeColor="#990000"/>
+        <NavigationButtonStyle BackColor="White" BorderColor="#CC9966" 
             BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" 
-            ForeColor="#284E98" Font-Size="Larger"  />
-        <HeaderStyle BackColor="#284E98" BorderColor="#EFF3FB" BorderStyle="Solid" 
-            BorderWidth="2px" Font-Bold="True" Font-Size="0.9em" ForeColor="White" 
+            ForeColor="#990000"  />
+        <HeaderStyle BackColor="#FFCC66" BorderColor="#FFFBD6" BorderStyle="Solid" 
+            BorderWidth="2px" Font-Bold="True" Font-Size="0.9em" ForeColor="#333333" 
             HorizontalAlign="Center" />
-        <CreateUserButtonStyle BackColor="White" BorderColor="#507CD1" 
+        <CreateUserButtonStyle BackColor="White" BorderColor="#CC9966" 
             BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" 
-            ForeColor="#284E98" Font-Size="Larger"/>
-        <TitleTextStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-        <StepStyle Font-Size="0.8em" />
+            ForeColor="#990000"/>
+        <TitleTextStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
         <WizardSteps>
             <asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server">
             </asp:CreateUserWizardStep>
@@ -72,16 +72,18 @@
             </asp:CompleteWizardStep>
         </WizardSteps>
     </asp:CreateUserWizard>
+    </div>
     <br />
     <br />
-    <p style="font-size:small;">Upcoming features in this site:<ul>
+    <p style="font-size:large;">Upcoming features in this site:<br /></p>
+    <ul class="normal" style="margin:15px 0px 15px 15px;">
     <li>A customized integration of the LiveChat</li>
     <li>Online WebDev Utilities like HTML encoder/decoder & URL encoder/decoder</li>
     <li>File share/storage portal</li>    
     <li>SSL transport-layer security for https connections</li>
     <li>Subdomains</li>
     <li>Forum-Wiki mixup app</li>
-    </ul></p>
+    </ul>
     <div style="height:600px" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphsidebar" Runat="Server">

@@ -1,18 +1,8 @@
 ﻿To Do : 
 
-    Disable debugging in web.config before deployment
     :-) remove the Threading . sleep(300) from file upload
     use ajax code from sample website don't code yourself
     Change as specified in ThonSettingsSet before deployment
-
-Know these :
-
-    ASPSpider
-    http://www.aspspider.net/qa/Question892.aspx
-    http://www.aspspider.net/tips/Tip8.aspx
-
-    robots.txt is used by the search engine spiders and web crawlers
-    in robots.txt # prefixed lines are comments
 
 Requirementz :
 
@@ -34,5 +24,12 @@ Requirementz :
     
     online utils like html encoder , url encoder , 
     csharp vb code compiler/ouput displayer and produces,
+
+Know these :
+
+    robots.txt is used by the search engine spiders and web crawlers
+    in robots.txt # prefixed lines are comments
+
+Diff :
     
-Original Design by <a href="http://arcsin.se">Arcsin</a>, Adapted by <a href="http://www.nyveldt.com/blog/">RazorAnt</a>
+    web.config (compilation, customerrors, connection string) , the 2 zip files of the source
