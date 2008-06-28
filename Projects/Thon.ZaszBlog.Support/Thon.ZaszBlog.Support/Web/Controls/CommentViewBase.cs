@@ -96,7 +96,8 @@ namespace Thon.ZaszBlog.Support.Web.Controls
 			string img = "<img src=\"{0}\" alt=\"{1}\" />";
 			string hash = CreateMd5Hash();
             string noavatar = SupportUtilities.AbsoluteWebRoot + "Images/NoAvatar.jpg";
-			string monster = SupportUtilities.AbsoluteWebRoot + "ZaszBlogHttpHandlers/Monster.ashx?seed=" + hash.Substring(0, 10) + "&size=" + size;
+            HttpContext context = HttpContext.Current;
+            string monster = new Uri(context.Request.Url.Scheme + "://" + context.Request.Url.Authority + SupportUtilities.RelativeWebRoot) + "ZaszBlogHttpHandlers/Monster.ashx?seed=" + hash.Substring(0, 10) + "&size=" + size;
 			string gravatar = "http://www.gravatar.com/avatar.php?gravatar_id=" + hash + "&size=" + size + "&default=";
 
 			string link = string.Empty;

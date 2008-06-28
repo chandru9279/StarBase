@@ -53,9 +53,13 @@ namespace Thon.ZaszBlog.Support
 				{
 					HttpContext context = HttpContext.Current;
 					if (context == null)
-						throw new System.Net.WebException("The current HttpContext is null");
-
-					_AbsoluteWebRoot = new Uri(context.Request.Url.Scheme + "://" + context.Request.Url.Authority + RelativeWebRoot);
+						throw new System.Net.WebException("AbsoluteWebRoot : The current HttpContext is null");
+                    
+                    if(ThonSettings.Instance.IsHosted)
+                        _AbsoluteWebRoot = new Uri(context.Request.Url.Scheme + "://www.chandruon.net" + RelativeWebRoot);
+                    else
+                        _AbsoluteWebRoot = new Uri(context.Request.Url.Scheme + "://" + context.Request.Url.Authority + RelativeWebRoot);
+                        
 				}
 				return _AbsoluteWebRoot;
                 // will return like "http://www.thon.net/ThonZNet/ZaszBlog/" (or)
@@ -92,7 +96,7 @@ namespace Thon.ZaszBlog.Support
                 if (!string.IsNullOrEmpty(BlogSettings.Instance.AlternateFeedUrl))
                     return BlogSettings.Instance.AlternateFeedUrl;
                 else
-                    return AbsoluteWebRoot + "ZaszBlogHttpHandlers/Syndication.ashx";
+                    return AbsoluteWebRoot.ToString() + "ZaszBlogHttpHandlers/Syndication.ashx";
             }
         }
 
@@ -108,8 +112,8 @@ namespace Thon.ZaszBlog.Support
 
 			string absolute = AbsoluteWebRoot.ToString();
 			int index = absolute.LastIndexOf(RelativeWebRoot.ToString());
-            // absolute.Substring(0, index) = "http://www.thon.net/"
-            // if relativeUri = "ThonZNet/ZaszBlog/post/2009/08/<post_title>.aspx" then this returns
+            // absolute.Substring(0, index) = "http://www.chandruon.net/"
+            // if relativeUri = "/ThonZNet/ZaszBlog/post/2009/08/<post_title>.aspx" then this returns
             // http://163.160.2.73:8080/ThonZNet/ZaszBlog/post/2009/08/<post_title>.aspx
 			return new Uri(absolute.Substring(0, index) + relativeUri);
 		}
