@@ -17,8 +17,8 @@ namespace Thon
 
             Page.MaintainScrollPositionOnPostBack = true;
             Page.Title = "Thon Settings";
-
-            btnSave.Click += new EventHandler(btnSave_Click);
+            
+            btnSave.Click  += new EventHandler(btnSave_Click);
             btnSaveTop.Click += new EventHandler(btnSave_Click);
             btnTestSmtp.Click += new EventHandler(btnTestSmtp_Click);
         }
@@ -54,6 +54,7 @@ namespace Thon
             //-----------------------------------------------------------------------
             ThonSettings.Instance.Name = txtName.Text;
             ThonSettings.Instance.Description = txtDescription.Text;
+            ThonSettings.Instance.IsHosted = bool.Parse(rblHosted.SelectedValue);
 
             //-----------------------------------------------------------------------
             // Set Email settings
@@ -105,6 +106,7 @@ namespace Thon
             //-----------------------------------------------------------------------
             txtName.Text = ThonSettings.Instance.Name;
             txtDescription.Text = ThonSettings.Instance.Description;
+            rblHosted.SelectedValue = ThonSettings.Instance.IsHosted.ToString();
 
             //-----------------------------------------------------------------------
             // Bind Email settings
@@ -142,6 +144,5 @@ namespace Thon
             //-----------------------------------------------------------------------
             txtTrackingScript.Text = ThonSettings.Instance.TrackingScript;
         }
-
-    }
+}
 }

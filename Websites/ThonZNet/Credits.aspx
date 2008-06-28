@@ -1,12 +1,14 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/ThonMasterPage.master" AutoEventWireup="true" CodeFile="Credits.aspx.cs" Inherits="Thon.CreditsAspx" Title="Credits" %>
-
+<%@ Register src="UserControls/License/CCAttribution25.ascx" tagname="CCAttribution25" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphhead" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphmain" Runat="Server">
 
-
 <ul class="normal" style="list-style-type:katakana;margin-left:10px;">
 
+    <uc1:CCAttribution25 ID="CCAttribution251" runat="server" />
+    <br />
+    <br />
     <li>
         <h2>ASP.NET Projects & References</h2>
             <ul class="normal" style="margin:15px 0px 15px 15px;">                
@@ -57,7 +59,6 @@
                 <li><a href="http://www.manoli.net">Jean-Claude Manoli</a> - Coding Syntax Highlighter <a href="License.aspx?license=codehighlight">Custom License</a></li>
                 <li><a href="http://www.happytocode.com">John Knipper</a> - Converts ASCII smilies into real smilies in the comments</li>
                 <li><a href="http://blog.furred.net/page/MonsterID-Demo.aspx">MonsterID HttpHandler</a> - by Alexander Schuc for commenter Avatars</li>
-                
             </ul>
     </li> 
   </ul>

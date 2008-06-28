@@ -74,10 +74,10 @@
     
     
     
-    <div id="body_area" style="height: 1880px">    
+    <div id="body_area">    
         <div class="left">
         <div class="morelinks_top"></div>
-        <div class="morelinks_area" style="height: 1810px">
+        <div class="morelinks_area">
             <div class="morelinks_head">Navigation Tree</div>
             <div class="links_morearea">
             <div style="padding-left:15px;">
@@ -88,7 +88,7 @@
                     </asp:TreeView>
             </div>
                 <br />
-                <table width="190px" cellspacing="20px" style="margin-left:-20px;">
+                <table width="190px" cellspacing="20px" style=";margin-left:-20px;">
                 <tr><td>
                 <div class="morelinks_head">Search <%=BlogSettings.Instance.Name%></div><br />
                 </td></tr>

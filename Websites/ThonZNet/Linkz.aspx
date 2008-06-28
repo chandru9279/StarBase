@@ -1,8 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/ThonMasterPage.master" AutoEventWireup="true" CodeFile="Linkz.aspx.cs" Inherits="Thon.LinkzAspx" Title="Cool Linkz" %>
-
-<%@ Register src="UserControls/Widgets/News.ascx" tagname="News" tagprefix="Google" %>
-<%@ Register src="UserControls/Widgets/WebCrawlerSpidey.ascx" tagname="WebCrawlerSpidey" tagprefix="Google" %>
-<%@ Register src="UserControls/Widgets/MusicSearch.ascx" tagname="MusicSearch" tagprefix="Google" %>
+<%@ Register src="~/UserControls/Widgets/News.ascx" tagname="News" tagprefix="Google" %>
+<%@ Register src="~/UserControls/Widgets/WebCrawlerSpidey.ascx" tagname="WebCrawlerSpidey" tagprefix="Google" %>
+<%@ Register src="~/UserControls/Widgets/MusicSearch.ascx" tagname="MusicSearch" tagprefix="Google" %>
 <%@ Register src="~/UserControls/AdSense/TowerAd.ascx"tagname="TowerAd" tagprefix="Google" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphhead" Runat="Server">
@@ -20,14 +19,16 @@
         - Currently has my resumé.</li>
     </ul> 
     <br /><h2>Download this site source </h2><br />
-    <ul>
-    <li><a href="Thon.Support.zip"><img src="Images/Download.gif" alt="Download" /></a><%=DateTime.Now.Date.ToString("d")%> The Thon.Support & Thon.ZaszBlog.Support dll  </li>
-    <li><a href="Thon.zip"><img src="Images/Download.gif" alt="Download" /></a><%=DateTime.Now.Date.ToString("d")%> The VWD Website svn working copy </li>
-    </ul>   
-    <table><tr><td><Google:MusicSearch ID="MusicSearch1" runat="server" /></td><td><Google:News ID="News1" runat="server" /></td></tr></table>    
+    <table cellspacing="5px" cellpadding="5px" border="2px">
+    <tr><td>The Thon.Support & Thon.ZaszBlog.Support dll (<%=DateTime.Now.Date.ToString("d")%>)</td><td><a href="Downloads/Thon.Support.zip"> <img style="border:none;border-width:0px;" src="Images/Download.gif" alt="Download" /></a></td></tr>
+    <tr><td>The VWD Website svn working copy (<%=DateTime.Now.Date.ToString("d")%>)</td><td><a href="Downloads/Thon.Support.zip"> <img style="border:none;border-width:0px;" src="Images/Download.gif" alt="Download" /></a></td></tr>
+    </table>
+    <table cellspacing="10px">
+    <tr><td><Google:MusicSearch ID="MusicSearch1" runat="server" /></td></tr>
+    <tr><td><Google:News ID="News1" runat="server" /></td></tr></table>    
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="cphsidebar" Runat="Server">
-    <Google:TowerAd runat="server" ID="googletowerad" />
+    <center><Google:TowerAd runat="server" ID="googletowerad" /></center>
 </asp:Content>
 

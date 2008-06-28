@@ -25,7 +25,7 @@ namespace Thon
         }
         protected void FLTwo_Click(object sender, EventArgs e)
         {
-            FooterPlaceHolder.Controls.Add(LoadControl("~/UserControls/Footer/News.ascx"));
+            FooterPlaceHolder.Controls.Add(LoadControl("~/UserControls/Widgets/News.ascx"));
             FLBStyles(2);
         }
         protected void FLThree_Click(object sender, EventArgs e)
@@ -71,6 +71,7 @@ namespace Thon
                 msg.To.Add(new System.Net.Mail.MailAddress("chandru9279@gmail.com"));
                 msg.Subject = "Feedback from Thon.net";
                 Thon.ZaszBlog.Support.SupportUtilities.SendMailMessageAsync(msg);
+                footerfeedback.Text = "";
             }
         }
     }

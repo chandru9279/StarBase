@@ -21,6 +21,13 @@
         
         <label for="<%=txtDescription.ClientID %>">Description</label>
         <asp:TextBox runat="server" ID="txtDescription" Width="300" /><br />
+        
+        <label for="<%=rblHosted.ClientID %>">Is Hosted</label><br />
+        <asp:RadioButtonList ID="rblHosted" runat="server" RepeatDirection="Horizontal" 
+            TextAlign="Left">
+            <asp:ListItem Value="True">Yes</asp:ListItem>
+            <asp:ListItem Value="False">No</asp:ListItem>
+        </asp:RadioButtonList>
     </div>
     
     <div class="settings">
@@ -100,7 +107,8 @@
             Rows="9" Columns="30" Width="400px" />
     </div>
     <div align="right">
-        <asp:Button runat="server" ID="btnSave" Text="Save Settings" /></div>
+        <asp:Button runat="server" ID="btnSave" Text="Save Settings"/>
+        </div>
     <br />
 </asp:Content>
 

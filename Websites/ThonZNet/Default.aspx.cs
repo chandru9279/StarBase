@@ -14,9 +14,13 @@ namespace Thon
 {
     public partial class ThonDefaultAspx : Thon.Support.Web.Controls.ThonBasePage
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Init(object sender, EventArgs e)
         {
-
+            try { string welcome = Request.QueryString[0]; }
+            catch (ArgumentOutOfRangeException loading) { Server.Transfer("Index.html"); }
+        }
+        protected void Page_Load(object sender, EventArgs e)
+        {            
         }
     }
 }

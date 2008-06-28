@@ -73,6 +73,7 @@ namespace Thon
                 msg.To.Add(new System.Net.Mail.MailAddress("chandru9279@gmail.com"));
                 msg.Subject = "Feedback from Thon.net";
                 Thon.ZaszBlog.Support.SupportUtilities.SendMailMessageAsync(msg);
+                footerfeedback.Text = "";
             }
         }
     }

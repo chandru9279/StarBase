@@ -9,6 +9,8 @@
   <enablecontactattachments>True</enablecontactattachments>
   <smtpusername>username</smtpusername>
   <enablehttpcompression>True</enablehttpcompression>
+  <storagelocation>~/App_Data/</storagelocation>
+  <myname>T.Chandirasekar</myname>
   <contactformmessage>&lt;p&gt;I'll answer the mail as soon as I can.&lt;/p&gt;</contactformmessage>
   <smtpserverport>25</smtpserverport>
   <enablereferrertracking>True</enablereferrertracking>
@@ -16,6 +18,7 @@
   <trackingscript />
   <enableopensearch>True</enableopensearch>
   <smtppassword>password</smtppassword>
+  <ishosted>True</ishosted>
   <htmlheader />
   <emailsubjectprefix />
   <contactthankmessage>&lt;h1&gt;Thank you&lt;/h1&gt;&lt;p&gt;The message was sent.&lt;/p&gt;</contactthankmessage>

@@ -31,24 +31,24 @@
          [System.Web.Script.Services.ScriptMethod]
          public static AjaxControlToolkit.Slide[] GetSlides()
          {
-             return new AjaxControlToolkit.Slide[] { 
-            new AjaxControlToolkit.Slide("Images/Mods/1.jpg", "Me & Pop", "Srinagar Fall"),
-            new AjaxControlToolkit.Slide("Images/Mods/2.jpg", "Jaya & Thiagu", "Rotang Pass"),
-            new AjaxControlToolkit.Slide("Images/Mods/3.jpg", "All four", "Skiing"),
-            new AjaxControlToolkit.Slide("Images/Mods/4.jpg", "Vasanth & Mahesh", "Skiing"),
-            new AjaxControlToolkit.Slide("Images/Mods/5.jpg", "Pop & Mom", "Ski"),
-            new AjaxControlToolkit.Slide("Images/Mods/6.jpg", "Bones & Family", "1st Floor"),
-            new AjaxControlToolkit.Slide("Images/Mods/7.jpg", "Arun", "Forbidden City"),
-            new AjaxControlToolkit.Slide("Images/Mods/8.jpg", "Mahesh", "Great Wall"),
-            new AjaxControlToolkit.Slide("Images/Mods/9.jpg", "Mahesh", "E.T."),
-            new AjaxControlToolkit.Slide("Images/Mods/10.jpg", "Arun", "Tongli Temple"),
-            new AjaxControlToolkit.Slide("Images/Mods/11.jpg", "Mini-Me", "China"),
-            new AjaxControlToolkit.Slide("Images/Mods/12.jpg", "Thiagu", "Manaali"),
-            new AjaxControlToolkit.Slide("Images/Mods/13.jpg", "Vasanth", "PSP & Comp"),
-            new AjaxControlToolkit.Slide("Images/Mods/14.jpg", "Mom", "Rotang Pass"),
-            new AjaxControlToolkit.Slide("Images/Mods/15.jpg", "Cool", "XBOX 360"),
-            new AjaxControlToolkit.Slide("Images/Mods/16.jpg", "Taj Mahal", "Delhi"),
-            new AjaxControlToolkit.Slide("Images/Mods/17.jpg", "Mahesh", "Shanghai"),
+            return new AjaxControlToolkit.Slide[] { 
+            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/1.jpg", "Me & Pop", "Srinagar Fall"),
+            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/2.jpg", "Jaya & Thiagu", "Rotang Pass"),
+            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/3.jpg", "All four", "Skiing"),
+            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/4.jpg", "Vasanth & Mahesh", "Skiing"),
+            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/5.jpg", "Pop & Mom", "Ski"),
+            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/6.jpg", "Bones & Family", "1st Floor"),
+            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/7.jpg", "Arun", "Forbidden City"),
+            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/8.jpg", "Mahesh", "Great Wall"),
+            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/9.jpg", "Mahesh", "E.T."),
+            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/10.jpg", "Arun", "Tongli Temple"),
+            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/11.jpg", "Mini-Me", "China"),
+            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/12.jpg", "Thiagu", "Manaali"),
+            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/13.jpg", "Vasanth", "PSP & Comp"),
+            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/14.jpg", "Mom", "Rotang Pass"),
+            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/15.jpg", "Cool", "XBOX 360"),
+            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/16.jpg", "Taj Mahal", "Delhi"),
+            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/17.jpg", "Mahesh", "Shanghai"),
             };
          }
     </script> 
@@ -71,7 +71,7 @@
             and would like to post yourself, give <a href="mailto:chandru9279@gmail.com">me</a> an e-mail.
             The entire site is SEO &#39;d(Search Engine Optimized) in every possible way, robots.txt, search-engine-sitemap,
             meta-tags, ping-facility, the entire works.... so if you have unique enough material on blog posts, you can get 
-            hit by Google, Yahoo, Live searches.
+            hit by Google, Yahoo, Live searches.            
             </p>
     </asp:Panel>
         <ajaxToolkit:CollapsiblePanelExtender ID="WelCollapsiblePanelExtender" 
@@ -85,12 +85,13 @@
             CollapsedImage="~/ZaszBlog/Images/MasterPageUserControls/Expand.jpg"
             ExpandedImage="~/ZaszBlog/Images/MasterPageUserControls/Collapse.jpg"
             /> 
-            <div style="text-align:center">
+          
+        <div style="text-align:center">
             <asp:Label runat="Server" ID="imageTitle" /><br />
             <asp:Image ID="Image1" runat="server" 
                 Height="342"
                 Style="border: 2px solid black;width:auto" 
-                ImageUrl="Images/Mods/Bones.jpg"
+                ImageUrl="Images/Files/Bones.jpg"
                 AlternateText="ThonSlideShow" /><br />
             <asp:Label runat="server" ID="imageDescription"></asp:Label><br /><br />
             <asp:Button runat="Server" ID="prevButton" Text="Prev" Font-Size="Larger" />
@@ -178,6 +179,7 @@
                 <a href="http://www.scopeinternational.com/" class="morelink">Scope <span class="links_text"> international</span></a> 
                 <a href="http://www.pnbindia.com/" class="morelink">Punjab National <span class="links_text"> bank</span></a> <br />
                 <a href="http://www.google.com/" class="morelink">Google <span class="links_text"> search</span></a> <br />
+                <a href="http://freshmeat.net/" class="morelink">Freshmeat <span class="links_text"> source</span></a> <br />
             </div><br /><br />
             <div class="freeregistration">
                 <div align="center"><span class="free">Free</span> registration</div>

@@ -2,6 +2,7 @@
 <%@ Register Src="~/UserControls/AdSense/BannerAd.ascx" TagName="BannerAd" TagPrefix="Google" %>
 
 <div class="post xfolkentry">
+    <asp:Panel BackColor="White" runat="server" BorderColor="Black" BorderWidth="3px">
     <h1><a class="postheader taggedlink" href="<%=Post.RelativeLink %>"><%=Post.Title %></a></h1>
     <div class="descr"><img id="Img1" src="~/ZaszBlog/Images/MasterPageUserControls/TimeIcon.gif" runat="server" alt="clock" /> <%=Post.DateCreated.ToString("MMMM d, yyyy HH:mm")%> by <img id="Img2" src="~/ZaszBlog/Images/MasterPageUserControls/Author.gif" runat="server" alt="author" /> <a href="<%=VirtualPathUtility.ToAbsolute("~/ZaszBlog/") + "author/" + Post.Author %>.aspx"><%=Post.Author %></a></div>
     <div class="entry"><asp:PlaceHolder ID="BodyContent" runat="server" /></div>
@@ -19,5 +20,7 @@
          |   
         <a rel="nofollow" href="<%=CommentFeed %>"><asp:Image ID="Image1" runat="Server" ImageUrl="~/ZaszBlog/Images/RSSButton.gif" AlternateText="RSS comment feed" style="margin-right:3px" />Comment RSS</a> | <a href="javascript:bookmarksite()" rel="Bookmark">Bookmark/Favorites</a> 
     </div>
+    </asp:Panel>
+    
     <br />
 </div>

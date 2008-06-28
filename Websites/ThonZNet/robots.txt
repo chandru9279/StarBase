@@ -2,4 +2,4 @@
 sitemap: http://www.thiagarajan.net/Sitemap.ashx
 # Allow all spiders
 User-agent: *
-Disallow:
+Disallow: /Admin/

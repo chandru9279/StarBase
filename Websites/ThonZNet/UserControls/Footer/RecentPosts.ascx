@@ -1,7 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="RecentPosts.ascx.cs" Inherits="Thon.RecentPostAscx" %>
 
 <div class="tab_text">
-    <p class="tab_head"><%=title1%></p>
+    <p class="tab_head">Recent Posts :</p>
+    <p><span class="tab_head1"><%=title1%></span><br />
     <%=desc1 %></p>
 </div>
 <div class="tab_readmore">

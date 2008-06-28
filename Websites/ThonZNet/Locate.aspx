@@ -5,12 +5,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphmain" Runat="Server">
 <h3>A Close-Up map of <i>THE</i> Crib</h3>
 <div style="overflow:scroll;width:520px;border-style:inset;border-width:medium;border-color:Maroon;">
-    <img src="Images/Mods/MapCloser.jpg" alt="Map Closer"/>
+    <img src="Images/Files/MapCloser.jpg" alt="Map Closer"/>
 </div>
 <br /><br />
-<h3>An Eagle's Eye view [more like googleearth's eye view :-)]</h3>
+<h3>An Eagle's Eye view [more like google's eye view :-)]</h3>
 <div style="overflow:scroll;width:520px;border-style:solid;border-width:medium;border-color:Black;">
-    <img src="Images/Mods/Map.jpg" alt="Map Closer"/>
+    <img src="Images/Files/Map.jpg" alt="Map"/>
 </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphsidebar" Runat="Server">
