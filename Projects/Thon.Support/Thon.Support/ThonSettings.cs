@@ -155,6 +155,29 @@ namespace Thon.Support
                     set { }
                 }
                 #endregion
+                //Decides the theme of the starcraft subdomain
+                #region Starcraft
+                private string theme;
+                public string StarcraftTheme
+                {
+                    get
+                    { return theme; }
+                    set
+                    { theme = value; }
+                }
+                #endregion
+                //Allows the .NET Assemblys(DLLs) to behave differently between Local and Hosted environment
+                //(becoz i used domain forwarding this is necessary)
+                #region IsHosted
+                private bool ishosted;
+                public bool IsHosted
+                {
+                    get
+                    { return ishosted; }
+                    set
+                    { ishosted = value; }
+                }
+                #endregion
 
         #endregion
 

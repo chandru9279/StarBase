@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 using System.Threading;
+using System.IO;
 
 namespace Thon.Support.Web.Controls
 {	
@@ -102,7 +103,15 @@ namespace Thon.Support.Web.Controls
                 {
                     if (!c.Attributes["href"].StartsWith("http://"))
                     {
-                        c.Attributes["href"] = HelperUtilities.RelativeAppRoot + "StyleSheets/Css.ashx?name=~/" + c.Attributes["href"];
+                        string inserrt = "";
+                        string path = Server.MapPath(ThonSettings.Instance.StorageLocation + "MajorSubdomains.txt");
+                        StreamReader SD = new StreamReader(path);
+                        string [] seperators = {"|"};
+                        string [] subdomains = SD.ReadToEnd().Split(seperators,StringSplitOptions.RemoveEmptyEntries);
+                        for (int i = 0; i < subdomains.Length; i++)
+                            if(Request.Path.Contains(subdomains[i]))
+                        inserrt = subdomains[i] + "/";
+                        c.Attributes["href"] = HelperUtilities.RelativeAppRoot + inserrt + "StyleSheets/Css.ashx?name=~/" + inserrt + c.Attributes["href"];
                         //eg href = StyleSheets/MasterPageStyleSheet.css will be converted into :
                         // /ThonZNet/ThonHttpHandlers/Css.ashx?name=~/StyleSheets/MasterPageStyleSheet.css
                         c.EnableViewState = false;
@@ -113,6 +122,7 @@ namespace Thon.Support.Web.Controls
 		
         /// <summary>
         /// Not used here actually, just present for any future use:-)
+        /// Except for SEO (using this to add keywords meta)
         /// </summary>
 		protected virtual void AddMetaTag(string name, string value)
 		{

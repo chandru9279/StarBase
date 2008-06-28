@@ -28,8 +28,10 @@ namespace Thon.Support
                     HttpContext context = HttpContext.Current;
                     if (context == null)
                         throw new System.Net.WebException("The current HttpContext is null");
-
-                    _InternetAppRoot = new Uri(context.Request.Url.Scheme + "://" + context.Request.Url.Authority + RelativeAppRoot);
+                    if(ThonSettings.Instance.IsHosted)
+                        _InternetAppRoot = new Uri(context.Request.Url.Scheme + "://www.chandruon.net" + RelativeAppRoot);
+                    else
+                        _InternetAppRoot = new Uri(context.Request.Url.Scheme + "://" + context.Request.Url.Authority + RelativeAppRoot);
                 }
                 return _InternetAppRoot;
                 // will return like "http://www.thon.net/ThonZNet/" (or)
