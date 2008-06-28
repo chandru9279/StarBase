@@ -67,7 +67,7 @@
     </td>
     </tr>
     <tr><td colspan="2">
-    <div style="width:893px;background-color:#000000;background-image:url(Effect/Back.jpg);background-repeat:no-repeat;background-position:bottom left;background-attachment:fixed; overflow:hidden;">
+    <div style="width:893px;background-color:#000000;background-image:url(Effect/Back.jpg);background-repeat:no-repeat;background-position:46% 100%;background-attachment:fixed; overflow:hidden;">
     <div style="width:893px;height:274px;background-image:url(Effect/Mask.gif)" />    
     </div>
     </td></tr></tbody>

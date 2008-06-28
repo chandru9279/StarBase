@@ -22,7 +22,7 @@
         <label for="<%=txtDescription.ClientID %>">Description</label>
         <asp:TextBox runat="server" ID="txtDescription" Width="300" /><br />
         
-        <label for="<%=rblHosted.ClientID %>">Is Hosted</label><br />
+        <label for="<%=rblHosted.ClientID %>">Is Hosted</label>
         <asp:RadioButtonList ID="rblHosted" runat="server" RepeatDirection="Horizontal" 
             TextAlign="Left">
             <asp:ListItem Value="True">Yes</asp:ListItem>

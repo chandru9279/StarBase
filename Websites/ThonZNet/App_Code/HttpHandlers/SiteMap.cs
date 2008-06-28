@@ -23,16 +23,51 @@ namespace Thon.Website.HttpHandlers
 
                 ZaszBlogSitemap.ReturnUrlSet(writer);
 
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + "");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
+                withRelativeUrl("Starcraft/Artwork.aspx", writer);
+                withRelativeUrl("Starcraft/BlackList.aspx", writer);
+                withRelativeUrl("Starcraft/Default.aspx", writer);
+                withRelativeUrl("Starcraft/Gamers.aspx", writer);
+                withRelativeUrl("Starcraft/Screenshots.aspx", writer);
+                withRelativeUrl("Starcraft/Wallpapers.aspx", writer);
+                withRelativeUrl("Chandirasekar/Default.aspx", writer);
+                withRelativeUrl("CreateUser.aspx", writer);
+                withRelativeUrl("Credits.aspx", writer);
+                withRelativeUrl("Default.aspx", writer);
+                withRelativeUrl("Gallery.aspx", writer);
+                //withRelativeUrl("Index.html", writer); No need default.aspx serves index.html
+                withRelativeUrl("SEODefault.aspx", writer);
+                withRelativeUrl("CCA25.aspx", writer);
+                withRelativeUrl("GNULGPL.aspx", writer);
+                withRelativeUrl("GNUGPL.aspx", writer);
+                withRelativeUrl("MSPL.aspx", writer);
+                withRelativeUrl("MSRL.aspx", writer);
+                withRelativeUrl("CodeHighlight.aspx", writer);
+                withRelativeUrl("Linkz.aspx", writer);
+                withRelativeUrl("Locate.aspx", writer);
+                withRelativeUrl("Login.aspx", writer);
+
+
 
                 writer.WriteEndElement();
                 context.Response.ContentType = "text/xml";
-
             }
+        }
+
+        /// <summary>
+        /// Google schema, Change frequency is assumed monthly, last modified is always one month before
+        /// so that search engines update this every time they crawl it.
+        /// </summary>
+        /// <param name="relativePath">
+        /// The path that must be appended to HelperUtilities.InternetAppRoot = http://www.chandruon.net (or) http://www.localhost:port/
+        /// </param>
+        private void withRelativeUrl(string relativePath, XmlWriter writer)
+        {
+
+            writer.WriteStartElement("url");
+            writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + relativePath);
+            writer.WriteElementString("lastmod", DateTime.Now.AddMonths(-1).ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
+            writer.WriteElementString("changefreq", "monthly");
+            writer.WriteEndElement();
         }
 
         public bool IsReusable
@@ -43,198 +78,4 @@ namespace Thon.Website.HttpHandlers
             }
         }
     }
-
-    
-
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + "Starcraft\Artwork.aspx'");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
-
-
-
-
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + "Starcraft\BlackList.aspx");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
-
-
-
-
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + "Starcraft\Default.aspx");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
-
-
-
-
-
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + "Starcraft\Gamers.aspx");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
-
-
-
-
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + "Starcraft\Screenshots.aspx");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
-
-
-
-
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + "");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
-
-    
-    
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + "Starcraft\Wallpapers.aspx");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
-
-
-
-
-
-
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + "chandirasekar\Default.aspx");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
-
-
-
-
-
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + "CreateUser.aspx");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
-
-
-
-
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + "Credits.aspx");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
-
-
-
-
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InterneAppRoot + "Default.aspx");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
-
-
-
-
-
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + "Gallery.aspx");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
-
-
-
-
-
-
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + "Index.html");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
-
-
-
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + "CCA25.aspx");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
-
-
-
-
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + "GNULGPL.aspx");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
-
-
-
-
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + "GNUGPL.aspx");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
-
-
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + "MSPL.aspx");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
-
-
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + "MSRL.aspx");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
-
-
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + "CodeHighlight.aspx");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
-
-
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + "Linkz.aspx");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
-
-
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + "Locate.aspx");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
-
-
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", HelperUtilities.InternetAppRoot + "Login.aspx");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
-
-     
-     
-     
-     
+}
