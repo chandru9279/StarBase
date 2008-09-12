@@ -1,0 +1,16 @@
+﻿[Thon.Support.Web.HttpModules]
+
+WwwSubDomainModule : 
+
+	Removes/Adds www subdomain from any incoming requests (based on the Settings singleton instance)
+and removes Default.aspx if its present in the request. And sends permanent redirection headers(301)
+
+CompressionModule :
+
+	Analyzes the incoming request headers to see if certain encodings are accepted and modifies the 
+HttpContext.Response.Filter with approperiate Streams.
+
+ReferrerModule :
+
+	Logs all the referrers , those requests that come from other clients than us, this allows us to 
+detect leeching, and we get an idea if our posts are referred to from other websites.
