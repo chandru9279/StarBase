@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="ThonBase" EntityNamespace="Thon.Gallery" ContextNamespace="Thon.Gallery" Class="GalleryContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\ThonBase.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ThonSqlServer" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Photos" Member="Photos">
+    <Type Name="Photo">
+      <Column Name="PhotoID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PhotoDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PhotoDescription" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="PhotoWidth" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PhotoHeight" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PhotoResolution" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PhotoVisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PhotoOwner" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PhotoFlickrID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Photo_PhotoCategoryJoin" Member="PhotoCategoryJoins" OtherKey="PhotoNumber" Type="PhotoCategoryJoin" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhotoCategoryJoin" Member="PhotoCategoryJoins">
+    <Type Name="PhotoCategoryJoin">
+      <Column Name="PhotoNumber" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CategoryNumber" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Photo_PhotoCategoryJoin" Member="Photo" ThisKey="PhotoNumber" Type="Photo" IsForeignKey="true" />
+      <Association Name="Category_PhotoCategoryJoin" Member="Category" ThisKey="CategoryNumber" Type="Category" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FlickrCommands" Member="FlickrCommands">
+    <Type Name="FlickrCommand">
+      <Column Name="FlickrCommandID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FlickrCommandType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FlickrCommandPhoto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FlickrCommandParameter" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Categories" Member="Categories">
+    <Type Name="Category">
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryOwner" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CategoryName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CategoryFlickrID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Category_PhotoCategoryJoin" Member="PhotoCategoryJoins" OtherKey="CategoryNumber" Type="PhotoCategoryJoin" />
+    </Type>
+  </Table>
+</Database>

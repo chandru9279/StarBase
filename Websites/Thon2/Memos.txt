@@ -1,0 +1,31 @@
+﻿To Do : 
+        
+    Chandru author has wrong website www.thon.net
+    News Footer is not working properly
+    Blog for heavens sake
+    change the ThonSetting IsHosted to true in server
+
+Requirementz :
+
+    subdomains for each fm
+    file upload.. download.. browser..
+    photo upload.. download.. browser.. album..
+    contacts
+    calender
+    tamil
+    email@thon.net
+    home-Login with silverlight... AJAX
+    startbutton or WPF control..    
+    online utils like html encoder , url encoder , 
+    csharp vb code compiler/ouput displayer and produces,
+
+Know these :
+
+    robots.txt is used by the search engine spiders and web crawlers
+    in robots.txt # prefixed lines are comments
+    [UserControl:~/path/usercontrol.ascx] Usercontrols can be inserted into posts
+
+Diff :
+    
+    web.config (compilation, customerrors, connection string) , the 2 zip files of the source
+    

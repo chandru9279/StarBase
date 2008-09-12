@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ThonSearch:SearchRoot 
+xmlns:ThonSearch="http://www.chandruon.net/App_Data/ThonSiteSearch.xsd" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.chandruon.net/App_Data/ThonSiteSearch.xsd"
+xsi:noNamespaceSchemaLocation="ThonSiteSearch.xsd">
+  
+<Pages>
+  <Page Name="Home" Uri="/Default.aspx" Keywords="Bones,Photos,Home,Welcome,Whats New,Open Source,My Latest Piece of Work,Latest,Work,Blog,Gallery,SourceForge,ASP.net,Punjab,National,bank,scope,standard chartered,freshmeat"/>
+  <Page Name="Create New User" Uri="/CreateUser.aspx" Keywords="Create,user,add,new"/>
+  <Page Name="Credits" Uri="/Credits.aspx" Keywords="TinyMCE,Ajax Control Toolkit,BlogEngine.NET,Gallery Example,VB.NET tofrom C#.NET,HTML Encoder,HTML Decoder,Formatted text to HTML Converter,Microsoft Developers Network,MSDN,MSDN Library,ASP.NET Videos,ASP.NET Projects References,Developer Tools,Paint.NET,Subversion,Ankh,TortoiseSVN,Visual WebDeveloper Express 2008,Visual C# Wxpress 2008,Google Analytics,Google AdSense,Google Earth,Google Universal Widgets,Filezilla,licenses,Blizzard,starcraft,fansite,Templateworld.com,Webtemplatebiz.com,Syntax Highlighter,Monster,Http,Handler"/>
+</Pages>
+
+<MasterPages>
+<MasterPage Name="ThonMaster" MainChildUri="/Default.aspx" Keywords="Blog,Gallery,Linkz,Locate,Thon,Zasz,gmail,irctc,yahoo,mail,veni,vidi,vici,gamespot,codeplex,inox,satyam,movies,windows,live,msdn,orkut,share,home,locate,search,thiagarajan,arunkumar,chandirasekar,mahesh,arun,jaya,jayalakshmi,register,bookmark,credits" />
+</MasterPages>
+
+</ThonSearch:SearchRoot>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <enablessl>False</enablessl>
+  <name>The Thiagarajan Household</name>
+  <smtpserver>mail.example.com</smtpserver>
+  <email>chandru9279@gmail.com</email>
+  <handlewwwsubdomain />
+  <description>Online Life at the Thiagarajan Household</description>
+  <enablecontactattachments>True</enablecontactattachments>
+  <smtpusername>username</smtpusername>
+  <enablehttpcompression>True</enablehttpcompression>
+  <storagelocation>~/App_Data/</storagelocation>
+  <myname>T.Chandirasekar</myname>
+  <contactformmessage>&lt;p&gt;I'll answer the mail as soon as I can.&lt;/p&gt;</contactformmessage>
+  <smtpserverport>25</smtpserverport>
+  <enablereferrertracking>True</enablereferrertracking>
+  <removewhitespaceinstylesheets>True</removewhitespaceinstylesheets>
+  <trackingscript />
+  <enableopensearch>True</enableopensearch>
+  <smtppassword>password</smtppassword>
+  <ishosted>True</ishosted>
+  <htmlheader />
+  <emailsubjectprefix />
+  <contactthankmessage>&lt;h1&gt;Thank you&lt;/h1&gt;&lt;p&gt;The message was sent.&lt;/p&gt;</contactthankmessage>
+</settings>

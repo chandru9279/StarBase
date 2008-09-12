@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ThonSiteSearch"
+    targetNamespace="http://www.chandruon.net/App_Data/ThonSiteSearch.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://www.chandruon.net/App_Data/ThonSiteSearch.xsd"           
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+
+  <xs:element name="SearchRoot">
+    <xs:complexType id="srtype">
+      <xs:all>
+        <xs:element name="Pages" minOccurs="1" maxOccurs="1">
+	    	<xs:complexType id="pagestype">
+		      <xs:sequence id="pagestypesequence">
+		        <xs:element name="Page" minOccurs="1" maxOccurs="unbounded" type="pagetype" />
+		      </xs:sequence>
+			</xs:complexType>
+    	</xs:element>
+        <xs:element name="MasterPages" minOccurs="1" maxOccurs="1">
+			    <xs:complexType id="mpagestype">
+				    <xs:sequence id="mpagestypesequence">
+					    <xs:element name ="MasterPage" minOccurs="1" maxOccurs="unbounded" type="masterpagetype" />
+				    </xs:sequence>
+			    </xs:complexType>
+        </xs:element>        
+      </xs:all>
+    </xs:complexType>
+  </xs:element> 
+
+  <xs:complexType name="pagetype">
+    <xs:attributeGroup ref="pageattributegroup" />
+  </xs:complexType>
+
+  <xs:complexType name="masterpagetype">
+    <xs:attributeGroup ref="masterpageattributegroup" />
+  </xs:complexType>
+
+  <xs:attributeGroup name="pageattributegroup">
+    <xs:attribute name="Name" type="xs:string" use="optional" />
+    <xs:attribute name="Uri" type="xs:anyURI" use="required" />
+    <xs:attribute name="Keywords" type="xs:string" use="required" />
+  </xs:attributeGroup>
+  
+  <xs:attributeGroup name="masterpageattributegroup">
+    <xs:attribute name="Name" type="xs:string" use="optional" />
+    <xs:attribute name="MainChildUri" type="xs:anyURI" use="required" />
+    <xs:attribute name="Keywords" type="xs:string" use="required" />
+  </xs:attributeGroup>
+  
+</xs:schema>

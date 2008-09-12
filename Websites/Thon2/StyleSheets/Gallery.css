@@ -1,0 +1,134 @@
+﻿/* Derivation of andreas03 - an open source xhtml/css website layout by Andreas Viklund - http://andreasviklund.com . Free to use for any purpose as long as the proper credits are given to the original author. */
+
+.GalleryFeatures { width: 190px; margin-top: 0px; float: left; }
+.GalleryFeatures div { padding-bottom: 6px; margin-bottom: 20px; border-left: solid 1px #d3d3d3; text-align: center; width:190px;}
+.GalleryFeatures h1 { font-size: 16px; font-weight: bold; background: url(../Images/Gallery/TileLight.gif) repeat-x; padding: 6px; margin: 0px 0px 10px 0px; }
+.GalleryFeatures ul { margin: 0px; list-style: none; padding: 0px;}
+.GalleryFeatures ul li { margin-bottom: 4px; }
+.GalleryFeatures input { width: 120px; }
+.GalleryStream {  }
+.GalleryStreamStandoff {  margin-right: 180px; }
+.GalleryStream div { float: left; }
+.GalleryStream img { vertical-align: middle; margin-right:auto;margin-left:auto; display:block; border: none; max-width: 120px; max-height: 120px; }
+.GalleryStream .PhotoItemHidden { filter:alpha(opacity=50); opacity: 0.5; -moz-opacity:0.5; _border: dashed 1px #6f5230; }
+.GalleryStream .PhotoItem { padding-top:36px; padding-left:10px; padding-right:10px; margin: 4px; text-align: center; width: 140px; height: 150px; border-left: solid 1px #F77171; border-right: solid 1px #F77171; border-bottom: solid 1px #F77171; background: #fff7e1 url(../Images/Gallery/TileLight.gif) repeat-x top left; }
+.GalleryNavigation { padding-top: 20px; text-align: center; clear:left; }
+.GalleryNavigation a { font-weight: bold; margin-left: 50px; margin-right: 50px; padding: 4px; border: outset 1px #d3d3d3; text-decoration: none; }
+
+#GalleryPopup { color: #ffffff; font-size: 12px; }
+#GalleryPopup a { color: #ffffff; }
+#GalleryPopup .PhotoTextItems { width: 100%; }
+#GalleryPopup .PhotoDescription { padding: 2px; }
+#GalleryPopup .DownloadLink { padding: 2px; vertical-align: top; text-align: right; font-weight: bold;  }
+#GalleryPopup .AdminPhoto { float: left;  }
+#GalleryPopup .AdminForm { width: 280px; float: right; }
+#GalleryPopup .AdminForm .FormRow { clear: both; margin: 10px; }
+#GalleryPopup .AdminForm .FormLabel { float: left; width: 80px; font-weight: bold; padding-right: 10px; }
+#GalleryPopup .AdminForm .FormItem { padding-left: 10px; }
+#GalleryPopup .AdminForm { white-space:nowrap; }
+#GalleryPopup .AdminForm .FixedWidth { width: 160px; }
+#GalleryPopup .AdminForm a { margin-top: 20px; padding: 4px; border: outset 1px #6f5230; text-decoration: none; }
+#GalleryPopup .AdminForm .DeleteButton { float: left; }
+#GalleryPopup .AdminForm .SaveButton { float: right; }
+
+/* Admin Section */
+
+.AdminFormRow { clear: both; margin: 10px; }
+.AdminFormLabel { float: left; width: 80px; font-weight: bold; padding-right: 10px; }
+.AdminFormItem { padding-left: 10px; }
+
+/* Sidebar */
+
+#Features h1 {
+    font-family: Arial;
+	font-size: 13px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+	background-image: url(../Images/Master/morelinks.png);
+	background-repeat: no-repeat;
+	float: left;
+	height: 24px;
+	width: 145px;
+	text-transform: capitalize;
+	padding-top: 7px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 30px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;	
+	margin-left: 12px;
+	display:inline;
+	}
+	
+#Features{
+width:190px;
+}
+
+#Features input{
+margin-left:15px;
+}
+	
+#Features li {
+display:table-row;
+line-height:normal;
+margin:0;
+padding:0;
+width:160px;
+}
+
+#Features ul {
+    list-style-type:none;
+	font-size:medium;
+	line-height:normal;
+	display:block;
+	width:160px;
+	}
+
+#Features li a {
+    font-family: Arial;
+	font-size: 11px;
+	font-weight: bold;
+	text-transform: none;
+	color: #c12f00;
+	text-decoration: none;
+	background-image: url(../Images/Master/morelinks_active.png);
+	background-repeat: no-repeat;
+	float: left;
+	height: 19px;
+	width: 143px;
+	padding-top: 3px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 17px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 15px;
+	} 
+#Features li a:hover {
+    font-family: Arial;
+	font-size: 11px;
+	font-weight: bold;
+	text-transform: none;
+	color: #c12f00;
+	text-decoration: none;
+	background-image: url(../Images/Master/morelinks_hover.jpg);
+	background-repeat: no-repeat;
+	float: left;
+	height: 19px;
+	width: 143px;
+	padding-top: 3px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 17px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 15px;
+}
+
+.redwatermark{
+    color:#faf5e1;
+}
