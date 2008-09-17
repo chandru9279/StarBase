@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TwoOhApp
+namespace Aveo.Daybook.TrayClient
 {
     public class ServiceAdapter
     {
@@ -11,7 +11,6 @@ namespace TwoOhApp
         private bool IsLoggedIn = false;
         private System.Net.CookieContainer cookiecontainer;
         private string Username, Password;        
-        private DaybookTray UI;
         private AuthenticationService authServ;
         private ProfileService proServ;
         private DaybookClientService dbcServ;
@@ -30,7 +29,13 @@ namespace TwoOhApp
         public static List<ScheduledEvent> events;
         public static List<Task> tasks;
         public static ArrayOfKeyValueOfstringanyTypeKeyValueOfstringanyType[] profiledata;
-        public static ProfilePropertyMetadata[] profileMD; 
+        public static ProfilePropertyMetadata[] profileMD;
+        public delegate void GotAllDataHandler(bool success);
+        public delegate void LoginCompletedHandler(bool success);
+        public delegate void GotProfileHandler(bool success); 
+        public static event GotAllDataHandler GotAllData;
+        public static event LoginCompletedHandler LoginCompleted;
+        public static event GotProfileHandler GotProfile;
         /// <summary>
         /// Readonly
         /// Gets a value indicating if the user is logged in.
@@ -50,14 +55,13 @@ namespace TwoOhApp
 
         #endregion
 
-        public ServiceAdapter(DaybookTray form)
+        public ServiceAdapter()
         {
             authServ = new AuthenticationService();
             proServ = new ProfileService();
             dbcServ = new DaybookClientService();
             authServ.CookieContainer = new System.Net.CookieContainer();
-            Instance = this;
-            UI = form;
+            Instance = this;            
         }
 
         #region Logging In
@@ -98,12 +102,12 @@ namespace TwoOhApp
                     cookiecontainer = authServ.CookieContainer;                    
                     IsLoggedIn = true;
                 }
-                UI.LoginCompleted(e.LoginResult);
+                LoginCompleted(e.LoginResult);
             }
             catch (Exception ex)
             {
                 Console.WriteLine("authServ_LoginCompleted : " + ex.ToString());
-                UI.LoginCompleted(false);
+                LoginCompleted(false);
             }
         }
 
@@ -153,7 +157,7 @@ namespace TwoOhApp
             catch (Exception ex) 
             {
                 Console.WriteLine("dbcServ_GetContactsCompleted : " + ex.ToString());
-                UI.GotAllData(false);
+                GotAllData(false);
             }
         }
 
@@ -179,7 +183,7 @@ namespace TwoOhApp
             catch (Exception ex)
             {
                 Console.WriteLine("dbcServ_GetScheduledEventsCompleted : " + ex.ToString());
-                UI.GotAllData(false);
+                GotAllData(false);
             }
         }
 
@@ -205,7 +209,7 @@ namespace TwoOhApp
             catch (Exception ex)
             {
                 Console.WriteLine("dbcServ_GetTasksCompleted : " + ex.ToString());
-                UI.GotAllData(false);
+                GotAllData(false);
             }
         }
 
@@ -219,7 +223,7 @@ namespace TwoOhApp
             ContactsCompleted = false;
             TasksCompleted = false;
             ScheduledEventsCompleted = false;
-            UI.GotAllData(true);
+            GotAllData(true);
         }
 
         #endregion
@@ -251,7 +255,7 @@ namespace TwoOhApp
                 if (e.Error == null)
                 {
                     profiledata = e.Result;
-                    UI.GotProfile(true);
+                    GotProfile(true);
                 }
                 else
                     throw e.Error;
@@ -259,7 +263,7 @@ namespace TwoOhApp
             catch (Exception ex)
             {
                 Console.WriteLine("proServ_GetAllPropertiesForCurrentUserCompleted : " + ex.ToString());
-                UI.GotProfile(false);
+                GotProfile(false);
             }
         }
 
