@@ -81,6 +81,20 @@ namespace TwoOhApp {
             }
         }
         
+        internal static System.Drawing.Bitmap DaybookPng {
+            get {
+                object obj = ResourceManager.GetObject("DaybookPng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap HomePng {
+            get {
+                object obj = ResourceManager.GetObject("HomePng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap LoggedIn {
             get {
                 object obj = ResourceManager.GetObject("LoggedIn", resourceCulture);

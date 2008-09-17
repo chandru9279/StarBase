@@ -147,7 +147,7 @@ namespace TwoOhApp
         /// <param name="e">The occured events arguments</param>
         private void SettingTSMI_Click(object sender, EventArgs e)
         {
-            this.Menu.SelectedIndex = 3;
+            //this.Menu.SelectedIndex = 3;
             this.Show();
         }
 

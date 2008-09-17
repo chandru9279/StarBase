@@ -14,7 +14,7 @@ namespace TwoOhApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DaybookTray());
+            Application.Run(new DaybookOnTray());
         }
     }
 }

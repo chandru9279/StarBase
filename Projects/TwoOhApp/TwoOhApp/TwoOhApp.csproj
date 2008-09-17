@@ -45,6 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contacts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contacts.Designer.cs">
+      <DependentUpon>Contacts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DaybookOnTray.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DaybookOnTray.Designer.cs">
+      <DependentUpon>DaybookOnTray.cs</DependentUpon>
+    </Compile>
     <Compile Include="DaybookTray.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,13 +68,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DaybookTrayResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ServiceAdapter.cs" />
-    <Compile Include="SettingsAdapter.cs" />
-    <Compile Include="Proxys\AuthenticationService.cs" />
-    <Compile Include="Proxys\DaybookClientService.cs" />
-    <Compile Include="Proxys\ProfileService.cs" />
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Contacts.resx">
+      <DependentUpon>Contacts.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DaybookOnTray.resx">
+      <DependentUpon>DaybookOnTray.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="DaybookTray.resx">
       <DependentUpon>DaybookTray.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -72,9 +99,29 @@
       <LastGenOutput>DaybookTrayResources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduledEvents.resx">
+      <DependentUpon>ScheduledEvents.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasks.resx">
+      <DependentUpon>Tasks.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -92,18 +139,44 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ScheduledEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScheduledEvents.Designer.cs">
+      <DependentUpon>ScheduledEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tasks.Designer.cs">
+      <DependentUpon>Tasks.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Background.jpg" />
     <Content Include="Notes\Memos.txt" />
     <Content Include="Notes\Requirementz.txt" />
     <Content Include="Resources\Daybook.ico" />
+    <None Include="Resources\DaybookPng.PNG" />
+    <None Include="Resources\HomePng.png" />
     <None Include="Resources\UserPictureMale.png" />
     <None Include="Resources\Date.png" />
     <None Include="Resources\Calendar.png" />
     <None Include="Resources\Task.png" />
     <None Include="Resources\UserPictureFemale.png" />
     <None Include="Resources\ErrorCircle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aveo.Daybook.TrayClient\Aveo.Daybook.TrayClient.csproj">
+      <Project>{32624986-CFC2-455E-8AF9-21FF4C95D364}</Project>
+      <Name>Aveo.Daybook.TrayClient</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
