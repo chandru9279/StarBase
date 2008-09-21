@@ -5,3 +5,10 @@ C:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\Thon2\T
 C:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\Thon2\Thon.ZaszBlog.Support\obj\Debug\Thon.ZaszBlog.Support.pdb
 C:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\Thon2\Thon.ZaszBlog.Support\bin\Debug\Thon.Support.dll
 C:\Documents and Settings\Owner\My Documents\Visual Studio 2008\Projects\Thon2\Thon.ZaszBlog.Support\bin\Debug\Thon.Support.pdb
+C:\Users\Home\Documents\Visual Studio 2008\Projects\Thon2\Thon.ZaszBlog.Support\bin\Debug\Thon.ZaszBlog.Support.dll
+C:\Users\Home\Documents\Visual Studio 2008\Projects\Thon2\Thon.ZaszBlog.Support\bin\Debug\Thon.ZaszBlog.Support.pdb
+C:\Users\Home\Documents\Visual Studio 2008\Projects\Thon2\Thon.ZaszBlog.Support\bin\Debug\Thon.Support.dll
+C:\Users\Home\Documents\Visual Studio 2008\Projects\Thon2\Thon.ZaszBlog.Support\bin\Debug\Thon.Support.pdb
+C:\Users\Home\Documents\Visual Studio 2008\Projects\Thon2\Thon.ZaszBlog.Support\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Home\Documents\Visual Studio 2008\Projects\Thon2\Thon.ZaszBlog.Support\obj\Debug\Thon.ZaszBlog.Support.dll
+C:\Users\Home\Documents\Visual Studio 2008\Projects\Thon2\Thon.ZaszBlog.Support\obj\Debug\Thon.ZaszBlog.Support.pdb
