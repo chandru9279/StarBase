@@ -11,13 +11,10 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 
-namespace Thon
+public partial class Default2 : System.Web.UI.Page
 {
-    public partial class ReferralAdAscx : System.Web.UI.UserControl
+    protected void Page_Load(object sender, EventArgs e)
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }

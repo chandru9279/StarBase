@@ -20,8 +20,8 @@
     </ul> 
     <br /><h2>Download this site source </h2><br />
     <table cellspacing="5px" cellpadding="5px" border="2px">
-    <tr><td>The Thon.Support & Thon.ZaszBlog.Support dll (<%=DateTime.Now.Date.ToString("d")%>)</td><td><a href="Downloads/Thon.Support.zip"> <img style="border:none;border-width:0px;" src="Images/Download.gif" alt="Download" /></a></td></tr>
-    <tr><td>The VWD Website svn working copy (<%=DateTime.Now.Date.ToString("d")%>)</td><td><a href="Downloads/Thon.Support.zip"> <img style="border:none;border-width:0px;" src="Images/Download.gif" alt="Download" /></a></td></tr>
+    <tr><td>The Thon.Support & Thon.ZaszBlog.Support dll (<%=DateTime.Now.Date.ToString("d")%>)</td><td><a href="Downloads/Site.zip"> <img style="border:none;border-width:0px;" src="Images/Download.gif" alt="Download" /></a></td></tr>
+    <tr><td>The VWD Website svn working copy (<%=DateTime.Now.Date.ToString("d")%>)</td><td><a href="Downloads/Assembly.zip"> <img style="border:none;border-width:0px;" src="Images/Download.gif" alt="Download" /></a></td></tr>
     </table>
     <table cellspacing="10px">
     <tr><td><Google:MusicSearch ID="MusicSearch1" runat="server" /></td></tr>

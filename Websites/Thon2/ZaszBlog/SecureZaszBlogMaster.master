@@ -7,7 +7,6 @@
 <%@ Reference Control="~/UserControls/Footer/RecentPosts.ascx" %>
 <%@ Reference Control="~/UserControls/Footer/Futures.ascx" %>
 
-<%@ Register Src="~/UserControls/AdSense/ReferralAd.ascx" TagName="ReferralAd" TagPrefix="Google"%>
 <%@ Register Src="~/UserControls/AdSense/TowerAd.ascx" TagName="TowerAd" TagPrefix="Google"%>
 <%@ Register Src="~/ZaszBlog/Admin/Menu.ascx" TagName="Menu" TagPrefix="M" %>
 <%@ Register Src="~/UserControls/AdSense/GoogleThisSiteSearch.ascx" TagName="ThisSiteSearch" TagPrefix="Google"%>

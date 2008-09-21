@@ -9,7 +9,7 @@
 
 <%@ Register Src="~/UserControls/AdSense/GoogleThisSiteSearch.ascx" TagName="ThisSiteSearch" TagPrefix="Google"%>
 <%@ Register Src="~/UserControls/AdSense/GoogleInternetSearch.ascx"TagName="InternetSearch" TagPrefix="Google"%>
-<%@ Register Src="~/UserControls/AdSense/ReferralAd.ascx" TagName="ReferralAd" TagPrefix="Google"%>
+
 <%@ Register Src="~/UserControls/AdSense/TowerAd.ascx" TagName="TowerAd" TagPrefix="Google"%>
 
 <%@ Register Namespace="Thon.ZaszBlog.Controls" TagPrefix="ZaszBlog" %>
@@ -46,6 +46,8 @@
 <form id="ThonForm" name="ThonForm" runat="server">
 <asp:SiteMapDataSource ID="ThonSitemap" runat="server" SiteMapProvider="SecuritySiteMap" />
 <asp:ScriptManager ID="ScriptManager1" runat="server">
+<Scripts>
+</Scripts>
 </asp:ScriptManager>
 
     <div id="topheader">
@@ -84,6 +86,8 @@
         <div class="left">
         <div class="morelinks_top"></div>
         <div class="morelinks_area" style="height: auto">
+        <table style="margin-top:20px;margin-bottom:20px;">
+        <tr><td>
             <div class="morelinks_head">Navigation Tree</div>
             <div class="links_morearea">
                 <div style="margin-left:20px">
@@ -106,8 +110,16 @@
                 <a href="http://www.msdn.com/" class="morelink">MSDN <span class="links_text"> dev</span></a> <br />
                 <a href="http://www.rapidshare.com/" class="morelink">Rapidshare <span class="links_text"> 100mb</span></a><br />
             </div>
-            <br />
-            <div style="margin-left:35px;"><Google:ReferralAd runat="server" ID="ThonMasterReferral" /></div>
+            </td></tr>
+            <tr><td>
+            <div class="morelinks_head">Google this site!</div>
+            </td></tr>
+            <tr><td style="padding-left:12px">
+            <span>
+            <Google:ThisSiteSearch ID="ThisSiteSearch1" runat="server" />
+            </span>
+            </td></tr>
+            </table>
             <br />
                 <div style="margin-left:12px">
                     <h1>Disclaimer</h1><br />

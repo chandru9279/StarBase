@@ -3,6 +3,7 @@ using System.Data;
 using System.Configuration;
 using System.Collections;
 using System.Web;
+using System.Xml;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -25,7 +26,65 @@ namespace Thon.ZaszBlog
         }
         protected void FLTwo_Click(object sender, EventArgs e)
         {
-            FooterPlaceHolder.Controls.Add(LoadControl("~/UserControls/Footer/News.ascx"));
+            System.Net.WebClient wc = new System.Net.WebClient();
+            string eksemmelle = "";
+            wc.Credentials = System.Net.CredentialCache.DefaultNetworkCredentials;
+            try
+            {
+                eksemmelle = wc.DownloadString("http://www.hindu.com/rss/01hdline.xml");
+            }
+            catch(Exception e1)
+            {
+                e1=null;
+
+            }
+            if(!string.IsNullOrEmpty(eksemmelle))
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.LoadXml(eksemmelle);
+                string title, content, link, date;
+                XmlNodeList list = doc.SelectNodes("rss/channel/item");
+                HtmlGenericControl hgc;
+                HtmlAnchor anc;
+
+                HtmlGenericControl maindiv = new HtmlGenericControl("div");
+                maindiv.Attributes.Add("style", "overflow:scroll; height:190px; width:400px; border-style:single; border-width:1px; border-color:silver; padding:3px 3px 3px 3px;");
+                foreach (XmlNode node in list)
+                {
+                    title = node.SelectSingleNode("title").InnerText;
+                    link = node.SelectSingleNode("link").InnerText;
+                    content = node.SelectSingleNode("description").InnerText;
+                    date = node.SelectSingleNode("pubDate").InnerText;
+
+                    title = "<b>" + title + "</b>";
+                    anc = new HtmlAnchor();
+                    anc.Attributes.Add("style", "color:#cdb753; text-decoration:none; font-size:small;");                    
+                    anc.HRef = link;
+                    anc.InnerHtml = title;
+                    maindiv.Controls.Add(anc);
+                    
+                    hgc = new HtmlGenericControl("br");
+                    maindiv.Controls.Add(hgc);
+
+                    hgc = new HtmlGenericControl("p");
+                    hgc.Attributes.Add("style", "color:silver;font-size:small;");
+                    hgc.InnerText = content;
+                    maindiv.Controls.Add(hgc);
+
+                    hgc = new HtmlGenericControl("br");
+                    maindiv.Controls.Add(hgc);
+
+                    hgc = new HtmlGenericControl("i");
+                    hgc.Attributes.Add("style", "color:silver;");
+                    hgc.InnerText = "Published Date : " + date + "\r\n\r\n";
+                    maindiv.Controls.Add(hgc);
+                    hgc = new HtmlGenericControl("br");
+                    maindiv.Controls.Add(hgc);
+                    
+                }
+
+                FooterPlaceHolder.Controls.Add(maindiv);
+            }
             FLBStyles(2);
         }
         protected void FLThree_Click(object sender, EventArgs e)

@@ -20,7 +20,7 @@ namespace Thon
         {
             if (Page.User.Identity.IsAuthenticated)
             {
-                ChangePassword.Visible = true;
+                ChangePassword.Visible = true;  
                 ThonLogin.Visible = false;
             }
             else

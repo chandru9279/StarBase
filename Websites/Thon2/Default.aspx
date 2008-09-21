@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="Default.aspx.cs" Inherits="Thon.ThonDefaultAspx" MasterPageFile="~/ThonMasterPage.master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="Default.aspx.cs" Inherits="Thon.ThonDefaultAspx" MasterPageFile="~/ThonMasterPage.master" Title="Welcome to ChandruOn.NET" %>
 <%@ Register 
     Assembly="AjaxControlToolkit" 
     Namespace="AjaxControlToolkit" 
@@ -44,9 +44,9 @@
             new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/10.jpg", "Arun", "Tongli Temple"),
             new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/11.jpg", "Mini-Me", "China"),
             new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/12.jpg", "Thiagu", "Manaali"),
+            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/15.jpg", "Zasz", "XBOX 360"),
+            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/14.jpg", "Mom", "Rotang Pass"),            
             new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/13.jpg", "Vasanth", "PSP & Comp"),
-            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/14.jpg", "Mom", "Rotang Pass"),
-            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/15.jpg", "Cool", "XBOX 360"),
             new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/16.jpg", "Taj Mahal", "Delhi"),
             new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/17.jpg", "Mahesh", "Shanghai"),
             };
@@ -91,22 +91,22 @@
             <asp:Image ID="Image1" runat="server" 
                 Height="342"
                 Style="border: 2px solid black;width:auto" 
-                ImageUrl="Images/Files/6.jpg"
-                AlternateText="ThonSlideShow" /><br />
+                ImageUrl="Images/Files/15.jpg"
+                AlternateText="ThonSlideShow" /><br />                
             <asp:Label runat="server" ID="imageDescription"></asp:Label><br /><br />
-            <asp:Button runat="Server" ID="prevButton" Text="Prev" Font-Size="Larger" />
-            <asp:Button runat="Server" ID="playButton" Text="Play" Font-Size="Larger" />
-            <asp:Button runat="Server" ID="nextButton" Text="Next" Font-Size="Larger" />
+            <asp:Button runat="Server" BorderStyle="Double" BackColor="Cornsilk" ForeColor="Maroon" Font-Bold="true" BorderColor="Maroon" ID="prevButton" Text="Previous" Font-Size="Larger" />
+            <asp:Button runat="Server" BorderStyle="Double" BackColor="Cornsilk" ForeColor="Maroon" Font-Bold="true" BorderColor="Maroon" ID="playButton" Text="Play" Font-Size="Larger" />
+            <asp:Button runat="Server" BorderStyle="Double" BackColor="Cornsilk" ForeColor="Maroon" Font-Bold="true" BorderColor="Maroon" ID="nextButton" Text="Next" Font-Size="Larger" />
             <ajaxToolkit:SlideShowExtender ID="slideshowextend1" runat="server"                         
                 TargetControlID="Image1"
                 SlideShowServiceMethod="GetSlides" 
-                AutoPlay="true"                 
+                AutoPlay="false"
                 ImageTitleLabelID="imageTitle"
                 ImageDescriptionLabelID="imageDescription"
                 NextButtonID="nextButton" 
-                PlayButtonText="Play" 
-                StopButtonText="Stop"
-                PreviousButtonID="prevButton" 
+                PlayButtonText="Start SlideShow" 
+                StopButtonText="Stop SlideShow"
+                PreviousButtonID="prevButton"                 
                 PlayButtonID="playButton" 
                 Loop="true" />
         </div>

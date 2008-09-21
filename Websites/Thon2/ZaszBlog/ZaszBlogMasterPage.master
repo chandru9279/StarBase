@@ -7,7 +7,7 @@
 <%@ Reference Control="~/UserControls/Footer/RecentPosts.ascx" %>
 <%@ Reference Control="~/UserControls/Footer/Futures.ascx" %>
 
-<%@ Register Src="~/UserControls/AdSense/ReferralAd.ascx" TagName="ReferralAd" TagPrefix="Google"%>
+
 <%@ Register Src="~/UserControls/AdSense/TowerAd.ascx" TagName="TowerAd" TagPrefix="Google"%>
 <%@ Register Src="~/ZaszBlog/Admin/Menu.ascx" TagName="Menu" TagPrefix="M" %>
 <%@ Register Src="~/UserControls/AdSense/GoogleThisSiteSearch.ascx" TagName="ThisSiteSearch" TagPrefix="Google"%>
@@ -137,9 +137,12 @@
                 </td></tr>
                 <tr><td  style="padding-left:15px">
                 <ZaszBlog:CategoryList ID="CategoryList" ShowRssIcon="false" runat="Server" /><br />
-                </td></tr>                
-                <tr><td  style="padding-left:35px">
-                <Google:ReferralAd runat="server" ID="ZBMasterReferral" />
+                </td></tr>
+                <tr><td>                
+                <div class="morelinks_head">Internet Search</div><br />
+                </td></tr>
+                <tr><td  style="padding-left:15px">
+                <Google:InternetSearch runat="server" ID="ZBGoogleWebSearch" />
                 </td></tr>                
                 <tr><td style="padding-left:15px;padding-right:10px;">
                 <h2>Disclaimer</h2>

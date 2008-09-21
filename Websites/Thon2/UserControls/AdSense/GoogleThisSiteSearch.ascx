@@ -1,15 +1,17 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="GoogleThisSiteSearch.ascx.cs" Inherits="Thon.GoogleThisSiteSearchAscx" %>
-<style type="text/css">@import url(http://www.google.com/cse/api/branding.css);</style>
-<br/><br/>
-<h2>Google This Site!</h2>
-<br/>
+<style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
 <div class="cse-branding-bottom" style="background-color:#FFFFFF;color:#000000">
   <div class="cse-branding-form">
-    <form action="http://www.google.co.in/cse" id="cse-search-box" target="_blank">
+    <form action="http://www.google.co.in/cse" id="Form1" target="_blank">
       <div>
         <input type="hidden" name="cx" value="partner-pub-5538103424429375:inv28-ped3o" />
-        <input type="text" name="q" size="22" />
-        <input type="submit" name="sa" value="Search" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input style="margin-top:2px;margin-bottom:2px;"
+                type="text" name="q" size="20" />
+        <input style="FONT-WEIGHT: bold; FONT-SIZE: larger; BORDER-LEFT-COLOR: maroon; BORDER-BOTTOM-COLOR: maroon; COLOR: maroon; BORDER-TOP-STYLE: double; BORDER-TOP-COLOR: maroon; BORDER-RIGHT-STYLE: double; BORDER-LEFT-STYLE: double; BACKGROUND-COLOR: #FFF8DC; BORDER-RIGHT-COLOR: maroon; BORDER-BOTTOM-STYLE: double"
+                type="submit" name="sa" value="Search" />
       </div>
     </form>
   </div>
