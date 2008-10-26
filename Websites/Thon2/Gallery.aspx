@@ -5,12 +5,11 @@ Title="Gallery" Debug="true" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
 
 <asp:Content ID="Header" ContentPlaceHolderID="cphhead" Runat="Server">
-<link href="StyleSheets/Gallery.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 
 
 <asp:Content ID="MainGalleryContent" ContentPlaceHolderID="cphmain" Runat="Server">    
-    
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     <div id="GalleryStream" class="GalleryStream">
         <asp:Repeater ID="PhotosRepeater" runat="server" 
             onitemdatabound="PhotosRepeater_ItemDataBound">
@@ -98,7 +97,7 @@ Title="Gallery" Debug="true" %>
             
             <div runat="server" id="GalleryAdminCatalog" visible="false" style="width:180px;">
                 <h1><asp:Literal ID="CatelogLiteral" runat="server" Text="Catalog Uploads" ></asp:Literal></h1><br /><br /><br />
-                <asp:Label runat="server" ID="UncatalogedCountLabel"></asp:Label><br /><br />
+                <center style="color:Maroon"><asp:Label runat="server" ID="UncatalogedCountLabel"></asp:Label></center><br /><br />
                 <asp:Button ID="UncatalogedCatalogButton" runat="server" Text="Catalog Uploads"  OnClick="UncatalogedCatalogButton_Click"/>
             </div>
             

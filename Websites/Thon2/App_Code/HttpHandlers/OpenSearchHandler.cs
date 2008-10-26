@@ -22,15 +22,15 @@ namespace Thon.Website.HttpHandlers
                 writer.WriteElementString("ShortName", ThonSettings.Instance.Name);
                 writer.WriteElementString("Description", ThonSettings.Instance.Description);
 
-                writer.WriteRaw("<Image height=\"16\" width=\"16\" type=\"image/vnd.microsoft.icon\">" + HelperUtilities.InternetAppRoot.ToString() + "Images/ThonIcon.ico</Image>");
+                writer.WriteRaw("<Image height=\"96\" width=\"96\" type=\"image/png\">" + HelperUtilities.InternetAppRoot.ToString() + "Images/Logo/Thon/logo_96.png</Image>");
 
                 writer.WriteStartElement("Url");
                 writer.WriteAttributeString("type", "text/html");
-                writer.WriteAttributeString("template", HelperUtilities.InternetAppRoot.ToString() + "search.aspx?q={searchTerms}");
+                writer.WriteAttributeString("template", HelperUtilities.InternetAppRoot.ToString() + "ZaszBlog/Search.aspx?q={searchTerms}");
 
                 writer.WriteStartElement("Url");
                 writer.WriteAttributeString("type", "application/rss+xml");
-                writer.WriteAttributeString("template", SupportUtilities.AbsoluteWebRoot.ToString() + "syndication.axd?q={searchTerms}");
+                writer.WriteAttributeString("template", SupportUtilities.AbsoluteWebRoot.ToString() + "ZaszBlogHttpHandlers/Syndication.ashx?q={searchTerms}");
 
                 writer.WriteEndElement();
             }
@@ -56,12 +56,12 @@ Sample rendered XML :
   
 <OpenSearchDescription>
 <ShortName>ZaszBlog</ShortName>
-<Description>Summa Oru Blog</Description>
-<Image height="16" width="16" type="image/vnd.microsoft.icon">
-http://localhost:49174/ThonZnet/Images/ThonIcon.ico
+<Description>Beta</Description>
+<Image height="16" width="16" type="image/png">
+http://localhost:49174/ThonZnet/Images/Logo/Thon/logo_96.png
 </Image>
-<Url type="text/html" template="http://localhost:49174/ThonZnet/search.aspx?q={searchTerms}">
-<Url type="application/rss+xml" template="http://localhost:49174/ThonZnet/ZaszBlog/syndication.axd?q={searchTerms}"/>
+<Url type="text/html" template="http://localhost:49174/ThonZnet/ZaszBlog/Search.aspx?q={searchTerms}">
+<Url type="application/rss+xml" template="http://localhost:49174/ThonZnet/ZaszBlog/ZaszBlogHttpHandlers/Syndication.ashx?q={searchTerms}"/>
 </Url>
 </OpenSearchDescription>
 */

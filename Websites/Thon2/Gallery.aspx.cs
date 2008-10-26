@@ -125,48 +125,55 @@ namespace Thon.Gallery
 
         protected void Page_Load(object sender, System.EventArgs e)
         {
-            GDC = new GalleryContext();
-            if (Context.Request.IsAuthenticated == true && (_Owner == "Any" || _Owner.ToLower().Contains(Context.User.Identity.Name.ToLower())))
+            try
             {
-                AdminMode = true;
-                Session["GalleryOwner"] = _Owner;
-                GalleryFeatures.Visible = true;
-               // GalleryAdvanced.Visible = true;
-                CategoriesDeleteButton.OnClientClick = "return alert('Are you sure you want to delete the category?')";
+                GDC = new GalleryContext();
+                if (Context.Request.IsAuthenticated == true && (_Owner == "Any" || _Owner.ToLower().Contains(Context.User.Identity.Name.ToLower())))
+                {
+                    AdminMode = true;
+                    Session["GalleryOwner"] = _Owner;
+                    GalleryFeatures.Visible = true;
+                    // GalleryAdvanced.Visible = true;
+                    CategoriesDeleteButton.OnClientClick = "return alert('Are you sure you want to delete the category?')";
+                }
+
+                if (Request.QueryString["Page"] != null)
+                    _CurrentPage = int.Parse(Request.QueryString["Page"].ToString());
+
+                if (Request.QueryString["PageSize"] != null)
+                    _PageSize = int.Parse(Request.QueryString["PageSize"].ToString());
+
+                if (Request.QueryString["SortOrder"] != null)
+                {
+                    if (Request.QueryString["SortOrder"] == "Oldest")
+                        _SortOrder = SortOrderType.AscendingDate;
+                    else
+                        _SortOrder = SortOrderType.DescendingDate;
+                }
+
+                RenderGalleryUploads();
+
+                if (_IncludeCategories == true)
+                    RenderCategories();
+
+                if (_IncludeSearch == true)
+                    GallerySearch.Visible = true;
+
+                if (_IncludeSort == true)
+                    RenderSort();
+
+                if (_IncludePageSize == true)
+                    RenderPageSize();
+
+                if (!Page.IsPostBack)
+                    ViewState["CurrentPage"] = _CurrentPage;
+
+                BindRepeater();
             }
-
-            if (Request.QueryString["Page"] != null)
-                _CurrentPage = int.Parse(Request.QueryString["Page"].ToString());
-
-            if (Request.QueryString["PageSize"] != null)
-                _PageSize = int.Parse(Request.QueryString["PageSize"].ToString());
-
-            if (Request.QueryString["SortOrder"] != null)
+            catch (Exception ex)
             {
-                if (Request.QueryString["SortOrder"] == "Oldest")
-                    _SortOrder = SortOrderType.AscendingDate;
-                else
-                    _SortOrder = SortOrderType.DescendingDate;
+                Label1.Text = ex.ToString() + "\n" + ex.Message;
             }
-
-            RenderGalleryUploads();
-
-            if (_IncludeCategories == true)
-                RenderCategories();
-
-            if (_IncludeSearch == true)
-                GallerySearch.Visible = true;
-
-            if (_IncludeSort == true)
-                RenderSort();
-
-            if (_IncludePageSize == true)
-                RenderPageSize();
-
-            if (!Page.IsPostBack)
-                ViewState["CurrentPage"] = _CurrentPage;
-
-            BindRepeater();
 
         }
 

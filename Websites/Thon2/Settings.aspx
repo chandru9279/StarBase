@@ -4,7 +4,6 @@
 <%@ Import Namespace="Thon.Support" %>
 
 <asp:Content ContentPlaceHolderID="cphhead" ID="Header" runat="server">
-<link href="StyleSheets/SettingsAspxStyleSheet.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 
 <asp:Content ID="SettingsContent" ContentPlaceHolderID="cphmain" runat="Server">    
@@ -113,4 +112,18 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="cphsidebar" ID="Content1" runat="server">
+            <div class="right_head">
+                <div class="morelinks_head">Some Links </div>
+            </div>
+            <div class="links_morearea">
+                <a href="http://www.sourceforge.net/" class="morelink">SourceForge <span class="links_text"> dev</span></a>
+                <a href="http://www.asp.net/" class="morelink">ASP <span class="links_text"> .net</span></a> 
+                <a href="http://www.scopeinternational.com/" class="morelink">Scope <span class="links_text"> international</span></a> 
+                <a href="http://www.pnbindia.com/" class="morelink">Punjab National <span class="links_text"> bank</span></a> <br />
+                <a href="http://www.google.com/" class="morelink">Google <span class="links_text"> search</span></a> <br />
+                <a href="http://freshmeat.net/" class="morelink">Freshmeat <span class="links_text"> source</span></a> <br />
+            </div><br /><br />
+            <div class="freeregistration">
+                <div align="center"><span class="free">Free</span> registration</div>
+            </div><br /><br />
 </asp:Content>

@@ -2,69 +2,28 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" href="afavicon.gif" type="image/gif" />
     <title>LoadPage</title>
-    <link rel="Stylesheet" href="Images/Master/top_menu1_03.png" />
-    <link rel="Stylesheet" href="Images/Master/banner.jpg" />
-    <link rel="Stylesheet" href="Images/Master/banner_bottom.jpg" />
-    <link rel="Stylesheet" href="Images/Master/bg.jpg" />
-    <link rel="Stylesheet" href="Images/Master/bodyarea1_bg.jpg" />
-    <link rel="Stylesheet" href="Images/Master/bookmark.png" />
-    <link rel="Stylesheet" href="Images/Master/call.png" />
-    <link rel="Stylesheet" href="Images/Master/fotter_bg.jpg" />
-    <link rel="Stylesheet" href="Images/Master/fotter_validation.png" />
-    <link rel="Stylesheet" href="Images/Master/fotter_validation1.png" />
-    <link rel="Stylesheet" href="Images/Master/freereg.png" />
-    <link rel="Stylesheet" href="Images/Master/go.png" />
-    <link rel="Stylesheet" href="Images/Master/go1.png" />
-    <link rel="Stylesheet" href="Images/Master/inner_banner.png" />
-    <link rel="Stylesheet" href="Images/Master/inner_link.png" />
-    <link rel="Stylesheet" href="Images/Master/inner_link1.png" />
-    <link rel="Stylesheet" href="Images/Master/innerbanner_head.png" />
-    <link rel="Stylesheet" href="Images/Master/login_buttons_01.png" />
-    <link rel="Stylesheet" href="Images/Master/login_buttons_02.png" />
-    <link rel="Stylesheet" href="Images/Master/login_buttons1_01.png" />
-    <link rel="Stylesheet" href="Images/Master/login_buttons1_02.png" />
-    <link rel="Stylesheet" href="Images/Master/login_head.png" />
-    <link rel="Stylesheet" href="Images/Master/loginbg.png" />
-    <link rel="Stylesheet" href="Images/Master/logobg.png" />
-    <link rel="Stylesheet" href="Images/Master/menu_01.png" />
-    <link rel="Stylesheet" href="Images/Master/menu_02.png" />
-    <link rel="Stylesheet" href="Images/Master/menu_03.png" />
-    <link rel="Stylesheet" href="Images/Master/menu_04.png" />
-    <link rel="Stylesheet" href="Images/Master/menu_inner_01.png" />
-    <link rel="Stylesheet" href="Images/Master/menu_inner_02.png" />
-    <link rel="Stylesheet" href="Images/Master/menu1_01.png" />
-    <link rel="Stylesheet" href="Images/Master/menu1_02.png" />
-    <link rel="Stylesheet" href="Images/Master/menu1_03.png" />
-    <link rel="Stylesheet" href="Images/Master/menu1_04.png" />
-    <link rel="Stylesheet" href="Images/Master/morelinks.png" />
-    <link rel="Stylesheet" href="Images/Master/morelinks_active.jpg" />
-    <link rel="Stylesheet" href="Images/Master/morelinks_active.png" />
-    <link rel="Stylesheet" href="Images/Master/morelinks_hover.jpg" />
-    <link rel="Stylesheet" href="Images/Master/panel.jpg" />
-    <link rel="Stylesheet" href="Images/Master/panelbottom.png" />
-    <link rel="Stylesheet" href="Images/Master/paneltop.png" />
-    <link rel="Stylesheet" href="Images/Master/readmore.png" />
-    <link rel="Stylesheet" href="Images/Master/readmore1.png" />
-    <link rel="Stylesheet" href="Images/Master/right_01.jpg" />
-    <link rel="Stylesheet" href="Images/Master/right_02.jpg" />
-    <link rel="Stylesheet" href="Images/Master/right_03.jpg" />
-    <link rel="Stylesheet" href="Images/Master/right_04.jpg" />
-    <link rel="Stylesheet" href="Images/Master/search.png" />
-    <link rel="Stylesheet" href="Images/Master/top_menu_01.png" />
-    <link rel="Stylesheet" href="Images/Master/top_menu_02.png" />
-    <link rel="Stylesheet" href="Images/Master/top_menu_03.png" />
-    <link rel="Stylesheet" href="Images/Master/top_menu1_01.png" />
-    <link rel="Stylesheet" href="Images/Master/top_menu1_02.png" />  
     <script type="text/javascript">    
     var iLoopCounter = 1;
     var iMaxLoop = 6;
     var iIntervalId;
+    var noi = 0;
     
     function BeginPageLoad()
-    {
-        location.href="Default.aspx?You=Welcome";
+    {    
+        noi=0;    
         iIntervalId=window.setInterval("iLoopCounter=UpdateProgressMeter(iLoopCounter,iMaxLoop);",500);
+    }
+    
+    function func()
+    {
+    noi++;
+    if(noi==53)
+    {
+    location.href="Default.aspx?You=Welcome";    
+    }
     }
     
     function UpdateProgressMeter(iCurrentLoopCounter, iMaximumLoops)
@@ -120,8 +79,67 @@
 </tr>
 </table>
 </center>
+
+
+<div style="visibility:hidden">
+    <img src="Images/Master/CssImage.ashx?image=top_menu1_03.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=banner.jpg" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=banner_bottom.jpg" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=bg.jpg" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=bodyarea1_bg.jpg" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=bookmark.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=call.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=fotter_bg.jpg" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=fotter_validation.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=fotter_validation1.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=freereg.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=go.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=go1.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=inner_banner.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=inner_link.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=inner_link1.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=innerbanner_head.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=login_buttons_01.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=login_buttons_02.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=login_buttons1_01.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=login_buttons1_02.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=login_head.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=loginbg.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=logobg.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=menu_01.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=menu_02.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=menu_03.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=menu_04.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=menu_inner_01.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=menu_inner_02.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=menu1_01.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=menu1_02.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=menu1_03.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=menu1_04.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=morelinks.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=morelinks_active.jpg" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=morelinks_active.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=morelinks_hover.jpg" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=panel.jpg" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=panelbottom.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=paneltop.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=readmore.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=readmore1.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=right_01.jpg" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=right_02.jpg" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=right_03.jpg" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=right_04.jpg" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=search.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=top_menu_01.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=top_menu_02.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=top_menu_03.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=top_menu1_01.png" alt="prefetched" onload="func()" />
+    <img src="Images/Master/CssImage.ashx?image=top_menu1_02.png" alt="prefetched" onload="func()" />  
+    
+</div>
 </form>
 </body>
+
 <script type="text/javascript">
 BeginPageLoad();
 </script>

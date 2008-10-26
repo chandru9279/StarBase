@@ -138,10 +138,12 @@ function Rate(id, rating)
   
   if(document.URL.toString().indexOf("/post/") > 0)
   {
+  //user rates from post.aspx
   CreateCallback("../../../ZaszBlogHttpHandlers/Rating.ashx?id=" + id + "&rating=" + rating, RatingCallback);  
   }
   else
   {
+  //user rates from default.aspx
   CreateCallback("ZaszBlogHttpHandlers/Rating.ashx?id=" + id + "&rating=" + rating, RatingCallback);  
   }
 }
@@ -231,10 +233,8 @@ function ToggleMonth(year)
   {
     if (years[i].id == year)
     {
-      var state = years[i].style.visibility == "visible" ? "hidden" : "visible";      
-      years[i].style.visibility = state;
-      var cstate = years[i].className == "open" ? "" : "open";
-      years[i].className = cstate;
+      var state = years[i].className == "open" ? "closed" : "open";
+      years[i].className = state;
       break;
     }
   }

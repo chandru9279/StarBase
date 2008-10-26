@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Software/SoftMaster.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Software_Default" Title="Untitled Page" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Software/SoftMaster.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="RTDefaultAspx" Title="R Thiagarajan" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphhead" Runat="Server">
 </asp:Content>
@@ -21,7 +21,7 @@
     <tr>
     <td height="21" colspan="2">
     <p align="center">
-    <img border="0" src="../Images/UnderConstruction.gif" width="200" height="200"></td>
+    <img border="0" alt="Under Construction" src="../../Images/UnderConstruction.gif" width="200" height="200"></p></td>
     </tr>
     
     <tr>
@@ -30,6 +30,7 @@
     <font size="5" color="#FF9900" face="Verdana">This part of the website is currently under 
     construction&nbsp; 
     </font>
+    </p>
     </td>
     </tr>
     

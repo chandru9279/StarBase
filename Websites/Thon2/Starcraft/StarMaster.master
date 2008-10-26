@@ -36,7 +36,7 @@
             <a href="BlackList.aspx">The Black List</a>            
           </div>
           <div id="more_information">
-       	  <div class="box"><center>To : <a style="color:White;font-size:large;text-decoration:none;" href="../Default.aspx">Z-BLOG</a></center></div>
+       	  <div class="box"><center>To : <a style="color:White;font-size:large;text-decoration:none;" href="../ZaszBlog/Default.aspx">Z-BLOG</a></center></div>
           <div class="box"><center>To : <a style="color:White;font-size:large;text-decoration:none;" href="../Gallery.aspx">GALLERY</a></center></div>
           <div class="box"><center>Back to : <a style="color:White;font-size:large;text-decoration:none;" href="../Default.aspx">HOME</a></center></div>
         </div>

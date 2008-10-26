@@ -70,6 +70,12 @@ ul{
 	font-size:0;
 	line-height:0;
 }
+
+.closed
+{
+	visibility:hidden;
+}
+
 .spacer{
 	clear:both; 
 	font-size:0; 

@@ -32,6 +32,7 @@
          public static AjaxControlToolkit.Slide[] GetSlides()
          {
             return new AjaxControlToolkit.Slide[] { 
+            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/15.jpg", "Zasz", "XBOX 360"),
             new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/1.jpg", "Me & Pop", "Srinagar Fall"),
             new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/2.jpg", "Jaya & Thiagu", "Rotang Pass"),
             new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/3.jpg", "All four", "Skiing"),
@@ -44,7 +45,6 @@
             new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/10.jpg", "Arun", "Tongli Temple"),
             new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/11.jpg", "Mini-Me", "China"),
             new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/12.jpg", "Thiagu", "Manaali"),
-            new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/15.jpg", "Zasz", "XBOX 360"),
             new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/14.jpg", "Mom", "Rotang Pass"),            
             new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/13.jpg", "Vasanth", "PSP & Comp"),
             new AjaxControlToolkit.Slide("ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/16.jpg", "Taj Mahal", "Delhi"),

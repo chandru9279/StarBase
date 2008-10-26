@@ -11,13 +11,8 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 
-public partial class chandirasekar_Default : System.Web.UI.Page
+public partial class MainDomainsAscx : System.Web.UI.UserControl
 {
-    protected void Page_PreInit(object sender, EventArgs e)
-    {
-        Server.Transfer("~/chandirasekar/WebResume.htm");
-    }
-
     protected void Page_Load(object sender, EventArgs e)
     {
 
