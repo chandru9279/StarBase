@@ -40,9 +40,9 @@ namespace Thon.Support.Web.Controls
 					AddTrackingScript();
 			}
 
-			if (ThonSettings.Instance.RemoveWhitespaceInStyleSheets)
-				CompressCss();
-		}
+            if (ThonSettings.Instance.RemoveWhitespaceInStyleSheets)
+                CompressCss();
+		}     
                 
         protected virtual void AddMetaContentType()
         {
@@ -101,19 +101,12 @@ namespace Thon.Support.Web.Controls
                 HtmlControl c = control as HtmlControl;
                 if (c != null && c.Attributes["type"] != null && c.Attributes["type"].Equals("text/css", StringComparison.OrdinalIgnoreCase))
                 {
-                    if (!c.Attributes["href"].StartsWith("http://"))
+                    string href = c.Attributes["href"];
+                    if (!href.StartsWith("http://"))
                     {
-                        string inserrt = "";
-                        string path = Server.MapPath(ThonSettings.Instance.StorageLocation + "MajorSubdomains.txt");
-                        StreamReader SD = new StreamReader(path);
-                        string [] seperators = {"|"};
-                        string [] subdomains = SD.ReadToEnd().Split(seperators,StringSplitOptions.RemoveEmptyEntries);
-                        for (int i = 0; i < subdomains.Length; i++)
-                            if(Request.Path.Contains(subdomains[i]))
-                        inserrt = subdomains[i] + "/";
-                        c.Attributes["href"] = HelperUtilities.RelativeAppRoot + inserrt + "StyleSheets/Css.ashx?name=~/" + inserrt + c.Attributes["href"];
+                        c.Attributes["href"] = href.Insert(href.LastIndexOf('/') + 1, "Css.ashx?name=");
                         //eg href = StyleSheets/MasterPageStyleSheet.css will be converted into :
-                        // /ThonZNet/ThonHttpHandlers/Css.ashx?name=~/StyleSheets/MasterPageStyleSheet.css
+                        //   href = StyleSheets/Css.ashx?name=MasterPageStyleSheet.css
                         c.EnableViewState = false;
                     }
                 }

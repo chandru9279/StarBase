@@ -55,6 +55,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Web\HttpHandlers\CssHandler.cs" />
+    <Compile Include="Web\HttpHandlers\CssImage.cs" />
     <Compile Include="Web\HttpHandlers\FileHandler.cs" />
     <Compile Include="Web\HttpHandlers\ImageHandler.cs" />
     <Compile Include="Web\HttpHandlers\JScriptHandler.cs" />

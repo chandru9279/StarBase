@@ -5,6 +5,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.IO.Compression;
 using System.Web.Caching;
+using System.Collections.Generic;
 
 namespace Thon.Support.Web.HttpHandlers
 {
@@ -16,7 +17,8 @@ namespace Thon.Support.Web.HttpHandlers
 	{
 		public void ProcessRequest(HttpContext context)
 		{
-            string file = context.Server.MapPath(context.Request.QueryString["name"]);
+            string name = context.Request.QueryString["name"];
+            string file = context.Server.MapPath(context.Request.Path.Replace("Css.ashx", name));
 			ReduceCss(file, context);
 			SetHeaders(file, context);
 
@@ -36,8 +38,8 @@ namespace Thon.Support.Web.HttpHandlers
 			{
 				using (StreamReader reader = new StreamReader(file))
 				{
-                    //file will be like StyleSheets/MasterPageStyleSheet.css
-					string body = StripWhitespace(reader);
+                    //file will be like "StyleSheets/MasterPageStyleSheet.css"                    
+					string body = StripWhitespace(reader);                    
 					context.Cache.Insert(file, body, new CacheDependency(file));
 					context.Cache.Insert(file + "date", File.GetLastWriteTime(file), new CacheDependency(file));
 				}
@@ -46,11 +48,40 @@ namespace Thon.Support.Web.HttpHandlers
 			context.Response.Write((string)context.Cache[file]);
 		}
 
+        private static string ChangeUrls(string input)
+        {
+            // Regex match
+            RegexOptions options = RegexOptions.None;
+            Regex regex = new Regex(@"url\(([^\)]*)\)", options);
+
+            // Check for match
+            bool isMatch = regex.IsMatch(input);
+            if (isMatch)
+            {
+                // Get matches
+                MatchCollection matches = regex.Matches(input);
+                List<int> l = new List<int>();
+                for (int i = 0; i != matches.Count; ++i)
+                {
+                    int semicolon = matches[i].Index + matches[i].Value.Length;
+                    int j;
+                    for (j = semicolon; input[j] != '/'; j--) ;
+                    l.Add(j);
+                }
+                // "CssImage.ashx?image=".Length = 20
+                for (int i = 0; i < l.Count; i++)
+                    l[i] += i * 20;
+                for (int i = 0; i < l.Count; i++)
+                    input = input.Insert(l[i]+1, "CssImage.ashx?image=");
+            }
+            return input;
+        }
+
 		// Strips the whitespace from any .css file.
 		private static string StripWhitespace(StreamReader reader)
 		{
 			string body = reader.ReadToEnd();
-
+            body = ChangeUrls(body);
 			body = body.Replace("  ", String.Empty);
 			body = body.Replace(Environment.NewLine, String.Empty);
 			body = body.Replace("\t", string.Empty);
@@ -61,7 +92,6 @@ namespace Thon.Support.Web.HttpHandlers
 			body = body.Replace("; ", ";");
 			body = body.Replace(";}", "}");
 			body = Regex.Replace(body, @"(?<=[>])\s{2,}(?=[<])|(?<=[>])\s{2,}(?=&nbsp;)|(?<=&ndsp;)\s{2,}(?=[<])", String.Empty);
-
 			return body;
 		}
 

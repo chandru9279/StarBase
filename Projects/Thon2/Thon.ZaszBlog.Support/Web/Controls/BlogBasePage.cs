@@ -166,9 +166,10 @@ namespace Thon.ZaszBlog.Support.Web.Controls
                 HtmlControl c = control as HtmlControl;
                 if (c != null && c.Attributes["type"] != null && c.Attributes["type"].Equals("text/css", StringComparison.OrdinalIgnoreCase))
                 {
-                    if (!c.Attributes["href"].StartsWith("http://"))
+                    string href = c.Attributes["href"];
+                    if (!href.StartsWith("http://"))
                     {
-                        c.Attributes["href"] = SupportUtilities.RelativeWebRoot + "StyleSheets/Css.ashx?name=~/ZaszBlog/" + c.Attributes["href"];
+                        c.Attributes["href"] = href.Insert(href.LastIndexOf('/') + 1, "Css.ashx?name=");
                         c.EnableViewState = false;
                     }
                 }

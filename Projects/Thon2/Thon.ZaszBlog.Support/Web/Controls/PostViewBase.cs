@@ -203,7 +203,7 @@ namespace Thon.ZaszBlog.Support.Web.Controls
 		{
 			string[] keywords = new string[Post.Categories.Count];
 			string link = "<a href=\"{0}{1}.aspx\">{2}</a>";
-			string path = VirtualPathUtility.ToAbsolute("~/category/");
+            string path = SupportUtilities.AbsoluteWebRoot + "category/";
 			for (int i = 0; i < Post.Categories.Count; i++)
 			{
 				if (Category.Categories.Contains((Category)Post.Categories[i]))
