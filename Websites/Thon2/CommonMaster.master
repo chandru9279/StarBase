@@ -199,12 +199,15 @@ controls within CPH isn't coming under Page.Header.Controls in *BasePage
                 <div class="fotter_copyrights">Copyright 2008. zasz@chandruon.net<br /> 
                 All Rights Reserved.<br />
                 Powered by Thon.NET</div>
-            </div>
-        </div>
+            </div>            
+        </div>    
+        <center>
+            <asp:ContentPlaceHolder runat="server" ID="OutForm" >
+            </asp:ContentPlaceHolder>
+        </center>
     </div>
     
-    <asp:ContentPlaceHolder runat="server" ID="OutForm" >
-    </asp:ContentPlaceHolder>
+    
     
     <script type="text/javascript">
     function bookmover(boo)

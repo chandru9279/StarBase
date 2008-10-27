@@ -1482,6 +1482,19 @@ a.treenodestyle:hover {
 	background-repeat: repeat-x;
 	background-position: center top;
 }
+.fotterlike
+{
+	width:100%;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+	line-height: normal;
+	text-transform: none;
+	padding: 0px;
+	float: left;
+	height: 50px;
+}
 #fotter_1{
 	width:941px;
 	height:104px;

@@ -39,7 +39,7 @@
             <div class="morelinks_head">Calendar</div><br />
             </td></tr>
             <tr><td>
-            <zaszblog:postcalendar ID="PostCalendar" runat="Server" NextMonthText=">>" 
+            <ZaszBlog:postcalendar ID="PostCalendar" runat="Server" NextMonthText=">>" 
                     DayNameFormat="FirstTwoLetters" FirstDayOfWeek="sunday" PrevMonthText="<<" 
                     CssClass="calendar" BorderWidth="0" WeekendDayStyle-CssClass="weekend" 
                     OtherMonthDayStyle-CssClass="other" UseAccessibleHeader="true" 
@@ -121,14 +121,8 @@
 </asp:Content>
 
 <asp:Content ID="Content6" ContentPlaceHolderID="OutForm" Runat="Server">     
-    <table width="100%">
-     <tr>
-        <td>Search the Internet</td>
-        <td>Search this Site</td>
-    </tr>
-    <tr>
-        <td><Google:InternetSearch runat="server" ID="InternetSearch" /></td>
-        <td><Google:ThisSiteSearch runat="server" ID="SearchThon" /></td>
-    </tr>
- </table>
+    <div class="fotterlike">
+        <p style="margin:10px 10px 10px 10px;color:Black;">Search the Internet</p><br />
+        <Google:InternetSearch runat="server" ID="InternetSearch" />
+    </div>
 </asp:Content>
