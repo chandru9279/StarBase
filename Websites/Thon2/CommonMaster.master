@@ -1,6 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="CommonMaster.master.cs" Inherits="CommonMasterPage" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Assembly="ScriptReferenceProfiler" Namespace="ScriptReferenceProfiler" TagPrefix="Microsoft" %>
 
 <%@ Reference Control="~/UserControls/Footer/MainDomains.ascx" %>
 <%@ Reference Control="~/UserControls/Footer/WaitFor.ascx" %>
@@ -16,19 +17,41 @@ No need to Pre-fetch Hover Images here already done in Index.html
 Nested Master Page Issue : Can't have <head> here with content place holders becoz 
 controls within CPH isn't coming under Page.Header.Controls in *BasePage
 --%>
-<asp:ContentPlaceHolder id="CMHead" runat="server">
-<!-- Must contain the entire head section with stylesheet links-->
 <head id="Head1" runat="server" profile="http://gmpg.org/xfn/11">
-<title></title>
-<link id="Link1" href="StyleSheets/Master.css" runat="server" rel="stylesheet" type="text/css" />
+    <title></title>
+    <!-- if(Request.Path.Contains("ZaszBlog")) -->    
+    <link runat="server" id="ZB1" href="ZaszBlog/StyleSheets/MasterPageUserControls.css" rel="stylesheet" type="text/css" />
+    <link runat="server" id="ZB2" href="ZaszBlog/StyleSheets/Facing.css" rel="stylesheet" type="text/css" />
+    <!--else if(Request.Path.Contains("Software")) -->
+    <link runat="server" id="So1" href="StyleSheets/Master.css" rel="stylesheet" type="text/css" />
+    <!--else -->
+    <link runat="server" id="TH1" href="StyleSheets/Master.css" rel="stylesheet" type="text/css" />
+    <link runat="server" id="TH2" href="StyleSheets/Gallery.css" rel="stylesheet" type="text/css" />
+    <link runat="server" id="TH3" href="StyleSheets/SettingsAspxStyleSheet.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="CMHead" runat="server">
+    </asp:ContentPlaceHolder>
 </head>
-</asp:ContentPlaceHolder>
 
 
 <body>
 <form id="ThonForm" name="ThonForm" runat="server">
 <asp:SiteMapDataSource ID="ThonSitemap" runat="server" SiteMapProvider="SecuritySiteMap" />
 <asp:ScriptManager ID="ScriptManager1" runat="server">
+<CompositeScript>
+<Scripts>
+    <asp:ScriptReference name="MicrosoftAjax.js"/>
+    <asp:ScriptReference name="MicrosoftAjaxWebForms.js"/>
+    <asp:ScriptReference name="AjaxControlToolkit.Common.Common.js" assembly="AjaxControlToolkit, Version=3.0.20820.16598, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e"/>
+	<asp:ScriptReference name="AjaxControlToolkit.Compat.Timer.Timer.js" assembly="AjaxControlToolkit, Version=3.0.20820.16598, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e"/>
+	<asp:ScriptReference name="AjaxControlToolkit.Animation.Animations.js" assembly="AjaxControlToolkit, Version=3.0.20820.16598, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e"/>
+	<asp:ScriptReference name="AjaxControlToolkit.ExtenderBase.BaseScripts.js" assembly="AjaxControlToolkit, Version=3.0.20820.16598, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e"/>
+	<asp:ScriptReference name="AjaxControlToolkit.CollapsiblePanel.CollapsiblePanelBehavior.js" assembly="AjaxControlToolkit, Version=3.0.20820.16598, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e"/>
+	<asp:ScriptReference name="AjaxControlToolkit.SlideShow.SlideShowBehavior.js" assembly="AjaxControlToolkit, Version=3.0.20820.16598, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e"/>
+	<asp:ScriptReference name="AjaxControlToolkit.Animation.AnimationBehavior.js" assembly="AjaxControlToolkit, Version=3.0.20820.16598, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e"/>
+	<asp:ScriptReference name="AjaxControlToolkit.UpdatePanelAnimation.UpdatePanelAnimationBehavior.js" assembly="AjaxControlToolkit, Version=3.0.20820.16598, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e"/>
+	<asp:ScriptReference name="AjaxControlToolkit.TextboxWatermark.TextboxWatermark.js" assembly="AjaxControlToolkit, Version=3.0.20820.16598, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e"/>
+</Scripts>
+</CompositeScript>
 </asp:ScriptManager>
 
     <div id="topheader">
@@ -158,6 +181,8 @@ controls within CPH isn't coming under Page.Header.Controls in *BasePage
         </div>
     </div>
     
+    <%-- <Microsoft:ScriptReferenceProfiler runat="server" id="id1" /> --%>
+</form>
     
     
     <div id="fotter">
@@ -177,6 +202,9 @@ controls within CPH isn't coming under Page.Header.Controls in *BasePage
             </div>
         </div>
     </div>
+    
+    <asp:ContentPlaceHolder runat="server" ID="OutForm" >
+    </asp:ContentPlaceHolder>
     
     <script type="text/javascript">
     function bookmover(boo)
@@ -207,7 +235,6 @@ controls within CPH isn't coming under Page.Header.Controls in *BasePage
     }
     </script>
 
-    
-</form>
+
 </body>
 </html>

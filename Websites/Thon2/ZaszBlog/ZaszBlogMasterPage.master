@@ -6,16 +6,10 @@
 <%@ Register Src="~/UserControls/AdSense/BannerAd.ascx" TagName="BannerAd" TagPrefix="Google"%>
 <%-- Skip reference to menu control coz NavTree itself can handle admin links --%>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="CMHead" Runat="Server">        
-<head id="Head1" runat="server" profile="http://gmpg.org/xfn/11">
-<link rel="shortcut icon" href="../favicon.ico" />
-<link rel="icon" href="../afavicon.gif" type="image/gif" />
-<title></title>
-<link href="StyleSheets/MasterPageUserControls.css" rel="stylesheet" type="text/css" />
-<link href="StyleSheets/Facing.css" rel="stylesheet" type="text/css" />
-</head>
+<asp:Content ID="Content1" ContentPlaceHolderID="CMHead" Runat="Server" >
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="icon" href="../afavicon.gif" type="image/gif" />
 </asp:Content>
-
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CMTopHeader" Runat="Server">
         <p class="banner_head">Welcome to <%=BlogSettings.Instance.Name %></p>
@@ -39,56 +33,63 @@
             <div class="morelinks_head">Search <%=BlogSettings.Instance.Name%></div><br />
             </td></tr>
             <tr><td style="padding-left:15px">
-            <ZaszBlog:SearchBox ID="SearchBox1" runat="server" />
+            <zaszblog:searchbox ID="SearchBox1" runat="server" />
             </td></tr>
             <tr><td>
             <div class="morelinks_head">Calendar</div><br />
             </td></tr>
             <tr><td>
-            <ZaszBlog:PostCalendar ID="PostCalendar" runat="Server" NextMonthText=">>" DayNameFormat="FirstTwoLetters" FirstDayOfWeek="sunday" PrevMonthText="<<" CssClass="calendar" BorderWidth="0" WeekendDayStyle-CssClass="weekend" OtherMonthDayStyle-CssClass="other" UseAccessibleHeader="true" EnableViewState="false" />              
+            <zaszblog:postcalendar ID="PostCalendar" runat="Server" NextMonthText=">>" 
+                    DayNameFormat="FirstTwoLetters" FirstDayOfWeek="sunday" PrevMonthText="<<" 
+                    CssClass="calendar" BorderWidth="0" WeekendDayStyle-CssClass="weekend" 
+                    OtherMonthDayStyle-CssClass="other" UseAccessibleHeader="true" 
+                    EnableViewState="false" />              
             </td></tr>
             <tr><td>                
             <div class="morelinks_head">Pages</div><br />
             </td></tr>
             <tr><td style="padding-left:15px">                
-            <ZaszBlog:PageList ID="PageList" runat="server" />
+            <zaszblog:pagelist ID="PageList" runat="server" />
             </td></tr>
             <tr><td>
             <div class="morelinks_head">RecentComments</div><br />
             </td></tr>
             <tr><td style="padding-left:15px">
-            <ZaszBlog:RecentComments ID="RecentComments" runat="server" />
+            <zaszblog:recentcomments ID="RecentComments" runat="server" />
             </td></tr>
             <tr><td>
             <div class="morelinks_head">RecentPosts</div><br />
             </td></tr>
             <tr><td style="padding-left:15px">
-            <ZaszBlog:RecentPosts ID="RecentPosts" runat="server" />
+            <zaszblog:recentposts ID="RecentPosts" runat="server" />
             </td></tr>
             <tr><td>               
             <div class="morelinks_head">Archive</div><br />
             </td></tr>
             <tr><td style="padding-left:15px">
-            <ZaszBlog:MonthList ID="MonthList" runat="server" />
+            <zaszblog:monthlist ID="MonthList" runat="server" />
             </td></tr>
             <tr><td>                                
             <div class="morelinks_head">Tags</div><br />
             </td></tr>
             <tr><td style="padding-left:15px">
-            <ZaszBlog:TagCloud ID="TagCloud" runat="server" />
+            <zaszblog:tagcloud ID="TagCloud" runat="server" />
             </td></tr>
             <tr><td>                
             <div class="morelinks_head">Categories</div><br />
             </td></tr>
             <tr><td  style="padding-left:15px">
-            <ZaszBlog:CategoryList ID="CategoryList" ShowRssIcon="false" runat="Server" /><br />
+            <zaszblog:categorylist ID="CategoryList" ShowRssIcon="false" runat="Server" /><br />
             </td></tr>
             <tr><td>                
             <div class="morelinks_head">Internet Search</div><br />
             </td></tr>
-            <tr><td  style="padding-left:15px">
-            <Google:InternetSearch runat="server" ID="ZBGoogleWebSearch" />
-            </td></tr>                
+            <tr><td>
+            <p style="padding-left:12px;margin-bottom:12px;color:Maroon"> Support this site by using :</p>
+            <span>
+            <a href="#q" class="morelink">Focus On <span class="links_text"> Custom Search</span></a> <br />
+            </span>
+            </td></tr>               
             <tr><td style="padding-left:15px;padding-right:10px;">
             <h2>Disclaimer</h2>
             </td></tr>
@@ -117,4 +118,17 @@
 
 <asp:Content ID="Content5" ContentPlaceHolderID="Sidebar" Runat="Server">
         <%-- No sidebar for ZaszBlog --%>
+</asp:Content>
+
+<asp:Content ID="Content6" ContentPlaceHolderID="OutForm" Runat="Server">     
+    <table width="100%">
+     <tr>
+        <td>Search the Internet</td>
+        <td>Search this Site</td>
+    </tr>
+    <tr>
+        <td><Google:InternetSearch runat="server" ID="InternetSearch" /></td>
+        <td><Google:ThisSiteSearch runat="server" ID="SearchThon" /></td>
+    </tr>
+ </table>
 </asp:Content>

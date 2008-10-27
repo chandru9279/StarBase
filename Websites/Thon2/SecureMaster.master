@@ -1,15 +1,10 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/CommonMaster.master" AutoEventWireup="true" CodeFile="SecureMaster.master.cs" Inherits="Thon.SecureMaster" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CMHead" Runat="Server">
-<head id="Head1" runat="server" profile="http://gmpg.org/xfn/11">
-<link rel="shortcut icon" href="favicon.ico" />
-<link rel="icon" href="afavicon.gif" type="image/gif" />
-<title></title>
-<link href="StyleSheets/Master.css" rel="stylesheet" type="text/css" />
-<link href="StyleSheets/SettingsAspxStyleSheet.css" rel="stylesheet" type="text/css" />
-<asp:ContentPlaceHolder id="cphhead" runat="server">
-</asp:ContentPlaceHolder>
-</head>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" href="afavicon.gif" type="image/gif" />
+    <asp:ContentPlaceHolder id="cphhead" runat="server">
+    </asp:ContentPlaceHolder>
 </asp:Content>
 
 
@@ -76,4 +71,8 @@
         </div>
         <div class="right_bottom" />
         </div>
+</asp:Content>
+
+<asp:Content ID="Content6" ContentPlaceHolderID="OutForm" Runat="Server">     
+  
 </asp:Content>

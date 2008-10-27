@@ -6,17 +6,25 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CMHead" Runat="Server">
-<head id="Head1" runat="server" profile="http://gmpg.org/xfn/11">
-<link rel="shortcut icon" href="favicon.ico" />
-<link rel="icon" href="afavicon.gif" type="image/gif" />
-<title></title>
-<link href="StyleSheets/Master.css" rel="stylesheet" type="text/css" />
-<link href="StyleSheets/Gallery.css" rel="stylesheet" type="text/css" />
-<asp:ContentPlaceHolder id="cphhead" runat="server">
-</asp:ContentPlaceHolder>
-</head>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" href="afavicon.gif" type="image/gif" />
+    <asp:ContentPlaceHolder id="cphhead" runat="server">
+    </asp:ContentPlaceHolder>
 </asp:Content>
 
+
+<asp:Content ID="Content6" ContentPlaceHolderID="OutForm" Runat="Server">     
+    <table width="100%">
+    <tr>
+        <td>Search the Internet</td>
+        <td>Search this Site</td>
+    </tr>
+    <tr>
+        <td><Google:InternetSearch runat="server" ID="InternetSearch" /></td>
+        <td><Google:ThisSiteSearch runat="server" ID="SearchThon" /></td>
+    </tr>
+    </table>
+</asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CMTopHeader" Runat="Server">        
         <table><tr>
@@ -32,7 +40,7 @@
 
 
 <asp:Content ID="Content3" ContentPlaceHolderID="CMMoreLinksArea" Runat="Server">
-        <table style="margin-top:20px;margin-bottom:20px;">
+        <table style="margin-top:20px;margin-bottom:20px;height:auto;">
         <tr><td>
             <div class="morelinks_head">Navigation Tree</div>
             <div class="links_morearea">
@@ -60,23 +68,27 @@
             <tr><td>
             <div class="morelinks_head">Google!</div>
             </td></tr>
-            <tr><td style="padding-left:12px">
+            <%-- IE8 Problem--%>
+            <tr><td>
+            <p style="padding-left:12px;margin-bottom:12px;color:Maroon"> Support this site by using :</p>
             <span>
-            <Google:InternetSearch ID="InternetSearch1" runat="server" />
+            <a href="#q" class="morelink">Focus On <span class="links_text"> Custom Search</span></a> <br />
             </span>
             </td></tr>
-            </table>
-            <br />
+            <tr><td>
+                <br />
                 <div style="margin-left:12px;margin-bottom:40px;">
                     <h1>Disclaimer</h1><br />
                     <p>The content exposed herein are confidential and private to the social circle of T. Chandirasekar, T. Arun Kumar, T. Jayalakshmi, R. Thiagarajan. Any form of misusage of content, will be subject to severe action as much as the the applicable country's law allows.</p><br />
                     <p>&copy; Copyright <%=DateTime.Now.Year %></p>                                        
                 </div>
+            </td></tr>
+            </table>
 </asp:Content>
 
 
 <asp:Content ID="Content4" ContentPlaceHolderID="CMDivMid" Runat="Server">
-<asp:ContentPlaceHolder ID="cphmain" runat="server" />
+    <asp:ContentPlaceHolder ID="cphmain" runat="server" />
 </asp:Content>
 
 

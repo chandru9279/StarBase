@@ -13,6 +13,33 @@ public partial class CommonMasterPage : System.Web.UI.MasterPage
     {
         if (!(Page.IsPostBack || Page.IsCallback))
             FooterPlaceHolder.Controls.Add(LoadControl("~/UserControls/Footer/Futures.ascx"));
+
+        foreach (Control control in Page.Header.Controls)
+        {
+            HtmlControl c = control as HtmlControl;
+            if (c != null && c.Attributes["type"] != null && c.Attributes["type"].Equals("text/css", StringComparison.OrdinalIgnoreCase))
+            {
+                string href = c.Attributes["href"];
+                if (!href.StartsWith("http://"))
+                    c.Visible = false;
+            }
+        }
+        if (Request.Path.Contains("ZaszBlog"))
+        {
+            ZB1.Visible = true;
+            ZB2.Visible = true;
+        }
+        else if (Request.Path.Contains("Software"))
+        {
+            So1.Visible = true;
+        }
+        else
+        {
+            TH1.Visible = true;
+            TH2.Visible = true;
+            TH3.Visible = true;
+        }
+
     }
 
     protected void FLOne_Click(object sender, EventArgs e)

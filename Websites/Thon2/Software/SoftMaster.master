@@ -1,24 +1,57 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/CommonMaster.master" AutoEventWireup="false" CodeFile="SoftMaster.master.cs" Inherits="Software_SoftMaster" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CMHead" Runat="Server">
-    <head>
+    <asp:ContentPlaceHolder id="cphhead" runat="server">
+</asp:ContentPlaceHolder>
 <link rel="shortcut icon" href="../favicon.ico" />
 <link rel="icon" href="../afavicon.gif" type="image/gif" />
-<title></title>
-<link href="../StyleSheets/Master.css" rel="stylesheet" type="text/css" />
-<asp:ContentPlaceHolder id="cphhead" runat="server">
-</asp:ContentPlaceHolder>
-</head>
 </asp:Content>
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CMTopHeader" Runat="Server">
-The Soft Showcase - chandru9279@chandruon.net
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="CMMoreLinksArea" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="CMDivMid" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="Sidebar" Runat="Server">
+    <span style="font-family: 'Goudy Old Style'; font-size: xx-large">Warez Showcase</span>
+<br />
+&nbsp;Odds and ends of code. Wannabe open source enthust.&nbsp; 
 </asp:Content>
 
+<asp:Content ID="Content3" ContentPlaceHolderID="CMMoreLinksArea" Runat="Server">
+        <div class="morelinks_head">Menu</div><br /><br /><br />
+        <table style="margin-left:30px;">
+        <tr><td><a href="../Default.aspx" class="comments">Home</a></td></tr>
+        <tr><td><a href="../Gallery.aspx" class="comments">Gallery</a></td></tr>
+        <tr><td><a href="../ZaszBlog/Default.aspx" class="comments">Z-Blog</a></td></tr>
+        </table>
+        <div class="morelinks_head">Projects</div><br /><br /><br />
+        <a href="Default.aspx" class="morelink">Warez <span class="links_text"> Home</span></a>
+        <a href="CallOfCSharp.aspx" class="morelink">Call Of C# <span class="links_text"> 3-D Game</span></a> 
+        <a href="CCuraPlus.aspx" class="morelink">CCura+ <span class="links_text"> Crypto utility</span></a>
+        <a href="GAP2P.aspx" class="morelink">GA P2P <span class="links_text"> ResShare utility</span></a>
+        <a href="PushWPF.aspx" class="morelink">D.I.Calc <span class="links_text"> WPF App</span></a>
+        <a href="TecMaze.aspx" class="morelink">TecMaze <span class="links_text"> Boring game</span></a>
+        <a href="ThonDotNet.aspx" class="morelink">Thon.NET <span class="links_text"> You're seeing it!</span></a>
+        <a href="TwoOhApp.aspx" class="morelink">TwoOhApp <span class="links_text"> WCF client</span></a>
+        <div class="morelinks_head">Open</div><br /><br /><br />
+        <p style="margin:0px 20px 0px 20px;color:Black;"> All of the above projects are open source. Download 'em , Use 'em , And don't forget to provide credits or a link back to this site!</p><br /><br />
+        <p style="margin:0px 20px 0px 20px;color:Black;"> Mail to zasz@chandruon.net for info concerning these projects. You can always leave a comment in the blog too.</p><br /><br />
+        <div class="morelinks_head">Licenses</div><br /><br /><br />
+        <table style="margin-left:20px">
+        <tr><td><a style="color:Blue" href="../CCA25.aspx">Creative Commons</a></td></tr>
+        <tr><td><a style="color:Blue" href="../GNULGPL.aspx">GNU Lesser</a></td></tr>
+        <tr><td><a style="color:Blue" href="../GNUGPL.aspx">GNU General</a></td></tr>
+        <tr><td><a style="color:Blue" href="../MSPL.aspx">Microsoft Permissive</a></td></tr>
+        <tr><td><a style="color:Blue" href="../MSRL.aspx">Microsoft Reciprocal</a></td></tr>
+        </table>
+        
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="CMDivMid" Runat="Server">
+    <asp:ContentPlaceHolder id="cphsoftware" runat="server">
+</asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content5" ContentPlaceHolderID="Sidebar" Runat="Server">
+    <asp:ContentPlaceHolder id="cphsidebar" runat="server">
+</asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content6" ContentPlaceHolderID="OutForm" Runat="Server">
+</asp:Content>

@@ -4,7 +4,7 @@
   <div>
     <input type="hidden" name="cx" value="partner-pub-5538103424429375:1jjgtmnkufs" />
     <input type="hidden" name="ie" value="ISO-8859-1" />
-    <input type="text" name="q" size="15" />
+    <input type="text" name="q" id="q" size="55" />
     <input type="submit" name="sa" value="Search" />
   </div>
 </form>
