@@ -91,7 +91,7 @@
             <asp:Image ID="Image1" runat="server" 
                 Height="342"
                 Style="border: 2px solid black;width:auto" 
-                ImageUrl="Images/Files/15.jpg"
+                ImageUrl="ThonHttpHandlers/Image.ashx?picturepath=~/Images/Files/15.jpg"
                 AlternateText="ThonSlideShow" /><br />                
             <asp:Label runat="server" ID="imageDescription"></asp:Label><br /><br />
             <asp:Button runat="Server" BorderStyle="Double" BackColor="Cornsilk" ForeColor="Maroon" Font-Bold="true" BorderColor="Maroon" ID="prevButton" Text="Previous" Font-Size="Larger" />
