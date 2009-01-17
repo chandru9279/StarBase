@@ -1,0 +1,3 @@
+﻿<PLog Date="1/14/2009" Time="10:16 PM">Sender: ASP.search_aspx   Message: Catalog object unavailable : Loadind from file!System.NullReferenceException: Object reference not set to an instance of an object.
+   at Shelf.Web.SearchAspx.Page_Load() in C:\Users\Agate\Documents\Visual Studio 2008\Projects\Shelf\Shelf.Web\Search.aspx.cs:line 79</PLog>
+<PLog Date="1/14/2009" Time="10:16 PM">Sender: ASP.search_aspx   Message: Deserialized catalog and put in Cache</PLog>

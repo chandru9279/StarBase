@@ -1,0 +1,661 @@
+<html>
+<head>
+
+<META NAME="keywords" CONTENT="parallel ,port ,interfacing ,windows , NT ,2000 , lpt , driver , inp , outp , inpout , VB , visual basic , vc++ , visual c++ , dll , xp">
+<META NAME="description" CONTENT="new inpout32.dll for windows nt / 2000 . this dll will solve the problems aring from the use of Inp() and Outp() functions in WIN NT">
+
+
+<TITLE>PARALLEL PORT INTERFACING TUTORIAL - Logix4u</TITLE>
+	
+<style type="text/css">
+	<!--
+	body {font-family: Arial; font-size: xx-small; color: black; background: #eeeeee;}
+	.hand {cursor: hand; color: black;}
+	a:link {color: blue; text-decoration: underline}
+	a:visited {color: darkred; text-decoration: none}
+	a:active {color: green; text-decoration: none}
+	a:hover {text-decoration: underline}
+	.1a {color: black; text-decoration: none; font-size: 18pt; font-weight: bold}
+	//-->
+</style>
+
+<link rel="STYLESHEET" type="text/css" href="PARALLEL PORT INTERFACING TUTORIAL - Logix4u_files/style000.css">
+
+<script language="JavaScript">
+	<!--
+		function Menu(wich)
+		{
+			// silver is the background color of the mouseover of the menu
+			wich.style.background = "#d9f5fb";
+			// Blue is the color of the text of the mouseoverof the menu
+			wich.style.color = 'blue';
+		}
+		function MenuOut(wich)
+		{
+			wich.style.background = '';
+			wich.style.color = 'black';
+		}
+		function ChangePage(url)
+		{
+			window.location.href = url;
+		}
+	//-->
+</script>
+
+</head>
+
+  <BODY bgcolor="#FFFFFF" bottommargin="0" leftmargin="1" rightmargin="1" topmargin="1" marginwidth="1" marginheight="1">
+
+  <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" class="maintable">
+<tr>
+<td width="105px" valign="top"> 
+
+	<table width="120px"  class="menuleft" cellpadding=3>
+
+	<tr>
+		<td style="font-size: 9pt; font-weight: bold; background: #0a20b8; background-repeat: repeat-y; background-attachment: scroll; color: white; border-bottom: 1px solid black; background-position: right">
+		Contents
+		</td>
+	</tr>
+	
+	
+	<tr>
+		<td id="m1" onMouseOver="Menu(m1)" onMouseOut="MenuOut(m1)" onClick="ChangePage('index.htm')" class="hand"><b>Home</b><br></td>
+	</tr>
+	
+		
+	<tr>
+		<td id="m2" onMouseOver="Menu(m2)" onMouseOut="MenuOut(m2)" onClick="ChangePage('parallelport1.htm')" class="hand"><b>Parallel Port</b></td>
+	</tr>
+	
+		
+	<tr>
+		<td id="m3" onMouseOver="Menu(m3)" onMouseOut="MenuOut(m3)" onClick="ChangePage('inpout32.htm')" class="hand"><b>Inpout32</b></td>
+	</tr>
+	
+		
+	<tr>
+		<td id="m4" onMouseOver="Menu(m4)" onMouseOut="MenuOut(m4)" onClick="ChangePage('dll_tutorial1.htm')" class="hand"><b>Dll Tutorial</b></td>
+	</tr>
+	
+	<tr>
+		<td id="m5" onMouseOver="Menu(m5)" onMouseOut="MenuOut(m5)" onClick="ChangePage('dsp_intro1.htm')" class="hand"><b>DSP tutorial</b></td>
+	</tr>
+	
+	<tr>
+		<td id="m6" onMouseOver="Menu(m6)" onMouseOut="MenuOut(m6)" onClick="ChangePage('digfilt.htm')" class="hand"><b>Digital Filters</b></td>
+	</tr>
+	
+	<tr>
+		<td id="m7" onMouseOver="Menu(m7)" onMouseOut="MenuOut(m7)" onClick="ChangePage('convolution.htm')" class="hand"><b>Convolution</b></td>
+	</tr>
+
+	<tr>
+		<td id="m8" onMouseOver="Menu(m8)" onMouseOut="MenuOut(m8)" onClick="ChangePage('dft.htm')" class="hand"><b>Discrete Fourier Transform</b></td>
+	</tr>
+
+	<tr>
+		<td id="m9" onMouseOver="Menu(m9)" onMouseOut="MenuOut(m9)" onClick="ChangePage('fft.htm')" class="hand"><b>Fast Fourier Transform</b></td>
+	</tr>
+		
+	<tr>
+		<td>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-6974310080265953";
+google_ad_width = 120;
+google_ad_height = 600;
+google_ad_format = "120x600_as";
+google_ad_type = "text";
+//2006-10-01: LeftSkyScrapper
+google_ad_channel ="2133780614";
+google_color_border = "63ADD1";
+google_color_bg = "63ADD1";
+google_color_link = "000000";
+google_color_text = "000000";
+google_color_url = "000000";
+//--></script>
+<script type="text/javascript"
+  src="PARALLEL PORT INTERFACING TUTORIAL - Logix4u_files/show_ads.js">
+</script>
+
+	 	</td>
+	</tr>
+	
+
+</table>
+</td>
+<td valign="top" style="font-family: Arial; font-size: xx-small">
+
+<table width="100%" class="header" cellspacing="0">
+	<tr>
+		<td><p class="1a" align="left">Logix4u.net</td>
+
+	</tr>
+</table>
+
+<table width="100%" class="maindoc" cellspacing="0" cellpadding=5>
+	
+
+<!-- main document starts //-->	
+	<table width="100%" style="background: #fafafa; border: 1px solid black; font-family: Arial; font-size: 10pt; color: black" cellspacing="0" cellpadding=5>
+	<tr>
+		<td style="font-size: 10pt; font-weight: bold; background: #2F97CF; background-repeat: repeat-y; background-attachment: scroll; color: white; border-bottom: 1px solid black; background-position: right">
+		Parallel port Interfacing Tutorial
+		</td>
+	</tr>
+	<tr>
+		<td><br>
+		
+		
+		<font size = "2pt" face="Courier new"><b><u>Introduction</u></b></font><br>
+		<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Parallel port is a simple and inexpensive tool for building 
+		computer controlled devices and projects. The 
+		simplicity and ease of programming makes parallel port popular 
+		in electronics hobbyist world. The parallel port is often used 
+		in Computer controlled robots,  Atmel/PIC programmers, home 
+		automation, ...etc... Here a simple tutorial on parallel port 
+		interfacing and programming with some examples.<br><br> 
+
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Everybody knows what is parallel port, where it can be found, 
+		and for what it is being used. the primary use of parallel port 
+		is to connect printers to computer and is specifically designed 
+		for this purpose. Thus it is often called as printer Port or 
+		Centronics port (this name came from a popular printer manufacturing
+		company 'Centronics' who devised some standards for parallel port).
+		You can see the parallel port connector in the rear panel of your 
+		PC. It is a 25 pin female (DB25) connector (to which printer is 
+		connected). On almost all the PCs only one parallel port is present,
+		but you can add more by buying and inserting ISA/PCI parallel port cards.
+		<br><br>
+
+<center>
+<script type="text/javascript"><!--
+google_ad_client = "pub-6974310080265953";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "text";
+google_ad_channel ="6521302433";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "333333";
+google_color_url = "FFFFFF";
+google_color_text = "333333";
+//--></script>
+<script type="text/javascript"
+  src="PARALLEL PORT INTERFACING TUTORIAL - Logix4u_files/show_ads.js">
+</script>
+</center>
+		<font size = "2pt"><b><u>Parallel port modes</u></b></font><br>	
+		
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		The <a href="http://www.fapo.com/ieee1284.htm">IEEE 1284 Standard</a> 
+		which has been published in 1994 defines five modes of data transfer 
+		for parallel port. They are,<br><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		1)	Compatibility Mode <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		2)	Nibble Mode<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		3)	Byte Mode<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		4)	EPP<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		5)	ECP<br><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		The programs, circuits and other information found in this tutorial 
+		are compatible to almost all types of parallel ports and can be used 
+		without any problems (Not tested, just because of confidence ! ).  
+		More information on parallel port operating modes can be found 
+		<a href="http://www.fapo.com/ieee1284.htm">here</a>.
+		<br><br>
+		<font size = "2pt"><b><u>Hardware</u></b></font><br>
+			
+		The pin outs of DB25 connector is shown in the picture below<br><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<img src="PARALLEL PORT INTERFACING TUTORIAL - Logix4u_files/parallel.gif">
+		<br><br>
+		
+		The lines in DB25 connector are divided in to three groups, they are<br><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		1)	Data lines (data bus)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		2)	Control lines<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		3)	Status lines<br><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		As the name refers , data is transferred over data lines , Control
+		lines are used to control the peripheral and of course , the 
+		peripheral returns status signals back computer through Status 
+		lines. These lines are connected to Data, Control And Status 
+		registers internally .  The details of parallel port signal lines 
+		are given below<br><br>
+		<CENTER>
+		<table cellspacing = "1" width="50" height="30" border = "1" frame = "border">
+
+<tr>
+       <td><b>Pin No (DB25)</b></td>
+       <td><b>Signal name</b></td>
+       <td><b>Direction</b></td>
+       <td><b>Register - bit</b></td>
+       <td><b>Inverted</b></td>
+</tr>
+		
+<tr>
+       <td><CENTER>1</CENTER></td>
+       <td><CENTER>nStrobe</CENTER></td>
+       <td><CENTER>Out</CENTER></td>
+       <td><CENTER>Control-0</CENTER></td>
+       <td><CENTER>Yes</CENTER></td>
+</tr>
+<tr>
+       <td><CENTER>2</CENTER></td>
+       <td><CENTER>Data0</CENTER></td>
+       <td><CENTER>In/Out</CENTER></td>
+       <td><CENTER>Data-0</CENTER></td>
+       <td><CENTER>No</CENTER></td>
+</tr>
+<tr>
+       <td><CENTER>3</CENTER></td>
+       <td><center>Data1<center></td>
+       <td><center>In/Out<center></td>
+       <td><center>Data-1<center></td>
+       <td><center>No<center></td>
+</tr>
+<tr>
+       <td><CENTER>4</CENTER></td>
+       <td><center>Data2<center></td>
+       <td><center>In/Out<center></td>
+       <td><center>Data-2<center></td>
+       <td><center>No<center></td>
+ </tr>
+<tr>
+       <td><CENTER>5</CENTER></td>
+       <td><center>Data3<center></td>
+       <td><center>In/Out<center></td>
+       <td><center>Data-3<center></td>
+       <td><center>No<center></td>
+</tr>
+<tr>
+       <td><CENTER>6</CENTER></td>
+       <td><center>Data4<center></td>
+       <td><center>In/Out<center></td>
+       <td><center>Data-4<center></td>
+       <td><center>No<center></td>
+</tr>
+<tr>
+       <td><CENTER>7</CENTER></td>
+       <td><center>Data5<center></td>
+       <td><center>In/Out<center></td>
+       <td><center>Data-5<center></td>
+       <td><center>No<center></td>
+</tr>
+<tr>
+       <td><CENTER>8</CENTER></td>
+       <td><center>Data6<center></td>
+       <td><center>In/Out<center></td>
+       <td><center>Data-6<center></td>
+       <td><center>No<center></td>
+</tr>
+<tr>
+       <td><CENTER>9</CENTER></td>
+       <td><center>Data7<center></td>
+       <td><center>In/Out<center></td>
+       <td><center>Data-7<center></td>
+       <td><center>No<center></td>
+</tr>
+<tr>
+       <td><CENTER>10</CENTER></td>
+       <td><center>nAck<center></td>
+       <td><center>In<center></td>
+       <td><center>Status-6<center></td>
+       <td><center>No<center></td>
+</tr>
+<tr>
+       <td><CENTER>11</CENTER></td>
+       <td><center>Busy<center></td>
+       <td><center>In<center></td>
+       <td><center>Status-7<center></td>
+       <td><center>Yes<center></td>
+</tr>
+<tr>
+       <td><CENTER>12</CENTER></td>
+       <td><center>Paper-Out <center></td>
+       <td><center>In<center></td>
+       <td><center>Status-5<center></td>
+       <td><center>No<center></td> 
+</tr>
+<tr>
+       <td><CENTER>13</CENTER></td>
+       <td><center>Select<center></td>
+       <td><center>In<center></td>
+       <td><center>Status-4<center></td>
+       <td><center>No<center></td>
+</tr>
+<tr>
+       <td><CENTER>14</CENTER></td>
+       <td><center>Linefeed<center></td>
+       <td><center>Out<center></td>
+       <td><center>Control-1<center></td>
+       <td><center>Yes<center></td>
+</tr>
+<tr>
+       <td><CENTER>15</CENTER></td>
+       <td><center>nError<center></td>
+       <td><center>In<center></td>
+       <td><center>Status-3<center></td>
+       <td><center>No<center></td>
+</tr>
+<tr>
+       <td><CENTER>16</CENTER></td>
+       <td><center>nInitialize<center></td>
+       <td><center>Out<center></td>
+       <td><center>Control-2<center></td>
+       <td><center>No<center></td>
+</tr>
+<tr>
+       <td><CENTER>17</CENTER></td>
+       <td><center>nSelect-Printer <center></td>
+       <td><center>Out<center></td>
+       <td><center>Control-3<center></td>
+       <td><center>Yes<center></td>
+</tr>
+<tr>
+       <td><CENTER>18-25</CENTER></td>
+       <td><center>Ground<center></td>
+       <td><center>-<center></td>
+       <td><center>-<center></td>
+       <td><center>-<center></td>
+</tr>
+</table>
+
+
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-6974310080265953";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "text";
+google_ad_channel ="6521302433";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "333333";
+google_color_url = "FFFFFF";
+google_color_text = "333333";
+//--></script>
+<script type="text/javascript"
+  src="PARALLEL PORT INTERFACING TUTORIAL - Logix4u_files/show_ads.js">
+</script>
+
+</CENTER>
+
+
+<br><br>
+
+<font size = "2pt"><b><u>Parallel port registers</u></b></font><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	As you know, the Data, Control and status lines are connected to there corresponding
+	registers inside the computer. So by manipulating these registers 
+	in program , one can easily read or write to parallel port with
+	programming languages like 'C' and BASIC.<br><br>
+	The registers found in standard parallel port are ,<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1)	data register<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2)	Status register<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+3)	Control register<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+As there names specifies, Data register is connected to Data lines, 
+Control register is connected to control lines and Status register 
+is connected to Status lines. (Here the word connection does not mean 
+that there is some physical connection between data/control/status lines. 
+The registers are virtually connected to the corresponding lines.). So 
+what ever you write to these registers , will  appear in corresponding 
+lines as voltages, Of course, you can measure it with a multimeter. And 
+What ever you give to Parallel port as voltages can be read from these
+registers(with some restrictions). For example , if we write '1' to Data 
+register , the line Data0 will be driven to +5v. Just like this ,we can 
+programmatically turn on and off any of the data lines and Control lines.   
+<br><br>
+
+<font size = "2pt"><b><u>Where these registers are ?</u></b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+In an IBM PC, these registers are IO mapped and will have unique address. 
+We have to find these addresses to work with parallel port. For a 
+typical PC , the base address of LPT1 is 0x378 and of LPT2 is  0x278. The 
+data register resides at this base address , status register at 
+baseaddress + 1 and the control register is at baseaddress + 2. So once we 
+have the base address , we can calculate the address of each registers in 
+this manner. The table below shows the register addresses of  LPT1 and 
+LPT2. <a href="http://www.logix4u.net/portaddr.htm" target="_blank">Click here for tutorial on how to find base address of 
+Parallel/Serial ports with sample source code </a><br><br>
+
+<CENTER>
+
+<table border="1" bordercolor="#b0b0b0">
+
+<tr>
+       <td>Register</td>
+       <td>LPT1</td>
+       <td>LPT2</td>
+</tr>
+<tr>
+       <td>data registar(baseaddress + 0)</td>
+       <td>0x378</td>
+       <td>0x278</td>
+</tr>
+<tr>
+       <td>status register (baseaddress + 1)</td>
+       <td>0x379</td>
+       <td>0x279</td>
+</tr>
+<tr>
+       <td>control register (baseaddress + 2)</td>
+       <td>0x37a</td>
+       <td>0x27a</td>
+</tr>
+</table>
+</CENTER>
+<br><br>
+<font size = "2pt"><b><u>Programming Concepts</u></b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Almost all programming languages allow programmers to access parallel port
+using some library functions. For example , Borland C  is providing 
+"Inportb" and "Outportb" functions to read or write IO mapped peripherals. 
+But the examples provided here in this tutorial is written VC++ and can be
+easily ported to other compilers like Borland C and Turbo C. Visual Basic  
+does not have any functions or support to access parallel port directly, 
+but it is possible to add such capabilities to your VB application by 
+writing a dll in VC++ and calling its exported functions from VB. VC++ 
+provides two functions to access IO mapped peripherals, '_inp' for 
+reading and '_outp' for writing. These functions are declared in 
+"conio.h".<br><br>
+
+<font size = "2pt"><b><u>Hardware for testing sample programs  </u></b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The schematic diagram of the test circuit is shown below. It is recommended 
+to build this circuit before testing the sample programs<br><br>
+<center>
+<a href="http://www.logix4u.net/paralleltest.gif">
+<img src="PARALLEL PORT INTERFACING TUTORIAL - Logix4u_files/parallem.gif" width="357" height="199" border="1">
+</a>
+</center><br><br>
+
+<b><u><big>Sample program in VC++</big></u></b><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Writing a parallel port interfacing program in VC++ is very easy. 
+Here is the steps to write your first parallel port interfacing application in VC++.
+<br><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Start VC++ IDE , Select 'New' from File menu.Then select “Win32 Console Application” 
+ from “Projects” tab(picture-3). enter project name as “partest1” , then click OK button.
+ <br><br>
+ <center><img src="PARALLEL PORT INTERFACING TUTORIAL - Logix4u_files/partest1.gif" width="480" height="397" alt="" border="0"> <br>
+ Picture-3
+ </center><br><br>
+ 
+ Now you can see a dialog box with caption “Win32 Console Application - step 1 of 1” 
+ (picture-4).<br><br>
+ 
+ <center><img src="PARALLEL PORT INTERFACING TUTORIAL - Logix4u_files/partest2.gif" width="413" height="272" alt="" border="0"><br>
+ Picture-4
+ </center><br><br>
+ 
+ 
+  Select “a simple Application” and click Finish. Now open example1.cpp 
+ from “fileview” and replace the existing code with the code given below.<br>
+
+<table border="1">
+<tr>
+    <td>
+	<pre>
+<font face="courier" size="-2">
+#include "stdafx.h"
+#include "conio.h"
+#include "stdio.h"
+#include "string.h"
+#include "stdlib.h"
+
+int main(int argc, char* argv[])
+{
+	short data;
+
+	if(argc<2)
+	{
+		printf("Usage\n\n");
+		printf("partest1.exe <read/write>,<portaddress in Decimal>,<data in Decimal>\n\n\n");
+		return 0;
+	}
+	
+	if(!strcmp(argv[1],"read"))
+	{
+		data = _inp(atoi(argv[2])); 
+		printf("Data read from parallel port is  ");
+		printf("%d\n\n\n\n",data);
+	}
+	
+	if(!strcmp(argv[1],"write"))
+	{
+		_outp(atoi(argv[2]),atoi(argv[3])); 
+		printf("Data written to parallel port is  ");
+		printf("%s\n\n\n\n\n",argv[3]);
+	}
+	return 0;
+}
+ </font>
+  </pre>
+	</td>
+</tr>
+</table><br>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Build the project and copy partest1.exe to "c:\". <br><br>
+
+ <big><u><b>How to Test The Program ?</b></u></big><br><br>
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Connect The assembled hardware shown above to your PC's parallel port. Open DOS command window
+ Move to "C:\" and type "partest1 write 888 255" and press enter. If everything is correct ,
+ LED1 to LED8 in the hardware will glow. You may be doubtful about the command line 
+ parameters passed to the program. Here 888(0x378) is the address of the parallel port 
+ data register and 255 is the data to be written to parallel port data register. if you 
+ enter "partest1 read 888" to command line , the program will read parallel port data 
+ register and display it. This will blindly read the contents of parallel port data register ,
+ but not the data present on data lines. To read the data from the data lines , we 
+ will have to enable the bidirectional data transfer first. To enable Bidirectional 
+ data transfer just set the "Bidirectional" bit (bit 5) in control register. This is done
+ by writing 32 to control register. The command "partest1 write 890 32" will do this.
+ After entering this command you can read the status of switches in the hardware using 
+ the command "partest1 read 888" <br><br>
+<font color = blue> Want to know more about parallel port..?, <a href="http://www.logix4u.net/books/par_ser_port/par_ser_port_books.htm">get these books</a></font><br><br>
+ 
+ <font color="#fc4f36">NOTE: This sample program will not work on Windows NT/2000 or XP 
+ if you run the program on these machines , it will show an error. use new <a href="http://www.logix4u.net/inpout32.htm">Inpout32.dll</a>
+ on NT/2000/XP machines</font><br><br>
+		<hr size="2%" width="100%" color="#66ccff">
+		
+		<script type="text/javascript"><!--
+google_ad_client = "pub-6974310080265953";
+google_ad_width = 728;
+google_ad_height = 15;
+google_ad_format = "728x15_0ads_al";
+google_ad_channel ="9022756988";
+//--></script>
+<script type="text/javascript"
+  src="PARALLEL PORT INTERFACING TUTORIAL - Logix4u_files/show_ads.js">
+</script>
+
+		</td>
+	</tr>
+
+
+	<tr>
+	<td>
+
+
+
+	</td>
+	</tr>
+
+</table>
+	
+	
+<!-- main document ends //-->	
+		
+
+
+
+</td>
+<td width="105px" align="right" valign="top">
+
+<table  width="105px" class="menuright" cellpadding=3>
+	<tr>
+		<td align="center" style="font-size: 9pt; font-weight: bold; background: #0a20b8; background-repeat: repeat-y; background-attachment: scroll; color: white; border-bottom: 1px solid black; background-position: right">
+		<img src="PARALLEL PORT INTERFACING TUTORIAL - Logix4u_files/mail0000.bmp">
+		</td>
+	</tr>
+	
+	<tr><td>
+	
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+ <br><br><br>
+
+	</td>
+
+	</tr>
+</table>
+
+
+</td>
+</tr>
+<tr>
+<td>
+<table width="100px" style="background: #eeeeee; border: 0px solid black; font-family: Arial; font-size: xx-small; color: black" cellspacing="0">
+	<tr>
+		<td> </td>
+	</tr>
+</table>
+
+</td>
+<td>
+
+
+
+</td>
+
+<tr>
+
+<table width="100%" style="background: #fafafa; border: 1px solid black; font-family: Arial; font-size: xx-small; color: black" cellspacing="0">
+	
+	<td>
+	
+		<td align="Center"><font color="#001de2"> <a href="http://www.logix4u.net/index.htm" >[Home]</a></font></td>
+	</td>
+
+</table>
+
+</tr>
+
+</body>
+
+<!-- This document saved from http://www.logix4u.net/parallelport1.htm -->

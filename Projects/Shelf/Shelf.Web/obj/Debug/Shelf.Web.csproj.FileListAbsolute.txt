@@ -1,0 +1,7 @@
+C:\Users\Agate\Documents\Visual Studio 2008\Projects\Shelf\Shelf.Web\bin\Shelf.Web.dll
+C:\Users\Agate\Documents\Visual Studio 2008\Projects\Shelf\Shelf.Web\bin\Shelf.Web.pdb
+C:\Users\Agate\Documents\Visual Studio 2008\Projects\Shelf\Shelf.Web\bin\Shelf.Support.dll
+C:\Users\Agate\Documents\Visual Studio 2008\Projects\Shelf\Shelf.Web\bin\Shelf.Support.pdb
+C:\Users\Agate\Documents\Visual Studio 2008\Projects\Shelf\Shelf.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Agate\Documents\Visual Studio 2008\Projects\Shelf\Shelf.Web\obj\Debug\Shelf.Web.dll
+C:\Users\Agate\Documents\Visual Studio 2008\Projects\Shelf\Shelf.Web\obj\Debug\Shelf.Web.pdb

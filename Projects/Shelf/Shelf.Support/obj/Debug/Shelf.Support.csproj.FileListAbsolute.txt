@@ -1,0 +1,5 @@
+C:\Users\Agate\Documents\Visual Studio 2008\Projects\Shelf\Shelf.Support\bin\Debug\Shelf.Support.dll
+C:\Users\Agate\Documents\Visual Studio 2008\Projects\Shelf\Shelf.Support\bin\Debug\Shelf.Support.pdb
+C:\Users\Agate\Documents\Visual Studio 2008\Projects\Shelf\Shelf.Support\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Agate\Documents\Visual Studio 2008\Projects\Shelf\Shelf.Support\obj\Debug\Shelf.Support.dll
+C:\Users\Agate\Documents\Visual Studio 2008\Projects\Shelf\Shelf.Support\obj\Debug\Shelf.Support.pdb
