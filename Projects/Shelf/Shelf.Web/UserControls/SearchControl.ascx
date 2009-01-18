@@ -8,7 +8,6 @@
 Panel that is visible when the search page is first visited
 --%>
 <asp:Panel id="pnlHomeSearch" runat="server">
-    <form method="get" action="Search.aspx" style="margin:0px;padding:0px;">
         <center>
         <p class="heading"><font color="red">S</font><font color="blue">h</font><font color="green">e</font><font color="orange">l</font><font color="navy">f</font>.<font color="maroon">Search</font> <font color="#990000"><sup>Beta</sup></font></p>
         <table align="center" cellspacing="0" cellpadding="4" frame="box" bgcolor="#ffffcc" rules="none" style=" border-color:#dcdcdc;border-collapse: collapse">
@@ -39,13 +38,11 @@ Panel that is visible when the search page is first visited
 	        </tr>
         </table>
         </center>
-    </form>
 </asp:Panel>
 <%--
 Panel that is visible when search results are being shown
 --%>
 <asp:Panel id="pnlResultsSearch" runat="server">
-    <form method="get" id="bottom" action="Search.aspx" style="margin:0px;padding:0px;">
         <center>
         <p class="heading" id="pHeading" runat="server"><font color="red">S</font><font color="blue">h</font><font color="green">e</font><font color="orange">l</font><font color="navy">f</font>.<font color="maroon">Search</font> <font color="#990000"><sup>Beta</sup></font></p>
         <table cellspacing="0" cellpadding="4" frame="box" rules="none" style="border-color:#dcdcdc; border-collapse: collapse" width="100%" bgcolor="#ffffcc">
@@ -72,5 +69,4 @@ Panel that is visible when search results are being shown
                 e-Library with Semantics</p></td></tr>
         </table>
         </center>
-    </form>
 </asp:Panel>

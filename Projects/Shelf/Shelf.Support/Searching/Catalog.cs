@@ -7,6 +7,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using Shelf.Support;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Shelf.Support.Searching
 {
@@ -34,6 +36,7 @@ namespace Shelf.Support.Searching
         /// key    = STRING representation of the word, 
         /// value  = Word OBJECT (with File collection hashtable, etc)
         /// </remarks>
+        [NonSerialized]
         private System.Collections.Hashtable _Index;	//TODO: implement collection with faster searching
 
         /// <summary>
@@ -47,7 +50,7 @@ namespace Shelf.Support.Searching
         /// </remarks>
         [XmlElement("o")]
         [XmlIgnore()]
-        [Obsolete("Use WordFiles and Files properties")]
+        [Obsolete("Use WordFiles and Files properties")]        
         public Word[] Words
         {
             get
@@ -77,6 +80,7 @@ namespace Shelf.Support.Searching
                 PostDeserialization();
             }
         }
+
         [XmlElement("f")]
         public File[] Files
         {
@@ -93,16 +97,22 @@ namespace Shelf.Support.Searching
             }
         }
 
-        #region Private fields and methods to manage XmlSerialization
+        #region Private fields and methods to manage Serialization
+
         /// <summary>
         /// List of File objects that were referenced in the Catalog
         /// </summary>
         private System.Collections.Generic.List<File> _FileList;
+
         /// <summary>
         /// Array of CatalogWordFile objects, with 'ids' for each File 
         /// rather than a reference to a File object
         /// </summary>
         private CatalogWordFile[] _WordfileArray;
+
+        /// <summary>
+        /// Status of the object
+        /// </summary>
         private bool _SerializePreparationDone = false;
 
         /// <summary>
@@ -140,6 +150,7 @@ namespace Shelf.Support.Searching
             }
             _SerializePreparationDone = true;
         }
+
         /// <summary>
         /// Property helper for Files &amp; WordFiles, ensures when
         /// they are both 'set', the internal Catalog datastructure is
@@ -158,6 +169,28 @@ namespace Shelf.Support.Searching
                 }
             }
         }
+
+        /// <summary>
+        /// Adapter for binary serializer
+        /// </summary>
+        /// <param name="context">The serialization context</param>
+        [OnSerializing]
+        private void PrepForBinarySerialization(StreamingContext context)
+        {
+            PrepareForSerialization();
+        }
+
+        /// <summary>
+        /// Adapter for binary serializer
+        /// </summary>
+        /// <param name="context">The serialization context</param>
+        [OnDeserialized]
+        private void PostBinaryDeserialization(StreamingContext context)
+        {
+            _Index = new Hashtable(); 
+            PostDeserialization();
+        }
+
         #endregion
         
 
@@ -179,6 +212,7 @@ namespace Shelf.Support.Searching
                 return wordArray;
             }
         }
+
         /// <summary>
         /// Number of Words in the Catalog
         /// </summary>
@@ -192,11 +226,12 @@ namespace Shelf.Support.Searching
 
         /// <summary>
         /// Constructor - creates the Hashtable for internal data storage.
-        /// </summary>
+        /// </summary>        
         public Catalog()
         {
-            _Index = new System.Collections.Hashtable();
+            _Index = new Hashtable();
         }
+
         /// <summary>
         /// Add a new Word/File pair to the Catalog
         /// </summary>
@@ -216,6 +251,7 @@ namespace Shelf.Support.Searching
             _SerializePreparationDone = false;  // adding to the catalog invalidates 'serialization preparation'
             return true;
         }
+
         /// <summary>
         /// Returns all the Files which contain the searchWord
         /// </summary>
@@ -271,7 +307,7 @@ namespace Shelf.Support.Searching
 
             // BINARY http://www.dotnetspider.com/technology/kbpages/454.aspx
             System.IO.Stream stream = new System.IO.FileStream(Preferences.CatalogFileName, System.IO.FileMode.Create);
-            System.Runtime.Serialization.IFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+            IFormatter formatter = new BinaryFormatter();
             formatter.Serialize(stream, this);
             stream.Close();
         }
@@ -304,7 +340,7 @@ namespace Shelf.Support.Searching
                     object deserializedCatalogObject;
                     using (System.IO.Stream stream = new System.IO.FileStream(Preferences.CatalogFileName, System.IO.FileMode.Open))
                     {
-                        System.Runtime.Serialization.IFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                        IFormatter formatter = new BinaryFormatter();
                         //object m = formatter.Deserialize (stream); // This doesn't work, SerializationException "Cannot find the assembly <random name>"
                         formatter.Binder = new CatalogBinder();	// This custom Binder is REQUIRED to find the classes in our current 'Temporary ASP.NET Files' assembly
                         deserializedCatalogObject = formatter.Deserialize(stream);
@@ -318,5 +354,6 @@ namespace Shelf.Support.Searching
                 }
             }
         }// Looad() method
+
     }// End of Catalog class
 }

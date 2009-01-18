@@ -124,6 +124,26 @@
     <None Include="Library\C#- Console Applications.pdf" />
     <None Include="Library\powerpoint.ppt" />
     <None Include="Library\Zasz.xlsx" />
+    <None Include="Resources\Dictionary\adj.exc" />
+    <None Include="Resources\Dictionary\adv.exc" />
+    <None Include="Resources\Dictionary\cntlist" />
+    <None Include="Resources\Dictionary\cntlist.rev" />
+    <None Include="Resources\Dictionary\data.adj" />
+    <None Include="Resources\Dictionary\data.adv" />
+    <None Include="Resources\Dictionary\data.noun" />
+    <None Include="Resources\Dictionary\data.verb" />
+    <None Include="Resources\Dictionary\frames.vrb" />
+    <None Include="Resources\Dictionary\index.adj" />
+    <None Include="Resources\Dictionary\index.adv" />
+    <None Include="Resources\Dictionary\index.noun" />
+    <None Include="Resources\Dictionary\index.sense" />
+    <None Include="Resources\Dictionary\index.verb" />
+    <None Include="Resources\Dictionary\log.grind.2.1" />
+    <None Include="Resources\Dictionary\noun.exc" />
+    <None Include="Resources\Dictionary\sentidx.vrb" />
+    <None Include="Resources\Dictionary\sents.vrb" />
+    <None Include="Resources\Dictionary\verb.exc" />
+    <None Include="Resources\Dictionary\verb.Framestext" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />

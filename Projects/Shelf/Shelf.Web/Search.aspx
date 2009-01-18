@@ -60,6 +60,14 @@
 		    
 		</asp:Repeater>
 		
+        <asp:Panel ID="SemanticsPanel" runat="server" Visible="false" >
+            <br />
+            <br />
+            <h3>Semantics justification : </h3>
+            <br />
+            <asp:Literal ID="SInformation" runat="server"></asp:Literal>
+        </asp:Panel>
+        
 		<TCNGKKP:ShelfSearchControl ID="ucSearchPanelFooter" runat="server" Visible="false" IsSearchResultsPage="true" IsFooter="true" />
 		
 </asp:Content>

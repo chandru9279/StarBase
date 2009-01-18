@@ -29,16 +29,18 @@ namespace Shelf.Web.UserControls
         public string Word = "";
 
         /// <summary>
-        /// Error message - on Home Page version ONLY
-        /// ie. ONLY when IsSearchResultsPage = true
+        /// Whether the enable semantics check box is checked(selected)
         /// </summary>
-        public string _ErrorMessage;
+        public bool SemanticsEnabled
+        {
+            get
+            {
+                return SearchPage_Semantics.Checked || ResultsPage_Semantics.Checked;
+            }
+        }
 
         /// <summary>Whether the standalone home page version, or the on Search Results page</summary>
         private bool _IsSearchResultsPage;
-
-        /// <summary>Whether the control is placed at the Header or Footer</summary>
-        protected bool _IsFooter;
 
         /// <summary>
         /// Value is either
@@ -64,6 +66,9 @@ namespace Shelf.Web.UserControls
             }
         }
 
+        /// <summary>Whether the control is placed at the Header or Footer</summary>
+        protected bool _IsFooter;
+
         /// <summary>
         /// Footer control has more 'display items' than the one shown
         /// in the Header - setting this property shows/hides them
@@ -79,6 +84,12 @@ namespace Shelf.Web.UserControls
                 rowSummary.Visible = !_IsFooter;
             }
         }
+
+        /// <summary>
+        /// Error message - on Home Page version ONLY
+        /// ie. ONLY when IsSearchResultsPage = true
+        /// </summary>
+        public string _ErrorMessage;
 
         /// <summary>
         /// Error message to be displayed if search input box is empty
@@ -98,12 +109,22 @@ namespace Shelf.Web.UserControls
 
         protected void SearchPage_Search_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Search.aspx?" + Preferences.QuerystringParameterName + "=" + SearchPage_TextBox.Text);
+            string result = "Search.aspx?" + Preferences.QuerystringParameterName + "=" + SearchPage_TextBox.Text;
+
+            if (SemanticsEnabled)
+                result += "&semantics=true";
+
+            Response.Redirect(result);
         }
 
         protected void ResultsPage_SearchButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Search.aspx?" + Preferences.QuerystringParameterName + "=" + ResultsPage_TextBox.Text);
+            string result = "Search.aspx?" + Preferences.QuerystringParameterName + "=" + ResultsPage_TextBox.Text;
+
+            if (SemanticsEnabled)
+                result += "&semantics=true";
+
+            Response.Redirect(result);
         }
     }
 }

@@ -15,6 +15,8 @@ using Shelf.Web.UserControls;
 using Shelf.Support;
 using Shelf.Support.Logging;
 using System.Text;
+using Shelf.Support.Semantics;
+using System.Collections.Generic;
 
 namespace Shelf.Web
 {
@@ -37,6 +39,8 @@ namespace Shelf.Web
         protected string _Matches = "";
         /// <summary>Display string: Number of pages that match the query</summary>
         protected string _NumberOfMatches;
+        /// <summary>Contains semantics enabler methods</summary>
+        protected EnableSemantics SInfo;
         #endregion
 
         int MaxResultsPerPage
@@ -62,12 +66,45 @@ namespace Shelf.Web
             }
         }
 
+        
+
         /// <summary>
         /// Method that invokes the search engine to get resuts
         /// </summary>
         SortedList GetSearchResults(SearchEngine se)
         {
-            return se.GetResults(this.SearchQuery, _Catalog);
+            if (!string.IsNullOrEmpty(Request.QueryString["semantics"]) && (Request.QueryString["semantics"].Equals("true", StringComparison.InvariantCultureIgnoreCase)))
+            {
+                SInfo = new EnableSemantics();
+                string newss = SInfo.GetSemanticSearchString(Request.QueryString[Preferences.QuerystringParameterName].ToString().Trim(' '));
+                SortedList res = new SortedList();
+                SortedList temp;
+                IList tem2,tem1;
+                int val;
+                int i=1;
+                foreach(string syn in newss.Split(" ".ToCharArray() , StringSplitOptions.RemoveEmptyEntries))
+                {
+                    temp = se.GetResults(syn, _Catalog);
+                    tem1 = temp.GetKeyList();
+                    tem2 = temp.GetValueList();
+                    for(int j=0;j<temp.Count;j++)
+                    {
+                        val = (int)tem1[j];
+                        val*=i;
+                        res.Add(val,tem2[j]);
+                    }
+
+                    i++;
+                    if(i>5)
+                        break;
+                }
+                return res;
+            }
+            else
+            {
+                SortedList res = se.GetResults(this.SearchQuery, _Catalog);
+                return res;
+            }
         }
 
         protected void Page_Load()
@@ -150,6 +187,12 @@ namespace Shelf.Web
                 ucSearchPanelFooter.Visible = true;
                 ucSearchPanelFooter.IsFooter = true;
                 ucSearchPanelHeader.IsSearchResultsPage = true;
+            }
+
+            if (!string.IsNullOrEmpty(Request.QueryString["semantics"]) && (Request.QueryString["semantics"].Equals("true",StringComparison.InvariantCultureIgnoreCase)))
+            {
+                SemanticsPanel.Visible = true;
+                SInformation.Text = SInfo.SemanticsHtml;
             }
 
         } // Page_Load
