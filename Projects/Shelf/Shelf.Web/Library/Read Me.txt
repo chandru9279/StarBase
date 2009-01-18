@@ -1,6 +1,0 @@
-Created by Aaron Ballman (aaron@aaronballman.com)
-Last modified on Oct 31, 2005
-
-This project requires REALbasic 2005r1 or greater, which can be downloaded at http://www.realsoftware.com/download
-
-In order for the project to run, you must have the InpOut32.dll (http://www.logix4u.net) file either next to the application, or installed in the system directory.
