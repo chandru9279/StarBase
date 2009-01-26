@@ -4,11 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Thon.Support.Web.Controls;
 
-public partial class Software_Default : System.Web.UI.Page
+namespace Thon.Warez
 {
-    protected void Page_Load(object sender, EventArgs e)
+    public partial class SoftDefaultAspx : ThonBasePage
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

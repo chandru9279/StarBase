@@ -122,7 +122,10 @@
         <p style="margin:15px 15px 15px 15px;color:Maroon;font-style:italic;line-height:18px;">
            <h3>My Latest Piece of Work</h3><br />
                 <p style="margin:15px 15px 15px 15px;color:Maroon;font-style:italic;line-height:18px;"> 
-                <%=DateTime.Now.AddDays(-1).ToLongDateString() %><br />Working on a HelpDesk solution in Java EE atop the struts 2 framework. And will shortly provide a download link
+                <%=DateTime.Now.AddDays(-1).ToLongDateString() %><br />Put up the new Diablo Fansite kit, and
+                the software warez subdomain. Some bugfixes, and content doodads.</p><hr />
+                <p style="margin:15px 15px 15px 15px;color:Maroon;font-style:italic;line-height:18px;"> 
+                <%=DateTime.Now.AddDays(-6).ToLongDateString() %><br />Working on a HelpDesk solution in Java EE atop the struts 2 framework. And will shortly provide a download link
                 to my new ruby app. (Simple app to improve UI using AJAX and javascript)</p><hr />
 				<p style="margin:15px 15px 15px 15px;color:#FFAABA;font-style:italic;line-height:18px;">
 				<%=DateTime.Now.AddDays(-12).ToLongDateString() %><br />You are looking at it. This website features a Blog and a Gallery presently. Its 

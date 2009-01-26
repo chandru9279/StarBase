@@ -1,0 +1,121 @@
+When specifying a URL, you either specify an absolute URL, or a relative one. An absolute URL includes at the very least the scheme, the authority, and the path. That is,
+
+http://www.example.com/
+
+You should only need to use this form when specifying links to external sites, or if the scheme is different (for example, https or ftp). In all other situations, you should use the relative form.
+
+Relative URLs only contain the path, and the optional query and fragment components. The path is resolved against the base URL. Generally, the URL of the current document. This is where things get rather complicated as a relative path can start in various ways: with a slash (/); a dot (.); two dots (..); or text.
+
+A starting slash refers to the root directory. For example, the URL
+
+/x.html
+
+in a document at
+
+http://www.example.com/a/b/y.html
+
+refers to
+
+http://www.example.com/x.html
+
+
+
+A starting dot refers to the current directory. For example,
+
+./x.html
+
+at
+
+http://www.example.com/a/b/y.html
+
+refers to
+
+http://www.example.com/a/b/x.html
+
+
+
+Two starting dots refers to the parent directory. For example,
+
+../x.html
+
+at
+
+http://www.example.com/a/b/y.html
+
+refers to
+
+http://www.example.com/a/x.html
+
+
+
+Finally, there's the form where none of these punctuation characters start the URL. As I wrote at the very beginning, this is effectively the same as using a dot:
+
+x.html
+
+at
+
+http://www.example.com/a/b/y.html
+
+refers to
+
+http://www.example.com/a/b/x.html
+
+
+
+You can actually combine these forms to your heart's content. To refer to the parent's parent directory, you'd use two sets of double dots:
+
+../../x.html
+
+at
+
+http://www.example.com/a/b/y.html
+
+refers to
+
+http://www.example.com/x.html
+
+
+
+The combinations could even be pointless if you want:
+
+../b/x.html
+
+at
+
+http://www.example.com/a/b/y.html
+
+refers to
+
+http://www.example.com/a/b/x.html
+
+
+
+Exactly how you best construct relative URLs varies on the circumstances. If you want one URL to always refer to the same place, start with a slash.
+
+There's one final thing to cover: same document references. You'll have probably seen them before with fragments that point to some place within the current document. For example,
+
+#fragment
+
+at
+
+http://www.example.com/a/b/y.html
+
+refers to
+
+http://www.example.com/a/b/y.html#fragment
+
+
+
+The same is true for query strings, too:
+
+?name=value&i=1
+
+at
+
+http://www.example.com/a/b/y.html
+
+refers to
+
+http://www.example.com/a/b/y.html?name=value&i=1
+
+

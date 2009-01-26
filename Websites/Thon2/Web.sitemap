@@ -28,7 +28,17 @@
     <siteMapNode url="~/CreateUser.aspx" title="Add New User" description="" roles="*"/>
     <siteMapNode url="~/CheckOut.aspx" title="Subdomains" description="" roles="*">
       <siteMapNode url="~/Starcraft/Default.aspx" title="Starcraft" description="" roles="*"/>
-      <siteMapNode url="~/Software/Default.aspx" title="Showcase" description="" roles="*"/>
+      <siteMapNode url="~/Software/Default.aspx" title="Showcase" description="" roles="*">
+        <siteMapNode url="~/Software/PushWPF.aspx" title="DICalc" description="" roles="*" />
+        <siteMapNode url="~/Software/CCuraPlus.aspx" title="CCura+" description="" roles="*" />
+        <siteMapNode url="~/Software/CallOfCSharp.aspx" title="CallOfCS" description="" roles="*" />
+        <siteMapNode url="~/Software/GAP2P.aspx" title="GAP2P" description="" roles="*" />
+        <siteMapNode url="~/Software/Scheduler.aspx" title="Scheduler" description="" roles="*" />
+        <siteMapNode url="~/Software/Shelf.aspx" title="Shelf.NET" description="" roles="*" />
+        <siteMapNode url="~/Software/TecMaze.aspx" title="TecMaze" description="" roles="*" />
+        <siteMapNode url="~/Software/ThonDotNet.aspx" title="Thon.NET" description="" roles="*" />
+        <siteMapNode url="~/Software/TwoOhApp.aspx" title="TwoOhApp" description="" roles="*" />
+      </siteMapNode>
       <siteMapNode url="~/Gallery.aspx" title="Gallery" description="" roles="*"/>
     </siteMapNode>    
     <siteMapNode url="~/Linkz.aspx" title="Linkz" description="" roles="*"/>

@@ -1,0 +1,24 @@
+P {
+	FONT-SIZE: 75%; FONT-FAMILY: verdana
+}
+LI {
+	FONT-SIZE: 75%; FONT-FAMILY: verdana
+}
+.sidelink {
+	FONT-SIZE: 100%; FONT-FAMILY: verdana
+}
+.topbar {
+	FONT-WEIGHT: bold; FONT-SIZE: 150%; COLOR: #ffffff; FONT-FAMILY: verdana
+}
+.bottombar {
+	FONT-SIZE: 90%; COLOR: #ffffff; FONT-FAMILY: verdana
+}
+H1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 100%; COLOR: #000080; FONT-FAMILY: verdana
+}
+H2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 90%; COLOR: #808080; FONT-FAMILY: verdana
+}
+CAPTION {
+	FONT-SIZE: 75%; FONT-FAMILY: verdana
+}

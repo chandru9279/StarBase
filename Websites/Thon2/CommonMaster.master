@@ -37,7 +37,7 @@ controls within CPH isn't coming under Page.Header.Controls in *BasePage
 <form id="ThonForm" name="ThonForm" runat="server">
 <asp:SiteMapDataSource ID="ThonSitemap" runat="server" SiteMapProvider="SecuritySiteMap" />
 <asp:ScriptManager ID="ScriptManager1" runat="server">
-<CompositeScript>
+<%-- <CompositeScript>
 <Scripts>
     <asp:ScriptReference name="MicrosoftAjax.js"/>
     <asp:ScriptReference name="MicrosoftAjaxWebForms.js"/>
@@ -51,7 +51,7 @@ controls within CPH isn't coming under Page.Header.Controls in *BasePage
 	<asp:ScriptReference name="AjaxControlToolkit.UpdatePanelAnimation.UpdatePanelAnimationBehavior.js" assembly="AjaxControlToolkit, Version=3.0.20820.16598, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e"/>
 	<asp:ScriptReference name="AjaxControlToolkit.TextboxWatermark.TextboxWatermark.js" assembly="AjaxControlToolkit, Version=3.0.20820.16598, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e"/>
 </Scripts>
-</CompositeScript>
+</CompositeScript>--%>
 </asp:ScriptManager>
 
     <div id="topheader">
@@ -85,6 +85,11 @@ controls within CPH isn't coming under Page.Header.Controls in *BasePage
         <div class="morelinks_area" style="height: auto">
         <asp:ContentPlaceHolder id="CMMoreLinksArea" runat="server">
         </asp:ContentPlaceHolder>
+        <center style="margin-top:10px;margin-bottom:10px;"><a href="http://www4.clustrmaps.com/counter/maps.php?url=http://www.chandruon.net/" id="clustrMapsLink"><img src="http://www4.clustrmaps.com/counter/index2.php?url=http://www.chandruon.net/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" onerror="this.onerror=null; this.src='http://www2.clustrmaps.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://www2.clustrmaps.com';" /></a></center>
+        <center style="margin-top:10px;margin-bottom:10px;">
+        <a href="http://www.prchecker.info/" target="_blank">
+        <img src="http://pr.prchecker.info/getpr.php?codex=aHR0cDovL3d3dy5jaGFuZHJ1b24ubmV0Lw==&tag=1" alt="PageRank Checking Icon" border="0" /></a>
+        </center>
         </div>
         <div class="morelinks_bottom"></div>
         </div>
@@ -189,7 +194,7 @@ controls within CPH isn't coming under Page.Header.Controls in *BasePage
         <div id="fotter_1">
             <div class="fotter_leftarea">
                 <div class="fotter_links">
-                    <a href="<%=accessurl()%>Default.aspx" class="fotterlink">Home</a>  |  <a href="<%=accessurl()%>About/TChandirasekar/Default.aspx" class="fotterlink">T Chandirasekar</a>  |  <a href="http://www.jackclaver.com/Default.aspx" class="fotterlink">T Arun Kumar</a>  |  <a href="<%=accessurl()%>About/TJayalakshmi/Default.aspx" class="fotterlink">T Jayalakshmi</a> |
+                    <a href="<%=accessurl()%>Default.aspx" class="fotterlink">Home</a>  |  <a href="<%=accessurl()%>About/TChandirasekar/Default.aspx" class="fotterlink">T Chandirasekar</a>  |  <a href="<%=accessurl()%>About/TArunKumar/Default.aspx" class="fotterlink">T Arun Kumar</a>  |  <a href="<%=accessurl()%>About/TJayalakshmi/Default.aspx" class="fotterlink">T Jayalakshmi</a> |
                     <a href="<%=accessurl()%>About/RThiagarajan/Default.aspx" class="fotterlink">R Thiagarajan</a>  |  <a href="<%=accessurl()%>Gallery.aspx" class="fotterlink">Gallery</a>  |  <a href="<%=accessurl()%>ZaszBlog/Default.aspx" class="fotterlink">Blog</a>  |  <a href="<%=accessurl()%>ZaszBlog/Contact.aspx" class="fotterlink">Contact</a> 
                 </div>
                 <div class="fotter_designed">Design :  <a href="<%=accessurl()%>Credits.aspx" class="fotter_designedlink">Credits</a> Best with 1280x1024 resolution.</div>

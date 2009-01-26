@@ -1,0 +1,14 @@
+User must be created after choosing the back ground. BGColor is recorded only when user is created and cannot be altered 
+at all permanantly for any particular user.
+
+If you get junk or unopenable file after decryption you must have entered the 31-bit key wrongly (or)
+If you get junk or unopenable file after decryption you must have given the target file extension differant from
+the source file
+
+Source file - file to be encrypted
+Target file - name of the encrypted file.
+
+Important:
+
+Always in using this software use '/' Forward slash
+Backslash wont work.

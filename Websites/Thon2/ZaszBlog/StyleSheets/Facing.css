@@ -40,6 +40,8 @@ disclaimer{
 div, h1, h2, h3, h4, p, form, label, input, textarea, img, span{
 	margin:0 0 0 0px; 
 padding:0;
+	width: 763px;
+	height: 522px;
 }
 
 #Features h1{

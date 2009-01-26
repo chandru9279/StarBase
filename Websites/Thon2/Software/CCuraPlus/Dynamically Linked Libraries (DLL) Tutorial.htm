@@ -1,0 +1,572 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0054)http://www.boondog.com/tutorials/dlltutor/dlltutor.htm -->
+<HTML><HEAD><TITLE>Dynamically Linked Libraries (DLL) Tutorial</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
+<BODY bgColor=white><IMG src=""> 
+<H2>Programming Custom Hardware in Visual Basic</H2>
+<CENTER><IMG 
+src="Dynamically Linked Libraries (DLL) Tutorial_files/COUNT01.gif">
+<P><B>Screen shot of Visual Basic Application for the Port I/O</B> </CENTER>
+<H2>Introduction</H2><PRE><B>Audience:</B>       You are developing custom hardware for Windows 95
+                You are frustrated learning how to create a DLL
+                You want Port I/O in Visual Basic
+                You want to mimic QuickBasic's INPUT and OUTPUT statements in VB
+                You want to mimic Turbo C's inportb() and outportb() statements in VB
+<B>Level:</B>          ALL
+<B>Pre-requisites:</B> Some Visual Basic programming, Win95 PC.
+<B>Compilers:</B>      Visual Basic 4.0 or 5.0
+                Microsoft Visual C++ 4.0 or 5.0 (not neccessary if you just want
+                to use the DLL and not program your own)
+<B>Downloads:</B>      All source code to DLL, compiled DLL
+                and apps programs.
+</PRE>
+<H3>Motivation</H3>You might be curious how to write Visual Basic (VB) 
+applications for your unique hardware device. For example, you custom developed 
+a PC card. It might be a data acquisition card, or perhaps a motor controller. 
+This tutorial will show you can write VB programs using a Dynamically linked 
+library (DLL). This tutorial is in response to the dozens of postings on the VB 
+usenet group every month: <PRE><FONT color=steelblue>
+      <B><I>"How do I create a DLL?"</I></B>
+      <B><I>"How do you get VB to call functions written in Visual C++ or 
+       other languages?"</I></B>
+</FONTCOLOR>
+</PRE>Sadly, you might be frustrated with the posted responses. You might be 
+frustrated scouring over reference books. You might be frustrated that the DLL's 
+on the Internet don't provide source code - thus wondering what magic is used to 
+create it. <BR>
+<P>Here, this tutorial gives you <I>step-by-step instructions</I> along with GIF 
+image screen shots to show you <I>how</I> to easily make your own DLL. This 
+tutorial is also in response to the hundreds of email Boondog gets each month 
+about writing VB apps for the <A 
+href="http://www.boondog.com/tutorials/8255/8255.htm">8255 PC Interface 
+Card.</A> This simple tutorial will show you how to get started. 
+<H2>Dynamically Linked Libraries (DLL)</H2>
+<P>
+<H3>Why do I need DLLs?</H3>You might have just started using Visual Basic (VB), 
+appreciating how easy it is to write Win95 32-bit applications with it. The 
+learning curve is relatively quick. You might have migrated from QuickBasic or 
+Turbo C, thus having some knowledge of the fundamental statements. 
+<P>If you have migrated from DOS' QuickBasic to VB, you soon realize that 
+QuickBasic's <B>INPUT</B> and <B>OUTPUT</B> (or Turbo C's <B>inportb</B> and 
+<B>outportb</B>) functions were not implemented in VB. These functions are 
+crucial for PC hardware developers and programmers because they allowed you to 
+read and write to ports. Thus without INPUT or OUPUT you can't read from or 
+write to your device. 
+<P>There is a way around this, using a DLL. As the name implies, DLLs allows VB 
+to link (a step before compiling) code (libraries you coded up in another 
+language like Delphi, Borland C++ or Microsoft's Visual C++) during run-time 
+(dynamically). VC++ has port I/O (input and output) read/write functions. Also 
+VC++'s compiler allows you to create DLLs (in addition to executable EXE files). 
+Thus you: <BR><PRE>      1. Write VC++ code that uses these read/write functions
+      2. Compile it into a DLL (instead of an executable EXE file) file
+      3. Call your functions from VB
+</PRE><BR>
+<H3>Writing your own DLL or just using one?</H3>If you don't have VC++ don't 
+worry. You can still use the FREE DLL here to read/write to ports. 
+<P><A href="http://www.boondog.com/tutorials/dlltutor/8255.zip">Download 
+8255.ZIP</A> which contains 8255.def, 8255.cpp and the 8255.dll files. 
+<P>You just copy the 8255.DLL file to your C:\windows directory. You can then 
+have your VB program use them. But if you are curious then writing a DLL is very 
+easy. The steps in this tutorial specifically use Visual C++ 5.0, but easy 
+enough to mimic in Delphi, Visual C++ 4.0 and Borland C++. 
+<H2>Writing the DLL</H2>There are two files you need to create. The first is a 
+DEF (define) file. The second is the CPP (C++ source) file. Both are simple 
+ASCII text files. You can use any editor (e.g. DOS' edit, or Windows' Notepad). 
+These are listed below: 
+<P>8255.def listing: <PRE>-----------------------------------------------------------------------
+LIBRARY 8255
+DESCRIPTION DLL FOR 8255 CARD
+
+EXPORTS
+    	Out8255        @1
+        In8255         @2
+-----------------------------------------------------------------------
+</PRE>
+<P>The name of your DLL library is given on the first line. It is 8255. The 
+second line is just a comment. Exports list the names of the functions you will 
+eventually define in your VC++. These functions are: Out8255 and In8255. If you 
+eventually wish to add more functions, give the name of your function and the 
+next number, like MyFunction @3. 
+<P>8255.cpp listing: <PRE>-----------------------------------------------------------------------
+//   FILE: 8255.cpp
+//   AUTH: P.OH/Boondog Automation
+//   DATE: 07/01/98
+//   DESC: CPP source file for 8255 DLL - compiled with Microsoft Visual C++ 5.0
+
+#include <STDIO.H>
+#include <CONIO.H>  // contains Visual C++'s inp and out functions
+
+// ------------------------------------------------------
+//   FUNC: Out8255
+//   DESC: uses Microsoft's Visual C++ _outp() function
+//         to output a PortData to PortAddress
+// ------------------------------------------------------
+
+short _stdcall Out8255( int PortAddress, int PortData )
+{
+  short Dummy; 
+  // Need Dummy since _outp officially returns int 
+  // short is a 16-bit integer in Win32 C++
+  // whereas int is 32-bit integer Win32 C++
+  // use (short) to force returning 16-bit integer
+  // back to VB
+  Dummy = (short)(_outp( PortAddress, PortData ));
+
+  return(Dummy);
+
+}; // end of Out8255
+
+
+// ----------------------------------------------------
+//   FUNC: In8255
+//   DESC: uses Microsoft's Visual C++ _inp() function
+//         to read PortAddress
+// ----------------------------------------------------
+
+short _stdcall In8255( int PortAddress ) 
+{
+  short PortData; 
+  // short is a 16-bit integer in Win32 C++
+  // whereas int is 32-bit integer in Win32 C++
+  // use (short) to force returning 16-bit integer 
+  // back to VB
+  
+  PortData = (short)(_inp( PortAddress ));
+  return( PortData );
+
+}; /* end of In8255 */
+
+</PRE>----------------------------------------------------------------------- 
+<P>8255.cpp defines In8255 and Out8255. It uses VC++'s _inp() and _out() 
+functions. The single underscore before inp and outp are needed. This underscore 
+notation refers to downloadly compatiable functions that were defined in older 
+versions of VC++. <BR><BR><B>Step 1: Write your .def and .cpp files</B> 
+<BR>Create a directory called c:\port. Type and save the DEF file as 8255.def 
+and the CPP file as 8255.cpp - if you want, just cut, paste and save these 
+files, or just download and save them. 
+<P>
+<P><B>Step 2: Visual C++ 5.0</B> <BR>Bring up Visual C++. Select FILE - NEW as 
+seen in Figure 1: 
+<P>
+<CENTER><IMG src="Dynamically Linked Libraries (DLL) Tutorial_files/CPP01.gif"> 
+<P>Figure 1 </CENTER>
+<P>
+<P><B>Step 3: Create Your Project</B> <BR>This brings up the NEW window. Make 
+sure the Projects tab is selected and choose Win32 Dynamic-Link Library (Figure 
+2). Make sure that Location is c:\port (you can click the ... button to explore 
+your directories). This is why you created a directory c:\port in Step 1. Type 
+8255 in the Project Name field. Click on OK. You should now see the result 
+(Figure 3). If not, click on the classes tab. You have just created a project 
+called 8255. 
+<P>
+<CENTER><IMG src="Dynamically Linked Libraries (DLL) Tutorial_files/CPP02.gif"> 
+<P>Figure 2 </CENTER>
+<P>
+<P>
+<CENTER><IMG src="Dynamically Linked Libraries (DLL) Tutorial_files/CPP03.gif"> 
+<P>Figure 3 </CENTER>
+<P>
+<P><B>Step 4: Add your .cpp file</B> <BR>Left click on 8255 classes once. This 
+selects it and turns it blue. Next, right click your mouse and choose Add Files 
+to Project (Figure 4). 
+<P>
+<CENTER><IMG src="Dynamically Linked Libraries (DLL) Tutorial_files/CPP04.gif"> 
+<P>Figure 4 </CENTER>
+<P>
+<P>An Insert Files to Project (Figure 5) will pop up. Make sure the Files of 
+Type is set to C++ files. Next, choose the 8255.cpp file and hit OK 
+<P>
+<CENTER><IMG src="Dynamically Linked Libraries (DLL) Tutorial_files/CPP05.gif"> 
+<P>Figure 5 </CENTER>
+<P>
+<P><B>Step 5: Add your .def file</B> <BR>Similar to Step 4, click on 8255 
+classes once. Right click and select Add Files to Project. Again the Insert File 
+into Project window pops up (Figure 6). This time make sure the Files of Type is 
+set for Definition (.def) files. Click on 8255.def and hit OK. Your 8255 Project 
+now has the 8255.def and 8255.cpp files added (Figure 7). Save everything by 
+clicking FILE - SAVE ALL. 
+<P>
+<CENTER><IMG src="Dynamically Linked Libraries (DLL) Tutorial_files/CPP06.gif"> 
+<P>Figure 6 </CENTER>
+<P>
+<P>
+<CENTER><IMG src="Dynamically Linked Libraries (DLL) Tutorial_files/CPP07.gif"> 
+<P>Figure 7 </CENTER>
+<P>
+<P><B>Step 6: Build your .dll file</B> <BR>On the top bar click on Build and 
+select Build 8255.dll (Figure 8). This will start compiling and create th2 
+8255.dll file. If you didn't mistype and lines in 8255.def or 8255.cpp (or just 
+cut/paste/save or download/save) VC++ will respond with 0 errors. Your new 
+8255.dll file is now saved in c:\port\8255\debug (Figure 9). 
+<P>
+<CENTER><IMG src="Dynamically Linked Libraries (DLL) Tutorial_files/CPP08.gif"> 
+<P>Figure 8 </CENTER>
+<P>
+<P>
+<CENTER><IMG src="Dynamically Linked Libraries (DLL) Tutorial_files/CPP09.gif"> 
+<P>Figure 9 </CENTER>
+<P>
+<P><B>Step 7: Copy your .dll file to c:\windows</B> <BR>Copy your new DLL file 
+to your c:\windows directory. You can do this from DOS (my habit), by bringing 
+up MS-DOS prompt and cd`ing to c:\port\8255\Debug (Figure 10). Of course, you 
+can drag-and-drop from Explorer. Congradulations! Your .dll is ready to use in 
+your Visual Basic programs! Easy right? 
+<P>
+<CENTER><IMG src="Dynamically Linked Libraries (DLL) Tutorial_files/CPP10.gif"> 
+<P>Figure 10 </CENTER>
+<P>
+<P>
+<H2>Using Your DLL in Your VB Programs</H2>To use your DLL functions, you add 
+the following lines in your VB program's declaration section. Typically right 
+after the Option Explicit statement. (Note: the underscore in VB means that the 
+statement is spread over several lines) <B><PRE>Private Declare Function Out8255 Lib "8255.dll" _
+     (ByVal PortAddress As Integer, _
+      ByVal PortData As Integer) As Integer
+<P>
+Private Declare Function In8255 Lib "8255.dll" _
+     (ByVal PortAddress As Integer) As Integer
+</B>
+</P></PRE>To <I><B>write</B></I> to a port, use Out8255: 
+<P>
+<CENTER><B>Dummy = Out8255(Cntrl, 128)</B> </CENTER>
+<P>where Dummy, Cntrl are integers. Here, the decimal value 128 is written to 
+the port address assigned to Cntrl. It is necessary to use associate an integer 
+variable (I called it "Dummy" here) with the Out8255 function. This is because 
+the DLL was built using VC++'s outp(), which returns an integer (1 if 
+successfully accomplished and and 0 if failed). 
+<P>To <I><B>read</B></I> from a port, use In8255: 
+<P>
+<CENTER><B>PortValue = In8255(PortSelected)</B> </CENTER>
+<P>where PortValue and PortSelected are integers. The 8-bit number at port 
+PortSelected will be assigned (in decimal form) to PortValue. 
+<H2>The Count Program</H2>The 8255.dll was applied to the 8255 PC Interface 
+Card. This is a custom-build card that plugs into the ISA slot on the PC's 
+motherboard. The card provides you with three 8-bit ports named A, B and C, 
+giving you a total of 24 digital lines of I/O. You can <A 
+href="http://www.boondog.com/tutorials/dlltutor/count.zip">download 
+COUNT.ZIP</A>. This file contains, the VBW, VBP, FRM and EXE files. Also, 
+Count's source code listing is in the COUNT.TXT file. In this simple 
+application, 8 LEDs were connected to one of the 8-bit ports on the 8255 Card. 
+The program sequentially counts from 1 to 255, lighting up its binary equivalent 
+among the 8 LEDs. This may not sound very interesting but it is a simple test 
+demo to show you that your 8255.dll is working. 
+<P>
+<CENTER><IMG 
+src="Dynamically Linked Libraries (DLL) Tutorial_files/COUNT02.gif"> </CENTER>
+<P>The above figure is a screen shot of the COUNT program. The user types in the 
+8255 Card's base address (608 in this case), selects a port and hits OK. The 
+program starts counting. 
+<H3>Designing Count's Form</H3>The VB program uses 14 objects. The object type, 
+its name and relevant value are listed in the following table: 
+<P>
+<CENTER>
+<TABLE cellSpacing=3 border=5 COLSPEC="L20 L20 L20 L20">
+  <TBODY>
+  <TR>
+    <TD><B>Object Type</B></TD>
+    <TD><B>Name</B></TD>
+    <TD><B>Value</B></TD></TR>
+  <TR>
+    <TD>Form</TD>
+    <TD>frmCount</TD>
+    <TD>Caption: Count</TD></TR>
+  <TR>
+    <TD>Label</TD>
+    <TD>lbl8255Address</TD>
+    <TD>Caption: 8255 Address</TD></TR>
+  <TR>
+    <TD>Label</TD>
+    <TD>lblDecimalOutput</TD>
+    <TD>Caption: Decimal Output</TD></TR>
+  <TR>
+    <TD>Label</TD>
+    <TD>lblPortA</TD>
+    <TD>Caption: Port A</TD></TR>
+  <TR>
+    <TD>Label</TD>
+    <TD>lblPortB</TD>
+    <TD>Caption: Port B</TD></TR>
+  <TR>
+    <TD>Label</TD>
+    <TD>lblPortC</TD>
+    <TD>Caption: Port C</TD></TR>
+  <TR>
+    <TD>Option</TD>
+    <TD>optPortA</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>Option</TD>
+    <TD>optPortB</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>Option</TD>
+    <TD>optPortC</TD>
+    <TD></TD></TR>
+  <TR>
+    <TD>Command</TD>
+    <TD>cmdGo</TD>
+    <TD>Go</TD></TR>
+  <TR>
+    <TD>Command</TD>
+    <TD>cmdEnd</TD>
+    <TD>End</TD></TR>
+  <TR>
+    <TD>Textbox</TD>
+    <TD>txt8255Address</TD>
+    <TD>Text: (None)</TD></TR>
+  <TR>
+    <TD>Textbox</TD>
+    <TD>txtOutputWindow</TD>
+    <TD>Text: (None)</TD></TR>
+  <TR>
+    <TD>Timer</TD>
+    <TD>tmrTimer</TD>
+    <TD>Interval: 500</TD></TR></TBODY></TABLE></CENTER>
+<P>
+<H3>Count's VB code</H3>The VB code listing is given below: 
+<P>------------------------------------------------------------------------ <PRE>Option Explicit
+'Declare use of the DLL
+Private Declare Function Out8255 Lib "8255.dll" (ByVal PortAddress As Integer, ByVal PortData As Integer) As Integer
+Private Declare Function In8255 Lib "8255.dll" (ByVal PortAddress As Integer) As Integer
+'Declare variables
+Dim BaseAddress As Integer: ' 8255 Base Address
+Dim Dummy As Integer: ' Dummy variable used with DLL
+Dim PortA As Integer: ' 8255 Port A address
+Dim PortB As Integer: ' 8255 Port B address
+Dim PortC As Integer: ' 8255 Port C address
+Dim Cntrl As Integer: ' 8255 Control Address
+Dim Number As Integer: ' decimal number to count from 1 to 255
+Dim Start As Integer: ' Start flag
+Dim Msg As String
+Dim Style As Integer
+Dim Response As Integer
+Dim PortSelected As Integer
+
+
+Private Sub cmdGo_Click()
+
+If Start = 0 Then
+    ' user clicked GO button first time
+    If txt8255Address.Text = "" Then
+        ' Base address was not defined
+        Msg = "Enter a Base Address! e.g. 608"   ' Define message.
+        Style = vbOK + vbExclamation ' Define buttons.
+        Response = MsgBox(Msg, Style)
+        Exit Sub
+    End If
+    
+    Start = 1: ' Go button enabled; start counting
+        
+    cmdGo.Caption = "Pause"
+    ' Assign values for all addresses
+    BaseAddress = Val(txt8255Address.Text)
+    PortA = BaseAddress
+    PortB = BaseAddress + 1
+    PortC = BaseAddress + 2
+    Cntrl = BaseAddress + 3
+
+    ' determine which port to output to
+    ' default is Port A
+    If optPortA.Value = True Then
+        PortSelected = PortA
+        Print PortSelected
+        End If
+    If optPortB.Value = True Then
+        PortSelected = PortB
+        Print PortSelected
+        End If
+    If optPortC.Value = True Then
+        PortSelected = PortC
+        Print PortSelected
+        End If
+    
+    ' configure all ports for output
+    Dummy = Out8255(Cntrl, 128)
+    ' initialize all Ports to 0
+    Dummy = Out8255(PortA, 0)
+    Dummy = Out8255(PortB, 0)
+    Dummy = Out8255(PortC, 0)
+Else
+    Start = 0: ' user clicked GO button again
+    cmdGo.Caption = "Go!"
+End If
+End Sub
+
+Private Sub cmdEnd_Click()
+
+Beep
+'txtOutputWindow.Text = "Stopped"
+Dummy = Out8255(PortA, 0)
+Dummy = Out8255(PortB, 0)
+Dummy = Out8255(PortC, 0)
+' quit program
+End
+End Sub
+
+Private Sub Form_Load()
+' Program is loaded with these values
+    txtOutputWindow.Text = "Enter Base Address"
+    Start = 0: 'Counting action not started
+    Number = 0: ' Number to start with
+    optPortA.Value = True ' Default port is A
+End Sub
+
+Private Sub tmrTimer_Timer()
+
+If Start = 1 Then
+    Number = Number + 1
+    Dummy = Out8255(PortSelected, Number)
+    txtOutputWindow.Text = "Number = " + Str(Number)
+    If Number = 255 Then
+        Beep
+        txtOutputWindow.Text = "Finished"
+        Dummy = Out8255(PortSelected, 0)
+        Start = 0
+        Number = 0
+        cmdGo.Caption = "Go!"
+    Exit Sub
+    End If
+Else
+    Exit Sub
+End If
+
+End Sub
+
+</PRE>------------------------------------------------------------------------ 
+<H3>Count's Program Description</H3>Upon executing Count, Form_Load initializes 
+Number and Start to 0. Number is the decimal number that will be outputted to 
+the port. Start is used as a flag. When the user clicks on the GO command 
+button, then cmdGo_Click() is executed. cmdGo_Click() initializes the ports by 
+grabbing the contents in the 8255 Address textbox. It also determines which port 
+(Port A, B or C) the user selected. The program then calls tmrTimer_Timer every 
+500 msec. Number is incremented by 1, and Out8255 writes Number to the port, 
+thus lighting up the LEDs. The Output Window textbox displays the current 
+decimal value of Number. If Number reaches 255, then Count exits. Or, if the 
+user hits the Pause command button, execution is halted. 
+<P>
+<H2>The DIP Program</H2>An 8 position DIP switch was connected to one of ports 
+on the 8255 PC Interface Card. This program reads the DIP positions and displays 
+its decimal equivalent. This program demonstrates the In8255 function you 
+created in the 8255.dll. You can <A 
+href="http://www.boondog.com/tutorials/dlltutor/DIP.ZIP">download</A> DIP.ZIP. 
+This file contains, the VBW, VBP, FRM and EXE files. Also, DIP's source code 
+listing is in the DIP.TXT file. A screen capture of the VB form is shown below: 
+<P>
+<CENTER><IMG src="Dynamically Linked Libraries (DLL) Tutorial_files/DIP01.gif"> 
+</CENTER>
+<P>The look and functionality of DIP is very similar to the Count program you 
+earlier saw. You can re-use many of Count's objects. 
+<P>
+<H3>DIP's VB code</H3>The VB code listing is given below: 
+<P><PRE>
+Option Explicit
+'Declare use of the DLL
+Private Declare Function Out8255 Lib "8255.dll" (ByVal PortAddress As Integer, ByVal PortData As Integer) As Integer
+Private Declare Function In8255 Lib "8255.dll" (ByVal PortAddress As Integer) As Integer
+'Declare variables
+Dim BaseAddress As Integer: ' 8255 Base Address
+Dim Dummy As Integer: ' Dummy variable used with DLL
+Dim PortA As Integer: ' 8255 Port A address
+Dim PortB As Integer: ' 8255 Port B address
+Dim PortC As Integer: ' 8255 Port C address
+Dim Cntrl As Integer: ' 8255 Control Address
+Dim PortValue As Integer: ' decimal value read at port
+Dim Start As Integer: ' Start flag
+Dim Msg As String
+Dim Style As Integer
+Dim Response As Integer
+Dim PortSelected As Integer
+
+Private Sub cmdEnd_Click()
+Beep
+'txtOutputWindow.Text = "Stopped"
+' quit program
+End
+End Sub
+
+Private Sub cmdGo_Click()
+If Start = 0 Then
+    ' user clicked GO button first time
+    If txt8255Address.Text = "" Then
+        ' Base address was not defined
+        Msg = "Enter a Base Address! e.g. 608"   ' Define message.
+        Style = vbOK + vbExclamation ' Define buttons.
+        Response = MsgBox(Msg, Style)
+        Exit Sub
+    End If
+    
+    Start = 1: ' Go button enabled; start counting
+        
+    cmdGo.Caption = "Pause"
+    ' Assign values for all addresses
+    BaseAddress = Val(txt8255Address.Text)
+    PortA = BaseAddress
+    PortB = BaseAddress + 1
+    PortC = BaseAddress + 2
+    Cntrl = BaseAddress + 3
+
+    ' determine which port to output to
+    ' default is Port A
+    If optPortA.Value = True Then
+        PortSelected = PortA
+    End If
+    If optPortB.Value = True Then
+        PortSelected = PortB
+    End If
+    If optPortC.Value = True Then
+        PortSelected = PortC
+    End If
+    
+    ' configure all ports for input
+    Dummy = Out8255(Cntrl, 155)
+    ' initialize all Ports to 0
+Else
+    Start = 0: ' user clicked GO button again
+    cmdGo.Caption = "Go!"
+End If
+End Sub
+
+
+Private Sub Form_Load()
+' Program is loaded with these values
+    txtOutputWindow.Text = "Enter Base Address"
+    Start = 0: 'Counting action not started
+    optPortA.Value = True ' Default port is A
+End Sub
+
+Private Sub tmrTimer_Timer()
+If Start = 1 Then
+    PortValue = In8255(PortSelected)
+    txtOutputWindow.Text = "Value = " + Str(PortValue)
+End If
+
+End Sub
+</PRE>------------------------------------------------------------------------ 
+<H3>DIP's Program Description</H3>When the user clicks on the Go command button, 
+the 8255 Card's base address is grabbed from the 8255 Address text box. All 
+ports are consequently assigned their addresses. Execution is then passed to 
+tmrTimer_Timer which reads the DIP switches using In8255, every interval. Here, 
+tmrTimer's interval was set at 1 msec. In8255's return value is assigned to 
+PortValue. PortValue is then displayed in the Output Window textbox. This is the 
+decimal equivalent of the 8-bit DIP switch. 
+<H2>Conclusion</H2>As you can read in this tutorial, VB programming using DLL's 
+is quite simple. There are many compiler's today like VC++ 4.0, 5.0, Delphi, and 
+Borland C++ that can generate DLLs. Furthermore, these compilers all have port 
+I/O functions. By writing the DLL you can have VB access them. 
+<P>Hopefully the step-by-step tutorial on DLL creation sheds light on how they 
+are made. This is in response to the flood of questions on DLL programming on 
+the VB usenet groups. 
+<P>One caveat is that if you use the wrong memory address (e.g you mistype the 
+address) you can cause Windows 95 to freeze. As a developer/programmer, you 
+might wish to use some error checking in your VB program to make sure that you 
+always write/read to your custom-build card's address. 
+<P>Boondog hopes that you have found this tutorial useful. Hopefully a new world 
+of VB/Win95 programming/PC interfacing brings you a lot of excitement and fun. 
+<P>Click <A href="http://www.cs.columbia.edu/~paul">here</A> to go Paul's Main 
+Page
+<P>Click <A href="http://www.cs.columbia.edu/robotics/">here</A> to go our 
+Robotics Lab
+<P>Click <A href="mailto:paul@cs.columbia.edu">here</A> to email me: 
+paul@cs.columbia.edu 
+<P></P></FONT></BODY></HTML>

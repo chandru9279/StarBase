@@ -22,5 +22,5 @@ Know these :
 
 Diff :
     
-    web.config (compilation, customerrors, connection string) , the 2 zip files of the source
+    web.config (compilation, customerrors, connection string) , Downloads folder
     ThonSettings.Instance.IsHosted Property

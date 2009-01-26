@@ -1,10 +1,13 @@
 ﻿using System;
 using Thon.Support.Web.Controls;
 
-public partial class RTDefaultAspx : ThonBasePage
+namespace Thon.About
 {
-    protected void Page_Load(object sender, EventArgs e)
+    public partial class RTDefaultAspx : ThonBasePage
     {
-        base.AddMetaTag("keywords", "R Thiagarajan");
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            base.AddMetaTag("keywords", "R Thiagarajan");
+        }
     }
 }

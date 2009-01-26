@@ -92,7 +92,7 @@
         <div class="right_links_area" style="height: auto">
         <asp:ContentPlaceHolder ID="cphsidebar" runat="server">
         </asp:ContentPlaceHolder>
-        <div style="margin-top: 80px;margin-bottom:80px;">        
+        <div style="margin-top: 80px;width:185px;float:left;">        
             <center><Google:TowerAd runat="server" ID="Tower" /></center>
         </div>        
         </div>

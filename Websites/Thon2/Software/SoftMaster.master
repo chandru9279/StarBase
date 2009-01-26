@@ -1,8 +1,16 @@
-﻿<%@ Master Language="C#" MasterPageFile="~/CommonMaster.master" AutoEventWireup="false" CodeFile="SoftMaster.master.cs" Inherits="Software_SoftMaster" %>
+﻿<%@ Master Language="C#" MasterPageFile="~/CommonMaster.master" AutoEventWireup="false" CodeFile="SoftMaster.master.cs" Inherits="Thon.Warez.SoftMaster" %>
 
+<%@ Register src="../UserControls/AdSense/GoogleInternetSearch.ascx" tagname="GoogleInternetSearch" tagprefix="Google" %>
+<%@ Register Src="~/UserControls/AdSense/BannerAd.ascx" TagName="BannerAd" TagPrefix="Google"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="CMHead" Runat="Server">
     <asp:ContentPlaceHolder id="cphhead" runat="server">
 </asp:ContentPlaceHolder>
+<style type="text/css">
+img
+{
+	border-style:none;
+}
+</style>
 <link rel="shortcut icon" href="../favicon.ico" />
 <link rel="icon" href="../afavicon.gif" type="image/gif" />
 </asp:Content>
@@ -15,43 +23,78 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="CMMoreLinksArea" Runat="Server">
-        <div class="morelinks_head">Menu</div><br /><br /><br />
-        <table style="margin-left:30px;">
-        <tr><td><a href="../Default.aspx" class="comments">Home</a></td></tr>
-        <tr><td><a href="../Gallery.aspx" class="comments">Gallery</a></td></tr>
-        <tr><td><a href="../ZaszBlog/Default.aspx" class="comments">Z-Blog</a></td></tr>
-        </table>
-        <div class="morelinks_head">Projects</div><br /><br /><br />
-        <a href="Default.aspx" class="morelink">Warez <span class="links_text"> Home</span></a>
-        <a href="CallOfCSharp.aspx" class="morelink">Call Of C# <span class="links_text"> 3-D Game</span></a> 
-        <a href="CCuraPlus.aspx" class="morelink">CCura+ <span class="links_text"> Crypto utility</span></a>
-        <a href="GAP2P.aspx" class="morelink">GA P2P <span class="links_text"> ResShare utility</span></a>
-        <a href="PushWPF.aspx" class="morelink">D.I.Calc <span class="links_text"> WPF App</span></a>
-        <a href="TecMaze.aspx" class="morelink">TecMaze <span class="links_text"> Boring game</span></a>
-        <a href="ThonDotNet.aspx" class="morelink">Thon.NET <span class="links_text"> You're seeing it!</span></a>
-        <a href="TwoOhApp.aspx" class="morelink">TwoOhApp <span class="links_text"> WCF client</span></a>
-        <div class="morelinks_head">Open</div><br /><br /><br />
+    <table>
+        
+        <tr><td><div class="morelinks_head">Projects</div><br /><br /><br /></td></tr>
+        
+        <tr><td>        
+        <a href="Default.aspx" style="margin:2px 0px 2px 15px;" class="morelink">Warez <span class="links_text"> Home</span></a>
+        <a href="CallOfCSharp.aspx" style="margin:2px 0px 2px 15px;" class="morelink">Call Of C# <span class="links_text"> 3-D Game</span></a> 
+        <a href="CCuraPlus.aspx" style="margin:2px 0px 2px 15px;" class="morelink">CCura+ <span class="links_text"> Crypto utility</span></a>
+        <a href="GAP2P.aspx" style="margin:2px 0px 2px 15px;"class="morelink">GA P2P <span class="links_text"> ResShare utility</span></a>
+        <a href="PushWPF.aspx" style="margin:2px 0px 2px 15px;" class="morelink">D.I.Calc <span class="links_text"> WPF App</span></a>
+        <a href="TecMaze.aspx" style="margin:2px 0px 2px 15px;" class="morelink">TecMaze <span class="links_text"> Boring game</span></a>
+        <a href="ThonDotNet.aspx" style="margin:2px 0px 2px 15px;" class="morelink">Thon.NET <span class="links_text"> You're seeing it!</span></a>
+        <a href="TwoOhApp.aspx" style="margin:2px 0px 2px 15px;" class="morelink">TwoOhApp <span class="links_text"> WCF client</span></a>
+        <a href="Shelf.aspx" style="margin:2px 0px 2px 15px;" class="morelink">Shelf.NET <span class="links_text"> e-library</span></a>
+        <a href="Scheduler.aspx" style="margin:2px 0px 2px 15px;" class="morelink">Scheduler <span class="links_text"> Calendar</span></a>
+        <a href="FeatSheet/1.htm" style="margin:2px 0px 2px 15px;" class="morelink">FeatSheets <span class="links_text"> Presentation</span></a>
+        </td></tr>
+        
+        <tr><td><div class="morelinks_head">Open</div><br /><br /><br /></td></tr>
+        
+        <tr><td>
         <p style="margin:0px 20px 0px 20px;color:Black;"> All of the above projects are open source. Download 'em , Use 'em , And don't forget to provide credits or a link back to this site!</p><br /><br />
         <p style="margin:0px 20px 0px 20px;color:Black;"> Mail to zasz@chandruon.net for info concerning these projects. You can always leave a comment in the blog too.</p><br /><br />
-        <div class="morelinks_head">Licenses</div><br /><br /><br />
-        <table style="margin-left:20px">
+        </td></tr>
+        
+        <tr><td><div class="morelinks_head">Google!</div></td></tr>
+        
+        <tr><td>
+        <div style="margin:20px 0px 20px 0px">
+        <p style="padding-left:12px;margin-bottom:12px;color:Maroon"> Support this site by using :</p>
+        <span>
+        <a href="#q" class="morelink">Focus On <span class="links_text"> Custom Search</span></a> <br />
+        </span>
+        </div>
+        </td></tr>
+            
+        <tr><td><div class="morelinks_head">Licenses</div><br /><br /><br /></td></tr>
+        
+        <tr><td>
+        <table style="margin:0px 0px 20px 20px">
         <tr><td><a style="color:Blue" href="../CCA25.aspx">Creative Commons</a></td></tr>
         <tr><td><a style="color:Blue" href="../GNULGPL.aspx">GNU Lesser</a></td></tr>
         <tr><td><a style="color:Blue" href="../GNUGPL.aspx">GNU General</a></td></tr>
         <tr><td><a style="color:Blue" href="../MSPL.aspx">Microsoft Permissive</a></td></tr>
         <tr><td><a style="color:Blue" href="../MSRL.aspx">Microsoft Reciprocal</a></td></tr>
         </table>
+        </td></tr>
         
+        <tr><td><div class="morelinks_head">Menu</div><br /><br /><br /></td></tr>
+        
+        <tr><td>
+        <table cellspacing="7" cellpadding="7" style="margin-left:10px;">
+        <tr><td><a href="../Default.aspx" class="comments">Home</a></td></tr>
+        <tr><td><a href="../Gallery.aspx" class="comments">Gallery</a></td></tr>
+        <tr><td><a href="../ZaszBlog/Default.aspx" class="comments">Z-Blog</a></td></tr>
+        </table>
+        </td></tr>
+        
+</table>     
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="CMDivMid" Runat="Server">
+<Google:BannerAd ID="banner" runat="server" />
     <asp:ContentPlaceHolder id="cphsoftware" runat="server">
-</asp:ContentPlaceHolder>
+    </asp:ContentPlaceHolder>
+<Google:BannerAd ID="BannerAd1" runat="server" />
 </asp:Content>
 
 <asp:Content ID="Content5" ContentPlaceHolderID="Sidebar" Runat="Server">
-    <asp:ContentPlaceHolder id="cphsidebar" runat="server">
-</asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="cphsidebar" runat="server">
+    </asp:ContentPlaceHolder>
 </asp:Content>
 
 <asp:Content ID="Content6" ContentPlaceHolderID="OutForm" Runat="Server">
+    <Google:GoogleInternetSearch ID="GoogleInternetSearch1" runat="server" />
 </asp:Content>

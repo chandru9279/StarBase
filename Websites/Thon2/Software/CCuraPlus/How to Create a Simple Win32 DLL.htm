@@ -1,0 +1,207 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0058)http://www.icynorth.com/development/createdlltutorial.html -->
+<HTML><HEAD><TITLE>How to Create a Simple Win32 DLL</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=UTF-8">
+<META content="MSHTML 6.00.2600.0" name=GENERATOR>
+<META content=565CA268/22 name=citydesk><LINK 
+href="How to Create a Simple Win32 DLL_files/icynorthstyles.css" type=text/css 
+rel=stylesheet></HEAD>
+<BODY>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=4 width=785>
+  <TBODY>
+  <TR>
+    <TD align=left bgColor=#c1c2e7 colSpan=2><IMG alt="Icy North Logo" 
+      src="How to Create a Simple Win32 DLL_files/icynorth_2.gif" border=0 
+      cd:pos="0"> </TD></TR>
+  <TR>
+    <TD align=left bgColor=#004080 colSpan=2><SPAN class=topbar>How to Create 
+      a Simple Win32 DLL</SPAN> </TD></TR>
+  <TR>
+    <TD vAlign=top width=150><BR>
+      <P><B><A href="http://www.icynorth.com/index.html">Home</A></B><BR>The 
+      place to start. </P>
+      <P><B><A 
+      href="http://www.icynorth.com/development/index.html">Development</A></B><BR>Software 
+      development links, free utilities, source code, product reviews and more. 
+      </P>
+      <P><B><A 
+      href="http://www.icynorth.com/products/index.html">Products</A></B><BR>Product 
+      information, downloads and purchasing information. </P>
+      <P><B><A 
+      href="http://www.icynorth.com/contact.html">Contact/About</A></B><BR>Who's 
+      behind this site and how to contact them. </P>
+      <P><B><A href="http://www.icynorth.com/news/index.html">What's 
+      New</A></B><BR>All of the latest&nbsp;news and articles. </P>
+      <P><B><A href="http://www.icynorth.com/forums">Community</A></B><BR>An 
+      open forum to discuss Icy North products or site content. </P><BR></TD>
+    <TD vAlign=top><BR>
+      <H1>Introduction</H1>
+      <P>This tutorial will teach you how to use Visual C++ 6.0 to create a 
+      small DLL that can be called from C++, Visual Basic, Delphi or any other 
+      program capable at calling DLL functions.&nbsp;Specifically, we will look 
+      at how to call the DLL function from <A href="http://www.indigorose.com/" 
+      target=_blank>Indigo Rose development tools</A>.</P>
+      <P>This DLL will have one purpose; to generate a unique filename using the 
+      Windows API function <A 
+      href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/fileio/base/gettempfilename.asp" 
+      target=_blank>GetTempFileName</A>.&nbsp;This function is useful if you 
+      need to store temporary data in a unique file for the user of your 
+      application and want to ensure that the file does not already exist. 
+      However, the point of this tutorial is not to generate unique filenames, 
+      but rather to show you how easy it is to create simple Windows DLLs using 
+      Visual C++.</P>
+      <P>The key here is "simple".&nbsp;Windows DLLs are capable of much, much 
+      more than outlined here.&nbsp;This tutorial will only cover simple, Win32 
+      DLL creation for those quick-and-dirty projects.</P>
+      <H1>Create&nbsp;the&nbsp;Project</H1>
+      <P>The first step is to start Visual C++ and create our DLL project.</P>
+      <P><STRONG>1) Start Visual C++ and choose File | New from the 
+      menu.</STRONG></P>
+      <P>This will open the <STRONG>New</STRONG> dialog.&nbsp;This is the 
+      starting point for creating all kinds of projects.&nbsp;Make sure that you 
+      are on the "Projects" tab.</P>
+      <P><STRONG>2) Select "Win32 Dynamic-Link Library" as the project type and 
+      name the project "MakeTempFilenameDLL".</STRONG></P>
+      <P>We want to create a Win32 DLL, not a MFC DLL.&nbsp;MFC-based DLLs can 
+      also be very useful and offer a lot more functionality, however they 
+      require the overhead of the MFC library DLLs (over 1 MB) just to get 
+      started. That is too much overhead for our simple DLL needs.</P>
+      <P><SPAN><IMG height=407 alt="New Project Dialog" hspace=4 
+      src="How to Create a Simple Win32 DLL_files/new_project_dlg.jpg" width=561 
+      align=left border=0 cd:pos="2"><BR clear=all></SPAN><SPAN></SPAN></P>
+      <P><SPAN></SPAN></P>
+      <P><SPAN>So, the New dialog should now look something like the one 
+      above.&nbsp;Click <STRONG>OK</STRONG> to continue to the next 
+      step.</SPAN></P>
+      <P><SPAN><STRONG>3) Choose "A simple DLL project." and click 
+      Finish.</STRONG></SPAN></P>
+      <P><SPAN>The next screen you will see looks like this:</SPAN></P>
+      <P><SPAN><IMG height=391 alt="Choose DLL Project Type" hspace=4 
+      src="How to Create a Simple Win32 DLL_files/new_project_dlg_type.jpg" 
+      width=477 align=left border=0 cd:pos="2"><BR clear=all></SPAN></P>
+      <P><SPAN></SPAN></P>
+      <P><SPAN>For this project, we will just start with a simple DLL. After you 
+      click the <STRONG>Finish</STRONG> button, you will see the <STRONG>New 
+      Project Information</STRONG> dialog which summarizes your 
+      settings.&nbsp;Click <STRONG>OK</STRONG> to complete the project 
+      creation.&nbsp;Your new project will now be ready to work on from the 
+      Visual C++ design environment. At this point, your project will compile 
+      and your DLL can be created, however it will not do anything because we 
+      have not created and exported any functions yet.&nbsp;That is the next 
+      step.</SPAN></P>
+      <H1>Add the Function</H1>
+      <P>The next step is to actually add the function to the DLL that we want 
+      to be able to call from other programs.</P>
+      <P><STRONG>1) Open the "MakeTempFilenameDLL.cpp" file for 
+      editing.</STRONG></P>
+      <P>Select the <STRONG>FileView</STRONG> tab on the Workspace bar. Then 
+      open the <STRONG>Source Files</STRONG> folder. Now double-click on the 
+      "MakeTempFilenameDLL.cpp" file.&nbsp;You will now be able to edit the 
+      file.</P>
+      <P><STRONG>2) Add the "RetrieveTempFilename" function.</STRONG></P>
+      <P>Next we want to add the actual code for the function. Our function will 
+      be called "RetrieveTempFilename".&nbsp;It will accept two string 
+      arguments. The first is "szDirectory" which is the directory that we want 
+      to generate the unique filename in. The second argument, "szPrefix" is a 
+      string that will be the prefix of the temporary filename. The 
+      "GetTempFileName" API function will use the first three characters of this 
+      string when generating the unique filename. The function will return the 
+      unique filename if successful, or the string "ERROR" if it fails.</P>
+      <P>Because we want to return a string, we need to make the returned string 
+      a global variable.&nbsp;This is necessary because if we declare the string 
+      inside of the function it will be destroyed when the function is 
+      finished.&nbsp;We need to create a string that will last for the life of 
+      the DLL.</P>
+      <P>Your global string declaration and function should look like this:</P>
+      <P><CODE>char szReturn[MAX_PATH];</CODE></P>
+      <P><CODE>__declspec(dllexport) LPCTSTR RetrieveTempFilename(LPCTSTR 
+      szDirectory, LPCTSTR szPrefix)<BR>{<BR>&nbsp;&nbsp;&nbsp;&nbsp; char 
+      szBuffer[MAX_PATH];<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+      if(GetTempFileName(szDirectory,szPrefix,0,szBuffer) == 
+      0)<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // It failed - 
+      return the string 
+      "ERROR"<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      lstrcpy(szReturn,"ERROR");<BR>&nbsp;&nbsp;&nbsp;&nbsp; } else 
+      {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 
+      Success!<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      lstrcpy(szReturn,szBuffer);<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+      }<BR>&nbsp;&nbsp;&nbsp;&nbsp; return szReturn;<BR>}</CODE></P>
+      <P>You can copy and paste the code above right into your file below the 
+      "DllMain" function. If you build your project now it will compile 
+      successfully but the function will still not be callable from outside 
+      programs.&nbsp;That is because the Visual C++ compiler "decorates" the 
+      function names so that they would not be recognizable to the calling 
+      program. Although there are several ways around this problem, we will use 
+      an "Export.def" file.</P>
+      <H1>Add an "Export.def" File</H1>
+      <P>Adding an Export.def file will allow us to tell the compiler the proper 
+      names of our DLL functions that should be exposed.</P>
+      <P><STRONG>1) Add a new text file to your project called 
+      "Export.def"</STRONG></P>
+      <P>Choose <STRONG>File | New</STRONG> from the menu within Visual C++ and 
+      select the Files tab. Select "Text File" as the file type and type in 
+      "Export.def" as the filename. Click <STRONG>OK</STRONG> to create the 
+      file.</P>
+      <P><SPAN><IMG height=407 alt="Create Export.def file" hspace=4 
+      src="How to Create a Simple Win32 DLL_files/addexportdef.jpg" width=561 
+      align=left border=0 cd:pos="2"><BR clear=all></SPAN>&nbsp;</P>
+      <P><STRONG>2) Add the "LIBRARY" and "EXPORTS" sections to the "Export.def" 
+      file.</STRONG></P>
+      <P>All that we need to do now is to add a few sections to the 
+      "Export.def:" file and we will be in business. The first section is the 
+      "LIBRARY" declaration with our DLL name. The second is the "EXPORTS" 
+      section which declares our exported functions.</P>
+      <P><CODE>LIBRARY 
+      MakeTempFilenameDLL<BR>EXPORTS<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+      RetrieveTempFilename</CODE></P>
+      <P>Copy and paste the above lines into the "Export.def" file. Now you can 
+      build your project. First of all, make sure you are building the "Release" 
+      build by selecting <STRONG>Build | Select Active Configuration</STRONG>, 
+      choosing "MakeTempFilenameDLL - Win32 Release" and clicking 
+      <STRONG>OK</STRONG>. Then just hit <STRONG>F7</STRONG> to build the DLL. 
+      It should compile and link with no troubles.</P>
+      <H1>Using the DLL from Indigo Rose Tools</H1>
+      <P>At this point you have a fully-functional DLL that can be called from 
+      Visual Basic, another C++ application or any other program capable of 
+      loading can calling DLL functions. Here we will focus on how to call our 
+      new function from any of the Indigo Rose development tools that use the 
+      Lua scripting language.</P>
+      <P>The first step will be to put the DLL somewhere that the runtime engine 
+      can find it.&nbsp; In the case of Setup Factory or Visual Patch include it 
+      as a primer file and call it like this:</P><CODE>local strDLLPath = 
+      SessionVar.Expand("%TempLaunchFolder%\\MakeTempFilenameDLL.dll");<BR>local 
+      strTempFilename = 
+      DLL.CallFunction(strDLLPath,"RetrieveTempFilename","\"".._TempFolder.."\",\"tst\"",<BR>&nbsp;&nbsp;&nbsp;&nbsp;DLL_RETURN_TYPE_STRING,DLL_CALL_CDECL);<BR>Dialog.Message("Temp 
+      Filename",strTempFilename);</CODE> 
+      <P>In the case of the other products, simply adjust the strDLLPath 
+      variable accordingly.</P>
+      <P><SPAN></SPAN></P>
+      <H1>Conclusion</H1>
+      <P><SPAN></SPAN>This tutorial has brought you through the process of 
+      creating a simple Win32 DLL using Visual C++ and calling a DLL function 
+      from one of the Indigo Rose development tools. Of course, in the real 
+      world your DLL functions will be more complicated and useful, I hope that 
+      this tutorial has put you on the right track.</P>
+      <P><SPAN></SPAN>I have prepared a downloadable zip file for you that 
+      contains the Visual C++ project and the finished DLL.</P>
+      <P><A href="http://www.icynorth.com/files/MakeTempFilenameDLL.zip">Click 
+      here to download MakeTempFilenameDLL.zip (29 KB)</A></P><BR></TD></TR>
+  <TR>
+    <TD align=left bgColor=#004080 colSpan=2><SPAN class=bottombar><A 
+      style="COLOR: #ffffff" href="http://www.icynorth.com/index.html">Home</A> 
+      - <A style="COLOR: #ffffff" 
+      href="http://www.icynorth.com/development/index.html">Development</A> - <A 
+      style="COLOR: #ffffff" 
+      href="http://www.icynorth.com/products/index.html">Products</A> - <A 
+      style="COLOR: #ffffff" 
+      href="http://www.icynorth.com/contact.html">Contact/About</A> - <A 
+      style="COLOR: #ffffff" 
+      href="http://www.icynorth.com/news/index.html">What's New</A> - <A 
+      style="COLOR: #ffffff" href="http://www.icynorth.com/forums">Community</A> 
+      </SPAN></TD></TR></TBODY></TABLE>
+<P><SPAN style="COLOR: #c0c0c0">Copyright © 2002 Icy North 
+Technologies<BR></SPAN><A style="COLOR: #c0c0c0; FONT-FAMILY: verdana" 
+href="mailto:info@icynorth.com">info@icynorth.com</A> 
+</P></CENTER></BODY></HTML>

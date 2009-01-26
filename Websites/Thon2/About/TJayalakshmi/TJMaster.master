@@ -1,20 +1,13 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="TJMaster.master.cs" Inherits="TJMaster" %>
+﻿<%@ Master AutoEventWireup="true" CodeFile="TJMaster.master.cs" Inherits="Thon.About.TJMaster"
+    Language="C#" MasterPageFile="~/ThonMasterPage.master" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Untitled Page</title>
-    <asp:ContentPlaceHolder id="cphhead" runat="server">
+<asp:Content ID="Content1" runat="Server" ContentPlaceHolderID="cphhead">
+<title>T Jayalakshmi</title>
+<asp:ContentPlaceHolder id="cphhead" runat="server">
+    </asp:ContentPlaceHolder></asp:Content>
+<asp:Content ID="Content2" runat="Server" ContentPlaceHolderID="cphmain">
+    <asp:ContentPlaceHolder ID="cphbody" runat="server">
     </asp:ContentPlaceHolder>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder id="cphbody" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
-    </form>
-</body>
-</html>
+</asp:Content>
+<asp:Content ID="Content3" runat="Server" ContentPlaceHolderID="cphsidebar">
+</asp:Content>

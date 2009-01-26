@@ -4,6 +4,7 @@ using System.Web.UI.HtmlControls;
 
 public partial class HinduNewsAscx : System.Web.UI.UserControl
 {
+    Exception ex;
     protected void Page_Load(object sender, EventArgs e)
     {
         System.Net.WebClient wc = new System.Net.WebClient();
@@ -15,17 +16,19 @@ public partial class HinduNewsAscx : System.Web.UI.UserControl
         }
         catch (Exception e1)
         {
-            e1 = null;
+            ex = e1;
         }
         if (!string.IsNullOrEmpty(eksemmelle))
         {
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(eksemmelle);
             XmlNodeList list = doc.SelectNodes("rss/channel/item");
-            HtmlGenericControl hgc;
-            HtmlAnchor anc;
             foreach (XmlNode node in list)
                 RenderNewsItem(node.SelectSingleNode("title").InnerText, node.SelectSingleNode("link").InnerText, node.SelectSingleNode("description").InnerText, node.SelectSingleNode("pubDate").InnerText);
+        }
+        else
+        {
+            RenderNewsItem(ex.Message,ex.ToString(),ex.Message,"121212");
         }
     }
 
