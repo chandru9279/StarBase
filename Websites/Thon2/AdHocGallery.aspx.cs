@@ -40,8 +40,8 @@ namespace Thon
                 HtmlGenericControl c = new HtmlGenericControl("c");
                 HtmlGenericControl img = new HtmlGenericControl("img");
                 img.Attributes.Add("src", actname);
-                img.Attributes.Add("height", "100%");
-                img.Attributes.Add("width", "100%");
+                img.Attributes.Add("height", "450px");
+                img.Attributes.Add("width", "450px");
                 c.Controls.Add(img);
                 tc.Controls.Add(c);
                 tr.Cells.Add(tc);
