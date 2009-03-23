@@ -24,3 +24,4 @@ Diff :
     
     web.config (compilation, customerrors, connection string) , Downloads folder
     ThonSettings.Instance.IsHosted Property
+    Images/AdHocGallery folder

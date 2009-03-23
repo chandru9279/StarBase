@@ -37,7 +37,7 @@ controls within CPH isn't coming under Page.Header.Controls in *BasePage
 <form id="ThonForm" name="ThonForm" runat="server">
 <asp:SiteMapDataSource ID="ThonSitemap" runat="server" SiteMapProvider="SecuritySiteMap" />
 <asp:ScriptManager ID="ScriptManager1" runat="server">
-<%-- <CompositeScript>
+<CompositeScript>
 <Scripts>
     <asp:ScriptReference name="MicrosoftAjax.js"/>
     <asp:ScriptReference name="MicrosoftAjaxWebForms.js"/>
@@ -51,7 +51,7 @@ controls within CPH isn't coming under Page.Header.Controls in *BasePage
 	<asp:ScriptReference name="AjaxControlToolkit.UpdatePanelAnimation.UpdatePanelAnimationBehavior.js" assembly="AjaxControlToolkit, Version=3.0.20820.16598, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e"/>
 	<asp:ScriptReference name="AjaxControlToolkit.TextboxWatermark.TextboxWatermark.js" assembly="AjaxControlToolkit, Version=3.0.20820.16598, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e"/>
 </Scripts>
-</CompositeScript>--%>
+</CompositeScript>
 </asp:ScriptManager>
 
     <div id="topheader">

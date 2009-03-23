@@ -26,7 +26,7 @@
     <siteMapNode url="~/Login.aspx" title="Sign In/Out" description="" roles="*"/>
     <siteMapNode url="~/Settings.aspx" title="Settings" description="" roles="Family"/>
     <siteMapNode url="~/CreateUser.aspx" title="Add New User" description="" roles="*"/>
-    <siteMapNode url="~/CheckOut.aspx" title="Subdomains" description="" roles="*">
+    <siteMapNode url="~/CheckOut.aspx" title="Subdomains" description="">
       <siteMapNode url="~/Starcraft/Default.aspx" title="Starcraft" description="" roles="*"/>
       <siteMapNode url="~/Software/Default.aspx" title="Showcase" description="" roles="*">
         <siteMapNode url="~/Software/PushWPF.aspx" title="DICalc" description="" roles="*" />
@@ -39,7 +39,12 @@
         <siteMapNode url="~/Software/ThonDotNet.aspx" title="Thon.NET" description="" roles="*" />
         <siteMapNode url="~/Software/TwoOhApp.aspx" title="TwoOhApp" description="" roles="*" />
       </siteMapNode>
-      <siteMapNode url="~/Gallery.aspx" title="Gallery" description="" roles="*"/>
+      <siteMapNode url="~/Gallery.aspx" title="Gallery" description="">
+        <siteMapNode url="~/AdHocGallery.aspx?folder=ooty" title="Ooty" description="" roles="*" />
+        <siteMapNode url="~/AdHocGallery.aspx?folder=class" title="Class" description="" roles="*" />
+        <siteMapNode url="~/AdHocGallery.aspx?folder=azhagar" title="Azhagar" description="" roles="*" />
+        <siteMapNode url="~/AdHocGallery.aspx?folder=pet" title="Pets" description="" roles="*" />        
+      </siteMapNode>
     </siteMapNode>    
     <siteMapNode url="~/Linkz.aspx" title="Linkz" description="" roles="*"/>
     <siteMapNode url="~/Credits.aspx" title="Credits" description="" roles="*"/>
