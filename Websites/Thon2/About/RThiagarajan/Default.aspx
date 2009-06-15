@@ -32,7 +32,7 @@
     <% } %>
     </font>
     </p></td>
-    <td align="right"><img src="../Images/Thiagarajan.jpg" alt="R Thiagarajan" width="150" height="217"/></td>        
+    <td align="right"><img src="../Images/Thiagarajan.jpg" alt="R Thiagarajan" width="150" height="217" /></td>        
     </tr>
     </table>
     </td>
@@ -51,7 +51,13 @@
     <tr>
     <td height="21" colspan="2">
     <p align="center">
-    <img border="0" alt="Under Construction" src="../../Images/UnderConstruction.gif" width="200" height="200"></p></td>
+    <img border="0" alt="Under Construction" src="../Images/Thiagarajan2.jpg" /></p></td>
+    </tr>
+    
+    <tr style="margin-top:20px;">
+    <td height="21" colspan="2">
+    <p align="center">
+    <img border="0" alt="Under Construction" src="../../Images/UnderConstruction.gif" width="200" height="200" /></p></td>
     </tr>
     
     <tr>
