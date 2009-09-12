@@ -2244,4 +2244,147 @@ a.fotterlink:active{
 				border-color:#d2e3e9;
 				background-color:#fffdfd;
 	}	
-/*----------------------------------------------------------------contactpage----------------------------------------------------------------------------------------*/																		
+
+/*----------------------------------------------------------------contactpage----------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------PostsDiv----------------------------------------------------------------------------------------*/
+div.post 
+{	
+	background-color:White;
+	border-left-color:Maroon;
+	border-right-color:Maroon;
+	border-left-width:thin;
+	border-right-width:thin;
+	padding: 5px 5px 5px 5px;
+	border-left-style:solid;	
+	border-right-style:solid;
+}
+
+div.post a
+{
+	color:Maroon;
+}
+
+.content {
+	float: left;
+	margin-right: 4%;
+	width: 100%;
+	color: Black;
+	font-weight:lighter;
+}
+.content ul{
+    line-height:normal;
+    font-size:medium;
+	margin:1px; 
+	padding:1px;	
+}
+.content .postheader {
+	text-decoration: none;
+	color: Maroon;
+}
+.content .descr {
+	color: #C60;
+	margin-bottom: 6px;
+}
+.content li {
+	list-style: url(../ZaszBlog/Images/MasterPageUserControls/Li.gif);
+	margin-left: 18px;
+}
+.postcontent {
+	font-size: 1.2em;
+	padding-bottom: 1.2em;
+}
+.postcontent p {
+	font-size: inherit;
+	padding-bottom: 1.2em;
+	font-weight:lighter;
+}
+.postfooter {
+	padding:2px 3px 3px 8px;
+	border:1px solid #e3e4e4;
+	background-color:#FFF3E8;
+	font-size:0.9em;
+	color:#505050;
+}
+.postfooter img{
+	border: none;
+}
+
+
+.rating p{
+	display: inline;
+	position: relative;
+	top: 14px;
+	left: 55px;
+}
+
+.star-rating {
+	position: relative;
+	width: 125px;
+	height: 25px;
+	overflow: hidden;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background-position: left top;
+}
+
+.star-rating li {
+	display: inline;
+}
+
+.star-rating a, .star-rating .current-rating {
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-indent: -1000em;
+	height: 25px;
+	line-height: 25px;
+	outline: none;
+	overflow: hidden;
+	border: none;
+}
+
+.star-rating a:hover, .star-rating a:active, .star-rating a:focus {
+	background-position: left bottom;
+}
+
+.star-rating a.one-star {
+	width: 20%;
+	z-index: 6;
+}
+
+.star-rating a.two-stars {
+	width: 40%;
+	z-index: 5;
+}
+
+.star-rating a.three-stars {
+	width: 60%;
+	z-index: 4;
+}
+.star-rating a.four-stars {
+	width: 80%;
+	z-index: 3;
+}
+.star-rating a.five-stars {
+	width: 100%;
+	z-index: 2;
+}
+.star-rating .current-rating {
+	z-index: 1;
+	background-position: left center;
+	margin: 0px;
+}
+
+/* smaller star */
+.small-star {
+	width: 50px;
+	height: 10px;
+}
+.small-star, .small-star a:hover, .small-star a:active, .small-star a:focus, .small-star .current-rating {
+	background-image: url(../ZaszBlog/Images/StarSmall.gif);	
+	line-height: 10px;
+	height: 10px;
+}

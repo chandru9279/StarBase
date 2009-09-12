@@ -90,6 +90,7 @@
         <div class="right_area">
         <div class="right_top"></div>
         <div class="right_links_area" style="height: auto">
+        <center style="margin-bottom:10px;"><asp:LoginStatus ID="LoginStatus1" ForeColor="Maroon" runat="server" /></center>
         <asp:ContentPlaceHolder ID="cphsidebar" runat="server">
         </asp:ContentPlaceHolder>
         <div style="margin-top: 80px;width:185px;float:left;">        

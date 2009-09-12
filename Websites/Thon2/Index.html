@@ -8,21 +8,25 @@
     <script type="text/javascript">    
     var iLoopCounter = 1;
     var iMaxLoop = 6;
-    var iIntervalId;
+    var iIntervalId, reloadIntervalId;
     var noi = 0;
     
     function BeginPageLoad()
     {    
         noi=0;    
+	reloadIntervalId=window.setInterval("location.reload;",4000);
         iIntervalId=window.setInterval("iLoopCounter=UpdateProgressMeter(iLoopCounter,iMaxLoop);",500);
     }
     
     function func()
     {
     noi++;
-    if(noi==53)
+    if(noi>=50)
     {
-    location.href="Default.aspx?You=Welcome";    
+	
+        var progressMeter = document.getElementById("loadedmsg");
+        progressMeter.innerHTML = "Page Loaded - Now Transferring";
+	location.href="Default.aspx?You=Welcome";    
     }
     }
     
@@ -45,8 +49,7 @@
     function EndPageLoad()
     {
         window.clearInterval(iIntervalId);
-        var progressMeter = document.getElementById("ProgressMeter");
-        progressMeter.innerHTML = "Page Loaded - Now Transferring";
+        window.clearInterval(reloadIntervalId);
     }    
     </script>    
 </head>
@@ -76,6 +79,9 @@
 </tr>
 <tr>
 <td><span id="loader" style="font-size:medium;">T. Chandirasekar's Portal</span></td>
+</tr>
+<tr>
+<td><span id="loadedmsg" style="font-size:medium;">~ Game On! ~</span></td>
 </tr>
 </table>
 </center>

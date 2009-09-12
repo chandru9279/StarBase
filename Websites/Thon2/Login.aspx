@@ -4,18 +4,18 @@
  <script type="text/javascript">
  // ctl00_cphmain_ThonLogin_Password
       function PressLogin()
-      {        
-        var loginbtn = document.getElementById('ctl00_cphmain_ThonLogin_LoginButton');
+      {
+          var loginbtn = document.getElementById('ctl00_ctl00_CMDivMid_cphmain_ThonLogin_LoginButton');
         if(loginbtn == null) 
         {
-            alert("For Security Purposes : Please click on the Login Button , Don' hit the enter key!");
-            return;
+            alert("For Security Purposes : Please click on the Login Button , Don' hit the enter key!");            
         }
         else
         {            
             try{loginbtn.click();}
-            catch(ex){alert("Err");}
+            catch (ex) { alert("Err"); }
         }
+        return false;
      }      
  </script>
 </asp:Content>

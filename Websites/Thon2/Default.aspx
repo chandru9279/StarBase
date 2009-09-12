@@ -1,10 +1,16 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="Default.aspx.cs" Inherits="Thon.ThonDefaultAspx" MasterPageFile="~/ThonMasterPage.master" Title="Welcome to ChandruOn.NET" %>
+<%@ Reference Control="~/ZaszBlog/UserControls/PostView.ascx" %>
+
+
 <%@ Register 
     Assembly="AjaxControlToolkit" 
     Namespace="AjaxControlToolkit" 
     TagPrefix="ajaxToolkit" %>
     
 <asp:Content ID="DefaultMainContent" ContentPlaceHolderID="cphmain" EnableViewState="false" runat="server">        
+
+    <table>
+    <tr><td>
         <div class="inner_banner">
         <table>
             <tr><td>
@@ -14,15 +20,19 @@
             <p> 
                 <a href="Linkz.aspx"class="innerlink">Linkz & Fun </a>
                 <a href="Credits.aspx" class="innerlink">Credits </a>
-                <a href="http://vcan.12gbfree.com/" class="innerlink">N. G. Karthikeyan's Portal</a>
+                <a href="http://www.intrepidkarthi.com/" class="innerlink">N. G. Karthikeyan's Portal</a>
                 <a href="ZaszBlog/Archive.aspx" class="innerlink">Archive </a> 
                 <a href="http://www.google.com/search?q=ZaszBlog&ie=utf-8&oe=utf-8" class="innerlink">Proving SEO</a>
-		        <a href="http://www.oceansthirteen.com" class="innerlink">Ocean's 11, 12, 13 fan</a>
+		        <a href="http://www.imdb.com/title/tt0496806/" class="innerlink">Ocean's 11, 12, 13 fan</a>
 		    </p>
 		    </td></tr>
         </table>
         </div>
-       
+     </td></tr>
+     <tr><td>   
+        <div runat="server" id="posts" /> 
+     </td></tr>
+     </table>
        
              
             
@@ -54,7 +64,9 @@
     </script> 
 			<h3></h3>
 			
-            
+		
+      
+    
     <asp:Panel ID="WelPanel1" runat="server" Style="cursor: pointer;color:Maroon;font-size:larger;font-style:normal;font-weight:bold;">
         <div class="heading">
             <asp:ImageButton ID="WelImageButton" runat="server" ImageUrl="~/ZaszBlog/Images/MasterPageUserControls/Collapse.jpg" AlternateText="collapse" Enabled="False" />
@@ -174,9 +186,18 @@
          CollapsedImage="~/ZaszBlog/Images/MasterPageUserControls/Expand.jpg"
          ExpandedImage="~/ZaszBlog/Images/MasterPageUserControls/Collapse.jpg"
          />
+
+<center>
+<br/>
+<!-- Facebook Badge START --><a href="http://en-gb.facebook.com/Chandirasekar.Zasz" title="Chandirasekar Zasz" target="_TOP" style="font-family: &quot;lucida grande&quot;,tahoma,verdana,arial,sans-serif; font-size: 11px; font-variant: normal; font-style: normal; font-weight: normal; color: #3B5998; text-decoration: none;">Chandirasekar Zasz</a><span style="font-family: &quot;lucida grande&quot;,tahoma,verdana,arial,sans-serif; font-size: 11px; line-height: 16px; font-variant: normal; font-style: normal; font-weight: normal; color: #555555; text-decoration: none;">&nbsp;|&nbsp;</span><a href="http://en-gb.facebook.com/facebook-widgets/" title="Make your own badge!" target="_TOP" style="font-family: &quot;lucida grande&quot;,tahoma,verdana,arial,sans-serif; font-size: 11px; font-variant: normal; font-style: normal; font-weight: normal; color: #3B5998; text-decoration: none;">Create your badge</a><br/><a href="http://en-gb.facebook.com/Chandirasekar.Zasz" title="Chandirasekar Zasz" target="_TOP"><img src="http://badge.facebook.com/badge/815596121.2578.703699520.png" width="360" height="265" style="border: 0px;" /></a><!-- Facebook Badge END -->
+<br/>
+</center>
+
+
 </asp:Content>
 
 <asp:Content ID="DefaultSideBarContent" ContentPlaceHolderID="cphsidebar" EnableViewState="false" runat="server">
+            
             <div class="right_head">
                 <div class="morelinks_head">Some Links </div>
             </div>

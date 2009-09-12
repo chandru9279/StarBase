@@ -69,7 +69,7 @@ controls within CPH isn't coming under Page.Header.Controls in *BasePage
                 </label>
                 </div>
                 <div class="searchbox">
-                    <div align="center"><asp:Button ID="Button1" runat="server" BorderStyle="None" BorderWidth="0" 
+                    <div align="center"><asp:Button UseSubmitBehavior="false" ID="Button1" runat="server" BorderStyle="None" BorderWidth="0" 
                             CssClass="go" Text="Go" onclick="MasterSearchTextBox_Click"></asp:Button> </div>
                 </div>
             </div>
