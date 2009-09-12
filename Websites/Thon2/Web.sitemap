@@ -43,7 +43,8 @@
         <siteMapNode url="~/AdHocGallery.aspx?folder=ooty" title="Ooty" description="" roles="*" />
         <siteMapNode url="~/AdHocGallery.aspx?folder=class" title="Class" description="" roles="*" />
         <siteMapNode url="~/AdHocGallery.aspx?folder=azhagar" title="Azhagar" description="" roles="*" />
-        <siteMapNode url="~/AdHocGallery.aspx?folder=pet" title="Pets" description="" roles="*" />        
+        <siteMapNode url="~/AdHocGallery.aspx?folder=pet" title="Pets" description="" roles="*" />
+        <siteMapNode url="~/AdHocGallery.aspx?folder=appa" title="R.Thiagarajan" description="New Branch" roles="*" />
       </siteMapNode>
     </siteMapNode>    
     <siteMapNode url="~/Linkz.aspx" title="Linkz" description="" roles="*"/>
