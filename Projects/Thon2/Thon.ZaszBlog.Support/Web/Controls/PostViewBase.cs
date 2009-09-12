@@ -244,7 +244,6 @@ namespace Thon.ZaszBlog.Support.Web.Controls
 			{
 				if (Page.User.IsInRole("Family") || Page.User.Identity.Name.Equals(Post.Author))
 				{
-					BlogBasePage page = (BlogBasePage)Page;
                     string confirmDelete = "Are you sure you want to Delete the post?";
 					StringBuilder sb = new StringBuilder();
 
@@ -276,8 +275,6 @@ namespace Thon.ZaszBlog.Support.Web.Controls
 				float rating = Post.Rating / 5 * 100;
 				StringBuilder sb = new StringBuilder();
 				sb.Append("<div class=\"rating\">");
-
-				BlogBasePage page = (BlogBasePage)Page;
 
 				if (Post.Raters > 0)
 					sb.AppendFormat("<p> Currently rated {0} by {1} people </p>", Post.Rating.ToString("#.0"), Post.Raters);
