@@ -5,8 +5,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphmain" Runat="Server">
 <br />
 <br />
-<h2> Sorry , An error has occured while processing your request.</h2>
+<h2> An error has occured while processing your request :(</h2>
 <blockquote> It has been logged. Contact me here : <a href="../ZaszBlog/Contact.aspx">Contact me!</a></blockquote>
+<br />
+<br />
+<blockquote> This has been logged! </blockquote>
 <br />
 <br />
 </asp:Content>

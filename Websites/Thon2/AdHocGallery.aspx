@@ -4,7 +4,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphmain" Runat="Server">
     <div style="margin-left:20px;">
-    Actual size images matching ' <%=Request.QueryString["folder"] %> '<br />    
+    Size modified images matching ' <%=Request.QueryString["folder"] %> '<br />
+    <b>To see actual size images click on any image</b><br />
     </div>
     <asp:Table ID="Table1" CellPadding="30" CellSpacing="10" runat="server">
     </asp:Table>

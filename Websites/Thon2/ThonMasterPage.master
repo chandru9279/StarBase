@@ -6,8 +6,8 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CMHead" Runat="Server">
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="icon" href="afavicon.gif" type="image/gif" />
+    <link rel="shortcut icon" href="<%=accessurl()%>favicon.ico" />
+    <link rel="icon" href="<%=accessurl()%>afavicon.gif" type="image/gif" />
     <asp:ContentPlaceHolder id="cphhead" runat="server">
     </asp:ContentPlaceHolder>
 </asp:Content>
@@ -22,13 +22,13 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CMTopHeader" Runat="Server">        
         <table><tr>
-        <td><img src="Images/Logo/Thon/logo_96.png" style="width:82px;height:82px" alt="Thon Logo" /></td>
+        <td><img src="<%=accessurl()%>Images/Logo/Thon/logo_96.png" style="width:82px;height:82px" alt="Thon Logo" /></td>
         <td>
         <p class="banner_head" style="text-align:center">Thon! The Thiagarajan Household on the Net, this is our 
             online portal, for all the stuff happening...&nbsp; Enjoy your stay at Thon! </p>
         <p style="text-align:center">Stay cool, and Stay connected ! Cheers, Zasz.</p>
         </td>
-        <td><img src="Images/Logo/Zasz/logo_96.png" style="width:82px;height:82px; " alt="Zasz Logo" /></td>
+        <td><img src="<%=accessurl()%>Images/Logo/Zasz/logo_96.png" style="width:82px;height:82px; " alt="Zasz Logo" /></td>
         </tr></table>        
 </asp:Content>
 

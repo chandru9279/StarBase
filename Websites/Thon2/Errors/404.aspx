@@ -5,8 +5,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphmain" Runat="Server">
 <br />
 <br />
-<h2> Sorry , I cannot find the resource your are looking, for.</h2>
+<h2> ChandruOn.Net cannot find the resource your are looking for :(</h2>
 <blockquote> Try searching here : <a href="../ZaszBlog/Search.aspx">ZaszBlog</a></blockquote>
+<br />
+<br />
+<blockquote> This has been logged! </blockquote>
 <br />
 <br />
 </asp:Content>

@@ -38,11 +38,15 @@ namespace Thon
                 TableCell tc = new TableCell();
                 TableRow tr = new TableRow();
                 HtmlGenericControl c = new HtmlGenericControl("c");
+                HtmlGenericControl Anc = new HtmlGenericControl("a");
+                Anc.Attributes.Add("href", actname);
+                Anc.Attributes.Add("target", "_blank");
                 HtmlGenericControl img = new HtmlGenericControl("img");
                 img.Attributes.Add("src", actname);
                 img.Attributes.Add("height", "450px");
                 img.Attributes.Add("width", "450px");
-                c.Controls.Add(img);
+                c.Controls.Add(Anc);
+                Anc.Controls.Add(img);
                 tc.Controls.Add(c);
                 tr.Cells.Add(tc);
                 Table1.Rows.Add(tr);
