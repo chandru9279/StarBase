@@ -36,13 +36,13 @@ namespace Thon.ZaszBlog.Support
 
             // Also adding the main data-containable aspx pages
             writer.WriteStartElement("url");
-            writer.WriteElementString("loc", SupportUtilities.AbsoluteWebRoot.ToString() + "archive.aspx");
+            writer.WriteElementString("loc", SupportUtilities.AbsoluteWebRoot.ToString() + "Archive.aspx");
             writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
             writer.WriteElementString("changefreq", "daily");
             writer.WriteEndElement();
 
             writer.WriteStartElement("url");
-            writer.WriteElementString("loc", SupportUtilities.AbsoluteWebRoot.ToString() + "contact.aspx");
+            writer.WriteElementString("loc", SupportUtilities.AbsoluteWebRoot.ToString() + "Contact.aspx");
             writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
             writer.WriteElementString("changefreq", "monthly");
             writer.WriteEndElement();
@@ -50,7 +50,7 @@ namespace Thon.ZaszBlog.Support
             if (Page.GetFrontPage() != null)
             {
                 writer.WriteStartElement("url");
-                writer.WriteElementString("loc", SupportUtilities.AbsoluteWebRoot.ToString() + "blog.aspx");
+                writer.WriteElementString("loc", SupportUtilities.AbsoluteWebRoot.ToString() + "Blog.aspx");
                 writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture));
                 writer.WriteElementString("changefreq", "daily");
                 writer.WriteEndElement();
