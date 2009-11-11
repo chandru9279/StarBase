@@ -1,1 +1,0 @@
-﻿<%@ WebHandler Class="Thon.ZaszBlog.Support.Web.HttpHandlers.PingbackHandler" Language="C#" %>

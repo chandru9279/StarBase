@@ -1,5 +1,0 @@
-<opml xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0">
-  <body>
-    <outline title="ZaszBlog" description="My Blog" xfn="me" xmlUrl="http://localhost:56453/ThonZNet/ZaszBlog/ZaszBlogHttpHandlers/Syndication.ashx?author=Zasz" htmlUrl="http://www.thon.net/ZaszBlog" />
-  </body>
-</opml>

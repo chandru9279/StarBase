@@ -1,1 +1,0 @@
-﻿<%@ WebHandler Class="Thon.ZaszBlog.Support.Web.HttpHandlers.TrackbackHandler" Language="C#" %>

@@ -1,2 +1,0 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="News.ascx.cs" Inherits="UserControls_News" %>
-<script src="http://gmodules.com/ig/ifr?url=http://www.google.com/ig/modules/tabnews.xml&amp;up_ned=in&amp;up_items=6&amp;up_show_image=1&amp;up_font_size=12pt&amp;up_selectedTab=0&amp;up_tabs=&amp;up_last_url=&amp;synd=open&amp;w=320&amp;h=200&amp;title=News&amp;lang=en&amp;country=US&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script>
