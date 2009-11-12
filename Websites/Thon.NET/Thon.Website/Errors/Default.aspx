@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/ThonMasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Errors_Default" Title="Untitled Page" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/ThonMasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Errors_Default" Title="SADNESS - ERROR :(" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphhead" Runat="Server">
 </asp:Content>

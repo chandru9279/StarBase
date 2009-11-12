@@ -33,11 +33,15 @@ public partial class CommonMasterPage : System.Web.UI.MasterPage
         {
             So1.Visible = true;
         }
+        else if (Request.Path.Contains("Gallery"))
+        {
+            TH1.Visible = true;
+            GL1.Visible = true;
+        }
         else
         {
             TH1.Visible = true;
             TH2.Visible = true;
-            TH3.Visible = true;
         }
 
     }

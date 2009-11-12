@@ -24,10 +24,10 @@ controls within CPH isn't coming under Page.Header.Controls in *BasePage
     <link runat="server" id="ZB2" href="ZaszBlog/StyleSheets/Facing.css" rel="stylesheet" type="text/css" />
     <%--else if(Request.Path.Contains("Software")) --%>
     <link runat="server" id="So1" href="StyleSheets/Master.css" rel="stylesheet" type="text/css" />
-    <%--else --%>
+    <%--else if(Request.Path.Contains("Gallery")) --%>
+    <link runat="server" id="GL1" href="StyleSheets/Gallery.css" rel="stylesheet" type="text/css" />
     <link runat="server" id="TH1" href="StyleSheets/Master.css" rel="stylesheet" type="text/css" />
-    <link runat="server" id="TH2" href="StyleSheets/Gallery.css" rel="stylesheet" type="text/css" />
-    <link runat="server" id="TH3" href="StyleSheets/SettingsAspxStyleSheet.css" rel="stylesheet" type="text/css" />
+    <link runat="server" id="TH2" href="StyleSheets/SettingsAspxStyleSheet.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="CMHead" runat="server">
     </asp:ContentPlaceHolder>
 </head>

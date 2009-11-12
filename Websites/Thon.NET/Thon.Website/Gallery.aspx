@@ -87,7 +87,6 @@ Title="Gallery" Debug="true" %>
      <div id="Features">
     
         <div runat="server" id="GalleryFeatures" visible="false">
-            <asp:LoginStatus ID="GalleryLoginStatus" runat="server" style="color:Maroon;margin-left:15px;" /><br /><br />
             <div runat="server" id="GalleryAdminUpload" visible="false" style="width:180px;">
                 <h1><asp:Literal ID="UploadLiteral" runat="server" Text="Upload Photos" ></asp:Literal></h1><br /><br /><br />
                 <asp:FileUpload ID="UncatalogedFileUpload" runat="server" BackColor="#fcffff"/><br /><br />
