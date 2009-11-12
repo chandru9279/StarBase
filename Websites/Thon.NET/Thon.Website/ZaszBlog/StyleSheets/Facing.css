@@ -39,9 +39,7 @@ disclaimer{
 }
 div, h1, h2, h3, h4, p, form, label, input, textarea, img, span{
 	margin:0 0 0 0px; 
-padding:0;
-	width: 763px;
-	height: 522px;
+	padding:0;
 }
 
 #Features h1{
@@ -1508,9 +1506,9 @@ a.treenodestyle:hover {
 	text-decoration: none;
 	padding: 0px;
 	float: left;
-	height: 104px;
+	height: 137px;
 	background-image: url(../../Images/Master/fotter_bg.jpg);
-	background-repeat: repeat-x;
+	background-repeat: repeat;
 	background-position: center top;
 }
 #fotter_1{
@@ -2263,3 +2261,35 @@ a.fotterlink:active{
 				background-color:#fffdfd;
 	}	
 /*----------------------------------------------------------------contactpage----------------------------------------------------------------------------------------*/																		
+
+
+#sa:hover 
+{	
+background-image:url(../../Images/Master/fotter_validation1.png);
+background-repeat:no-repeat;
+background-color:Black;
+border: 0;
+color:#000000;
+font-family:Arial;
+font-size:10px;
+font-weight:bold;
+margin:0 5px 0 0;
+padding:3px 0 0 20px;
+text-decoration:none;
+text-transform:uppercase;
+}
+
+#sa{
+background-image:url(../../Images/Master/fotter_validation.png);
+background-repeat:no-repeat;
+background-color:Black;
+border: 0;
+color:#000000;
+font-family:Arial;
+font-size:10px;
+font-weight:bold;
+margin:0 5px 0 0;
+padding:3px 0 0 20px;
+text-decoration:none;
+text-transform:uppercase;
+}

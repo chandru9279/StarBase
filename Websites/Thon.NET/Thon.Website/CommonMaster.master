@@ -19,12 +19,12 @@ controls within CPH isn't coming under Page.Header.Controls in *BasePage
 --%>
 <head id="Head1" runat="server" profile="http://gmpg.org/xfn/11">
     <title></title>
-    <!-- if(Request.Path.Contains("ZaszBlog")) -->    
+    <%-- if(Request.Path.Contains("ZaszBlog")) --%>    
     <link runat="server" id="ZB1" href="ZaszBlog/StyleSheets/MasterPageUserControls.css" rel="stylesheet" type="text/css" />
     <link runat="server" id="ZB2" href="ZaszBlog/StyleSheets/Facing.css" rel="stylesheet" type="text/css" />
-    <!--else if(Request.Path.Contains("Software")) -->
+    <%--else if(Request.Path.Contains("Software")) --%>
     <link runat="server" id="So1" href="StyleSheets/Master.css" rel="stylesheet" type="text/css" />
-    <!--else -->
+    <%--else --%>
     <link runat="server" id="TH1" href="StyleSheets/Master.css" rel="stylesheet" type="text/css" />
     <link runat="server" id="TH2" href="StyleSheets/Gallery.css" rel="stylesheet" type="text/css" />
     <link runat="server" id="TH3" href="StyleSheets/SettingsAspxStyleSheet.css" rel="stylesheet" type="text/css" />
@@ -192,6 +192,7 @@ controls within CPH isn't coming under Page.Header.Controls in *BasePage
     
     <div id="fotter">
         <div id="fotter_1">
+            <center>  <asp:ContentPlaceHolder runat="server" ID="OutForm" />  </center>
             <div class="fotter_leftarea">
                 <div class="fotter_links">
                     <a href="<%=accessurl()%>Default.aspx" class="fotterlink">Home</a>  |  <a href="<%=accessurl()%>About/TChandirasekar/Default.aspx" class="fotterlink">T Chandirasekar</a>  |  <a href="<%=accessurl()%>About/TArunKumar/Default.aspx" class="fotterlink">T Arun Kumar</a>  |  <a href="<%=accessurl()%>About/TJayalakshmi/Default.aspx" class="fotterlink">T Jayalakshmi</a> |
@@ -206,10 +207,6 @@ controls within CPH isn't coming under Page.Header.Controls in *BasePage
                 Powered by Thon.NET</div>
             </div>            
         </div>    
-        <center>
-            <asp:ContentPlaceHolder runat="server" ID="OutForm" >
-            </asp:ContentPlaceHolder>
-        </center>
     </div>
     
     

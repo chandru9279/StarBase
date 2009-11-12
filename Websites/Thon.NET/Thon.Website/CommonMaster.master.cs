@@ -44,21 +44,25 @@ public partial class CommonMasterPage : System.Web.UI.MasterPage
 
     protected void FLOne_Click(object sender, EventArgs e)
     {
+        FooterPlaceHolder.Controls.Clear();
         FooterPlaceHolder.Controls.Add(LoadControl("~/UserControls/Footer/Futures.ascx"));
         FLBStyles(1);
     }
     protected void FLTwo_Click(object sender, EventArgs e)
-    {       
+    {
+        FooterPlaceHolder.Controls.Clear();
         FooterPlaceHolder.Controls.Add(LoadControl("~/UserControls/Footer/HinduNews.ascx"));
         FLBStyles(2);
     }
     protected void FLThree_Click(object sender, EventArgs e)
     {
+        FooterPlaceHolder.Controls.Clear();
         FooterPlaceHolder.Controls.Add(LoadControl("~/UserControls/Footer/WaitFor.ascx"));
         FLBStyles(3);
     }
     protected void FLFour_Click(object sender, EventArgs e)
     {
+        FooterPlaceHolder.Controls.Clear();
         FooterPlaceHolder.Controls.Add(LoadControl("~/UserControls/Footer/RecentPosts.ascx"));
         FLBStyles(4);
     }

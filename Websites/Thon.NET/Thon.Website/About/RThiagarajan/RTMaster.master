@@ -1,5 +1,4 @@
-﻿<%@Master  AutoEventWireup="true" CodeFile="RTMaster.master.cs" Inherits="Thon.About.RTMaster"
-    Language="C#" MasterPageFile="~/ThonMasterPage.master" %>
+﻿<%@Master  AutoEventWireup="true" CodeFile="RTMaster.master.cs" Inherits="Thon.About.RTMaster" Language="C#" MasterPageFile="~/ThonMasterPage.master" %>
 
 <asp:content id="Content1" runat="Server" contentplaceholderid="cphhead">
  <title>R Thiagarajan</title>

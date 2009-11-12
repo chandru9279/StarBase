@@ -14,10 +14,7 @@
 
 
 <asp:Content ID="Content6" ContentPlaceHolderID="OutForm" Runat="Server">     
-    <div class="fotterlike">
-        <p style="margin:10px 10px 10px 10px;color:Black;">Search the Internet</p><br />
         <Google:InternetSearch runat="server" ID="InternetSearch" />
-    </div>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CMTopHeader" Runat="Server">        

@@ -1477,23 +1477,10 @@ a.treenodestyle:hover {
 	text-decoration: none;
 	padding: 0px;
 	float: left;
-	height: 104px;
+	height: 137px;
 	background-image: url(../Images/Master/fotter_bg.jpg);
-	background-repeat: repeat-x;
+	background-repeat: repeat;
 	background-position: center top;
-}
-.fotterlike
-{
-	width:100%;
-	margin-top: 0;
-	margin-right: auto;
-	margin-bottom: 0;
-	margin-left: auto;
-	line-height: normal;
-	text-transform: none;
-	padding: 0px;
-	float: left;
-	height: 50px;
 }
 #fotter_1{
 	width:941px;
@@ -2387,4 +2374,36 @@ div.post a
 	background-image: url(../ZaszBlog/Images/StarSmall.gif);	
 	line-height: 10px;
 	height: 10px;
+}
+
+
+#sa:hover 
+{	
+background-image:url(../Images/Master/fotter_validation1.png);
+background-repeat:no-repeat;
+background-color:Black;
+border: 0;
+color:#000000;
+font-family:Arial;
+font-size:10px;
+font-weight:bold;
+margin:0 5px 0 0;
+padding:3px 0 0 20px;
+text-decoration:none;
+text-transform:uppercase;
+}
+
+#sa{
+background-image:url(../Images/Master/fotter_validation.png);
+background-repeat:no-repeat;
+background-color:Black;
+border: 0;
+color:#000000;
+font-family:Arial;
+font-size:10px;
+font-weight:bold;
+margin:0 5px 0 0;
+padding:3px 0 0 20px;
+text-decoration:none;
+text-transform:uppercase;
 }
