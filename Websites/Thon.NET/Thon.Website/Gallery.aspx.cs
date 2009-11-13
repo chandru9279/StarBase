@@ -756,7 +756,8 @@ namespace Thon.Gallery
                 string ThumbFileName = Server.MapPath(_FilePath + "/Thumbs/") + PhotoID + ".jpg";
                 NewImg.Save(ThumbFileName, System.Drawing.Imaging.ImageFormat.Jpeg);
                 NewImg.Dispose();
-                System.IO.File.Move(OldFileName, NewFileName);
+                System.IO.File.Copy(OldFileName, NewFileName);                
+                System.IO.File.Delete(OldFileName);
             }
             BindRepeater();
             GalleryAdminCatalog.Visible = true;

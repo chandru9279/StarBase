@@ -97,20 +97,25 @@ Title="Gallery" Debug="true" %>
             <div runat="server" id="GalleryAdminCatalog" visible="false" style="width:180px;">
                 <h1><asp:Literal ID="CatelogLiteral" runat="server" Text="Catalog Uploads" ></asp:Literal></h1><br /><br /><br />
                 <center style="color:Maroon"><asp:Label runat="server" ID="UncatalogedCountLabel"></asp:Label></center><br /><br />
+                <center style="margin-bottom:5px;">
                 <asp:Button ID="UncatalogedCatalogButton" runat="server" Text="Catalog Uploads"  OnClick="UncatalogedCatalogButton_Click"/>
+                <span style="clear: both; display: block;" />
+                </center>
             </div>
             
             <div runat="server" id="GalleryCategories" visible="false" style="width:180px;">
                 <h1><asp:Literal ID="CategoriesLiteral" runat="server" Text="Categories" ></asp:Literal></h1>
                 <br /><br /><br /><br />
-                <asp:BulletedList runat="server" ID="CategoriesList" DisplayMode="HyperLink"></asp:BulletedList> <br /><br />       
-                <asp:TextBox runat="server" ID="CategoriesAddDeleteBox" Visible="false"></asp:TextBox><br /><br />
-                <asp:Button runat="server" ID="CategoriesAddButton" Text="Add" Visible="false" 
-                     onclick="CategoriesAddButton_Click"></asp:Button>
-                <asp:Button runat="server" ID="CategoriesDeleteButton" Text="Delete" 
-                    Visible="false"  
-                    onclick="CategoriesDeleteButton_Click"></asp:Button><br /><br />
-                <span style="clear: both; display: block;"></span>
+                <asp:BulletedList runat="server" ID="CategoriesList" DisplayMode="HyperLink"></asp:BulletedList> <br /><br />
+                <center><table cellpadding="7px">
+                <tr><td colspan="2"><asp:TextBox runat="server" ID="CategoriesAddDeleteBox" Visible="false"></asp:TextBox></td></tr>
+                <tr><td><asp:Button runat="server" ID="CategoriesAddButton" Text="Add" Visible="false" onclick="CategoriesAddButton_Click"></asp:Button></td><td><asp:Button runat="server" ID="CategoriesDeleteButton" Text="Delete" Visible="false" onclick="CategoriesDeleteButton_Click"></asp:Button></td></tr>
+                <%-- <tr><td><asp:Label runat="server" ID="Consol"></asp:Label></td></tr> --%>
+                </table></center>       
+                
+                
+                
+                <span style="clear: both; display: block;" />
             </div>
             
             <div runat="server" id="GallerySearch" visible="false" style="width:180px;">
